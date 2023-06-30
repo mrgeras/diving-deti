@@ -17,10 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      image: {
-        type: DataTypes.TEXT,
-      },
-      video: {
+      file: {
         type: DataTypes.TEXT,
       },
       coach_id: {
