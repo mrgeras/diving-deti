@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function CoursesList() {
-  return (
-    <div>Courses</div>
-  )
+  const { courses } = useSelector;
+  return <div>Courses</div>;
 }
 
-export default CoursesList
+export default CoursesList;
