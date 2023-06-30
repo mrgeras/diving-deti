@@ -1,6 +1,6 @@
-import { Admin } from './type';
+import { Admin, AdminWithOutId } from './type';
 
-const authLogFetch = async (admin: Admin): Promise<Admin> => {
+const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
   const res = await fetch('/api/auth/authorization', {
     method: 'POST',
     headers: {
