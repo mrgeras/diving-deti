@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import AuthSlice from './Reducers/AuthSlice';
+// import AuthSlice from './Reducers/AuthSlice';
 
 const store = configureStore({
   reducer: {

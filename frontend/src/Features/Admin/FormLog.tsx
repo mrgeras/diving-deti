@@ -1,26 +1,17 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../../Redux/store';
+import { authorization } from '../../Redux/Reducers/AuthSlice';
 
 function FormLog(): JSX.Element {
-  const [name, setName] = useState('');
+  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useAppDispatch();
 
-  const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+  const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+    e
+  ): Promise<void> => {
     e.preventDefault();
-
-    const res = await fetch('/api/auth/authorization', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        password,
-      }),
-    });
-
-    const data = await res.json();
-
-    console.log(data);
+    dispatch(authorization({ login, password }));
   };
 
   return (
@@ -30,8 +21,8 @@ function FormLog(): JSX.Element {
           Имя
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
           />
         </label>
         <label>
