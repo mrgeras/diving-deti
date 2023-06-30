@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(Coach, { foreignKey: 'coach_id' });
     }
   }
-  File.init(
+  Coach_File.init(
     {
       id: {
         allowNull: false,

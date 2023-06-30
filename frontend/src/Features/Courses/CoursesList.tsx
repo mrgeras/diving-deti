@@ -1,9 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../Redux/store';
+import store, { RootState } from '../../Redux/store';
 
 function CoursesList() {
-  const { courses } = useSelector;
-  return <div>Courses</div>;
+  const { courses } = useAppSelector((store) => store.course);
+  return <div>
+    {courses.map((course)=><)}
+  </div>;
 }
 
 export default CoursesList;
