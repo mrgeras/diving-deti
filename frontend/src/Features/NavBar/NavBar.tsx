@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 
 function NavBar(): JSX.Element {
   return (
-    <div>
-      <nav className="navbar">NavBar</nav>
+    <>
+      <nav className="header">NavBar</nav>
       <Outlet />
-    </div>
+    </>
   );
 }
 

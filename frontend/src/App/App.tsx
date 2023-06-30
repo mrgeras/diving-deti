@@ -6,13 +6,13 @@ import NavBar from '../Features/NavBar/NavBar';
 import Footer from '../Features/Footer/Footer';
 import Articles from '../Features/Articles/Articles';
 import Main from '../Features/Main/Main';
-import Courses from '../Features/Courses/Courses';
+import Courses from '../Features/Courses/CoursesList';
 import About from '../Features/About/About';
 import Error from '../Features/404/Error';
 
 function App(): JSX.Element {
   return (
-    <div className="App">
+    <div className="app">
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
@@ -21,7 +21,7 @@ function App(): JSX.Element {
           <Route path="/courses" element={<Courses />} />
           <Route path="/about" element={<About />} />
         </Route>
-        <Route path="*" element={<Error></Error>} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </div>
