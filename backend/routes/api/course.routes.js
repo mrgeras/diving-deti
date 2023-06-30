@@ -6,7 +6,7 @@ router.get('/api/courses', async (req, res) => {
   try {
     const courses = await Course.findAll({
       where: { id: course.id },
-      include: { model: Course_Media },
+      include: { model: Course_File },
     });
 
     res.json({ courses });

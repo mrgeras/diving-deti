@@ -2,28 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Coach_Media', {
+    await queryInterface.createTable('Files', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      coach_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'Coaches',
-          key: 'id'
-        }
+      image: {
+        type: Sequelize.TEXT
       },
-      media_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'Medias',
-          key: 'id'
-        }
+      video: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -36,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Coach_Media');
+    await queryInterface.dropTable('Files');
   }
 };

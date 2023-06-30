@@ -1,20 +1,20 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Media extends Model {
+  class File extends Model {
     static associate({
-      Coach_Media,
-      Article_Media,
-      Information_Media,
-      Course_Media,
+      Coach_File,
+      Article_File,
+      Information_File,
+      Course_File,
     }) {
-      this.hasMany(Coach_Media, { foreignKey: 'media_id' });
-      this.hasMany(Article_Media, { foreignKey: 'media_id' });
-      this.hasMany(Information_Media, { foreignKey: 'media_id' });
-      this.hasMany(Course_Media, { foreignKey: 'media_id' });
+      this.hasMany(Coach_File, { foreignKey: 'file_id' });
+      this.hasMany(Article_File, { foreignKey: 'file_id' });
+      this.hasMany(Information_File, { foreignKey: 'file_id' });
+      this.hasMany(Course_File, { foreignKey: 'file_id' });
     }
   }
-  Media.init(
+  File.init(
     {
       id: {
         allowNull: false,
@@ -31,8 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Media',
+      modelName: 'File',
     }
   );
-  return Media;
+  return File;
 };

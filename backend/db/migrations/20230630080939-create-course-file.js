@@ -2,40 +2,40 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Article_Media', {
+    await queryInterface.createTable('Course_Files', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
-      article_id: {
+      course_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'Articles',
+          model: 'Courses',
           key: 'id',
         },
       },
-      media_id: {
+      file_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'Medias',
+          model: 'Files',
           key: 'id',
         },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Article_Media');
-  },
+    await queryInterface.dropTable('Course_Files');
+  }
 };
