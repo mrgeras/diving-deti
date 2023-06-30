@@ -13,23 +13,25 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
       },
       coach_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
-        references:{
+        references: {
           model: 'Coaches',
-          key: 'id'
-        }
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       file_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
-        references:{
+        references: {
           model: 'Files',
-          key: 'id'
-        }
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
     },
     {

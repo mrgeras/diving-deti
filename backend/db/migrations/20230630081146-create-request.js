@@ -16,6 +16,7 @@ module.exports = {
           model: 'Courses',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       request_status: {
         allowNull: false,

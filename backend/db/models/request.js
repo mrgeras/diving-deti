@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
           model: 'Courses',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       request_status: {
         allowNull: false,

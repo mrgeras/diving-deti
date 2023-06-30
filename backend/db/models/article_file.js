@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
           model: 'Articles',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       file_id: {
         allowNull: false,
@@ -30,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
           model: 'Files',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
     },
     {

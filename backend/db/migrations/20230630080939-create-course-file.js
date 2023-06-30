@@ -16,6 +16,7 @@ module.exports = {
           model: 'Courses',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       file_id: {
         allowNull: false,
@@ -24,6 +25,7 @@ module.exports = {
           model: 'Files',
           key: 'id',
         },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
