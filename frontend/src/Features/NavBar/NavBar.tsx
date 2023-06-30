@@ -1,7 +1,13 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 function NavBar(): JSX.Element {
-  return <nav className="navbar">NavBar</nav>;
+  return (
+    <div>
+      <nav className="navbar">NavBar</nav>
+      <Outlet />
+    </div>
+  );
 }
 
 export default NavBar;
