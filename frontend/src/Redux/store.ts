@@ -5,7 +5,7 @@ import AuthSlice from "./Reducers/AuthSlice";
 
 const store = configureStore({
   reducer: {
-    auth: AuthSlice,
+    // auth: AuthSlice,
   },
 });
 export type AppDispatch = typeof store.dispatch;

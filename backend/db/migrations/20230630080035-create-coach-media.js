@@ -11,11 +11,19 @@ module.exports = {
       },
       coach_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model: 'Coach',
+          key: 'id'
+        }
       },
       media_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model: 'Media',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

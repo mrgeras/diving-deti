@@ -18,10 +18,18 @@ module.exports = (sequelize, DataTypes) => {
       information_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: 'Information',
+          key: 'id',
+        },
       },
       media_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: 'Media',
+          key: 'id',
+        },
       },
     },
     {

@@ -13,15 +13,23 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER
       },
       coach_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references:{
+          model: 'Coach',
+          key: 'id'
+        }
       },
       media_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references:{
+          model: 'Media',
+          key: 'id'
+        }
       },
     },
     {
