@@ -1,11 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
 
-import AuthSlice from "./Reducers/AuthSlice";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import AuthSlice from './Reducers/AuthSlice';
 
 const store = configureStore({
   reducer: {
-    auth: AuthSlice,
+    // auth: AuthSlice,
   },
 });
 export type AppDispatch = typeof store.dispatch;

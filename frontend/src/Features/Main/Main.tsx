@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-function Main() {
-  return <div>Main</div>;
+function Main(): JSX.Element {
+  return <main className="main">Main</main>;
 }
 
 export default Main;

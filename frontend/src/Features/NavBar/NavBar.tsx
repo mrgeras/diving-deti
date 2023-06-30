@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function NavBar() {
-  return (
-    <div>NavBar</div>
-  )
+function NavBar(): JSX.Element {
+  return <nav className="navbar">NavBar</nav>;
 }
 
-export default NavBar
+export default NavBar;
