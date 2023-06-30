@@ -5,10 +5,10 @@ const config = require('./config/serverConfig');
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 config(app);
 
 app.listen(PORT, () => {
-  console.log(`server ${PORT}`);
+  console.log(`Этот сервер летит со скоростью ${PORT} км/ч`);
 });
