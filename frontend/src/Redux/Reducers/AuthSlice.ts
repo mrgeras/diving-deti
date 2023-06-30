@@ -1,7 +1,7 @@
 // import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Admin, AuthState } from '../../Features/Admin/type';
-import * as api from '../../Features/Admin/api';
+import { AdminWithOutId, AuthState } from '../../Features/Admin/type';
+import authLogFetch from '../../Features/Admin/api';
 
 const initialState: AuthState = {
   admin: undefined,
@@ -10,7 +10,7 @@ const initialState: AuthState = {
 
 export const authorization = createAsyncThunk(
   'auth/authorization',
-  (value: Admin) => api.default(value)
+  (value: AdminWithOutId) => authLogFetch(value)
 );
 
 const AuthSlice = createSlice({
