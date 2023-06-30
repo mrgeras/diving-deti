@@ -4,9 +4,11 @@ const bcrypt = require('bcrypt');
 
 router.post('/authorization', async (req, res) => {
   try {
-    const { name, password } = req.body;
+    const { login, password } = req.body;
 
-    const user = await Admin.findOne({ where: { name } });
+    console.log(login);
+
+    const user = await Admin.findOne({ where: { login } });
 
     let compare = false;
 
