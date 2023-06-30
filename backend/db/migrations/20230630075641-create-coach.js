@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      coach_img: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },
       coach_name: {
         allowNull: false,
         type: Sequelize.TEXT
