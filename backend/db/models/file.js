@@ -2,16 +2,11 @@
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class File extends Model {
-    static associate({
-      Coach_File,
-      Article_File,
-      Information_File,
-      Course_File,
-    }) {
-      this.hasMany(Coach_File, { foreignKey: 'file_id' });
-      this.hasMany(Article_File, { foreignKey: 'file_id' });
-      this.hasMany(Information_File, { foreignKey: 'file_id' });
-      this.hasMany(Course_File, { foreignKey: 'file_id' });
+    static associate({ Coach, Article, Information, Course }) {
+      this.belongsTo(Coach, { foreignKey: 'coach_id' });
+      this.belongsTo(Article, { foreignKey: 'article_id' });
+      this.belongsTo(Information, { foreignKey: 'information_id' });
+      this.belongsTo(Course, { foreignKey: 'course_id' });
     }
   }
   File.init(
@@ -27,6 +22,47 @@ module.exports = (sequelize, DataTypes) => {
       },
       video: {
         type: DataTypes.TEXT,
+      },
+      coach_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Coaches',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+
+      article_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Articles',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+      information_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Informations',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+      course_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Courses',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
       },
     },
     {

@@ -2,8 +2,8 @@
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Article extends Model {
-    static associate({ Article_File }) {
-      this.hasMany(Article_File, { foreignKey: 'article_id' });
+    static associate({ File }) {
+      this.hasMany(File, { foreignKey: 'article_id' });
     }
   }
   Article.init(

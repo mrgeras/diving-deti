@@ -7,14 +7,47 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       image: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
       video: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
       },
+      coach_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Coaches',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+
+      article_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Articles',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+      information_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Informations',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },
+      course_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Courses',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+      },,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
