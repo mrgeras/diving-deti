@@ -1,6 +1,6 @@
-const Course = require('../../db/models/course');
+const { Course } = require('../../db/models');
 
-const router = require('express').Routes();
+const router = require('express').Router();
 
 router.get('/api/courses', async (req, res) => {
   try {
