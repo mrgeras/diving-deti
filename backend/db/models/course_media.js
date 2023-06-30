@@ -18,11 +18,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     course_id: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Course',
+        key: 'id',
+      },
     },
     media_id: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Media',
+        key: 'id',
+      },
     },
   }, {
     sequelize,

@@ -11,11 +11,19 @@ module.exports = {
       },
       information_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Information',
+          key: 'id',
+        },
       },
       media_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Media',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
