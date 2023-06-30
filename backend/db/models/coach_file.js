@@ -1,13 +1,13 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Coach_Media extends Model {
-    static associate({ Media, Coach }) {
-      this.belongsTo(Media, { foreignKey: 'media_id' });
+  class File extends Model {
+    static associate({ File, Coach }) {
+      this.belongsTo(File, { foreignKey: 'file_id' });
       this.belongsTo(Coach, { foreignKey: 'coach_id' });
     }
   }
-  Coach_Media.init(
+  File.init(
     {
       id: {
         allowNull: false,
@@ -23,19 +23,19 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      media_id: {
+      file_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references:{
-          model: 'Media',
+          model: 'Files',
           key: 'id'
         }
       },
     },
     {
       sequelize,
-      modelName: 'Coach_Media',
+      modelName: 'File',
     }
   );
-  return Coach_Media;
+  return File;
 };
