@@ -1,7 +1,7 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class File extends Model {
+  class Coach_File extends Model {
     static associate({ File, Coach }) {
       this.belongsTo(File, { foreignKey: 'file_id' });
       this.belongsTo(Coach, { foreignKey: 'coach_id' });
@@ -37,5 +37,5 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'File',
     }
   );
-  return File;
+  return Coach_File;
 };
