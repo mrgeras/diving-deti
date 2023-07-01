@@ -1,15 +1,13 @@
+const router = require('express').Router();
 const { Course } = require('../../db/models');
 
-const router = require('express').Router();
-
-router.get('/api/courses', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const courses = await Course.findAll({
-      where: { id: course.id },
-      include: { model: Course_File },
+    const course = await Course.findAll({
     });
+    console.log(course)
 
-    res.json({ courses });
+    res.json(course );
   } catch (err) {
     console.log(err);
     res.json({ message: err.message });

@@ -9,10 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      image: {
-        type: Sequelize.TEXT,
-      },
-      video: {
+      file: {
         type: Sequelize.TEXT,
       },
       coach_id: {
@@ -23,7 +20,6 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-
       article_id: {
         type: Sequelize.INTEGER,
         references: {
@@ -47,18 +43,18 @@ module.exports = {
           key: 'id',
         },
         onDelete: 'CASCADE',
-      },,
+      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Files');
-  }
+  },
 };
