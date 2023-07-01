@@ -14,9 +14,7 @@ function FormLog(): JSX.Element {
     e
   ): Promise<void> => {
     e.preventDefault();
-
     dispatch(authorization({ login, password }));
-
     navigate('/');
   };
 
