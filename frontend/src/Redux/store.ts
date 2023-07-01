@@ -20,5 +20,3 @@ export const useAppSelector: <T>(fn: (state: RootState) => T) => T =
 export type RootState = ReturnType<typeof store.getState>;
 
 export default store;
-
-//
