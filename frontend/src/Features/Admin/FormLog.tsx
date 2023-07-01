@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../Redux/store';
-// import { useNavigate } from 'react-router-dom';
 import { authorization } from '../../Redux/Reducers/AuthSlice';
 
 function FormLog(): JSX.Element {
@@ -8,14 +8,16 @@ function FormLog(): JSX.Element {
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     e
   ): Promise<void> => {
     e.preventDefault();
+
     dispatch(authorization({ login, password }));
-    // navigate('/');
+
+    navigate('/');
   };
 
   return (

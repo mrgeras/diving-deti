@@ -3,10 +3,8 @@ import { useAppSelector } from '../../Redux/store';
 import store, { RootState } from '../../Redux/store';
 
 function CoursesList() {
-  const { courses } = useAppSelector((store) => store.course);
-  return <div>
-    {courses.map((course)=><)}
-  </div>;
+  // const { courses } = useAppSelector((store) => store.course);x
+  return <div>{/* {courses.map((course)=><)} */}</div>;
 }
 
 export default CoursesList;
