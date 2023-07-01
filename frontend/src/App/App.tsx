@@ -9,6 +9,7 @@ import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
 import About from '../Features/About/About';
 import Error from '../Features/404/Error';
+import Background from '../Features/Background/Background';
 
 function App(): JSX.Element {
   return (
@@ -23,6 +24,7 @@ function App(): JSX.Element {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
+          <Background />
       <Footer />
     </div>
   );
