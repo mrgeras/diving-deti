@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import store, { RootState } from '../../Redux/store';
 import CourseItem from './CourseItem';
-import { coursesInit } from './CourseSlices/CourseSlice';
+import { coursesInit } from './CourseSlices/courseSlice';
 
 function CoursesList(): JSX.Element {
+  const { courses } = useAppSelector((store) => store.courses);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(coursesInit());
-  }, [courses, dispatch]);
-  const { courses } = useAppSelector((store) => store.course);
+  }, []);
   return (
     <div>
-      {courses.map((course) => (
+      {courses?.map((course) => (
         <CourseItem key={course.id} course={course} />
       ))}
     </div>

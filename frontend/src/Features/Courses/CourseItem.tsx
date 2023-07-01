@@ -1,12 +1,14 @@
 import React from 'react';
 import { Course } from './types/CoursesType';
-import { useAppSelector } from '../../Redux/store';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
-  
-  return <div>
-    <img src={course.img} alt="" />
-  </div>;
+  return (
+    <div>
+      <img src={course.course_img} alt="" />
+      <p>{course.course_name}</p>
+      <p>{course.description}</p>
+    </div>
+  );
 }
 
 export default CourseItem;
