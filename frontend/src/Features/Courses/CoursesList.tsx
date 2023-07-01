@@ -3,9 +3,9 @@ import { useAppSelector } from '../../Redux/store';
 import store, { RootState } from '../../Redux/store';
 
 function CoursesList() {
-  const { courses } = useAppSelector((store) => store.course);
+  // const { courses } = useAppSelector((store) => store.course);
   return <div>
-    {courses.map((course)=><)}
+    {/* {courses.map((course)=><)} */}
   </div>;
 }
 
