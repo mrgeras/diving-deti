@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      course_img: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },
       course_name: {
         allowNull: false,
         type: Sequelize.TEXT

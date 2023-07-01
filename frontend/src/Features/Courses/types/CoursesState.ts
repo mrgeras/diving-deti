@@ -1,6 +1,6 @@
 import { Course } from './CoursesType';
 
-export type CourseState = {
-  courses: Course[];
+export type CoursesState = {
+  courses: Course[] | undefined;
   error: string | undefined;
 };

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Course } from './types/CoursesType';
 
-function CourseItem() {
+function CourseItem({ course }: { course: Course }): JSX.Element {
   return (
-    <div>CourseItem</div>
-  )
+    <div>
+      <img src={course.course_img} alt="" />
+      <p>{course.course_name}</p>
+      <p>{course.description}</p>
+    </div>
+  );
 }
 
-export default CourseItem
+export default CourseItem;
