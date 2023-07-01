@@ -4,9 +4,9 @@ const router = require('express').Router();
 
 router.get('/api/courses', async (req, res) => {
   try {
+    const { course_id } = req.params;
     const courses = await Course.findAll({
-      where: { id: course.id },
-      include: { model: Course_File },
+      where: { course_id: course_id },
     });
 
     res.json({ courses });
