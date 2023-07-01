@@ -1,10 +1,19 @@
 import React from 'react';
-import './Main.scss';
-import Background from '../Background/Background';
+import { useAppDispatch } from '../../Redux/store';
+import { logOut } from '../../Redux/Reducers/AuthSlice';
 
 function Main(): JSX.Element {
+      const dispatch = useAppDispatch();
+
+  const onHandleLogout: React.MouseEventHandler<HTMLButtonElement> = async (
+    e
+  ) => {
+    e.preventDefault();
+    dispatch(logOut());
+  };
   return (
-    <main className="main">
+    <>
+      <main className="main">
       <div className="main__content">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
         similique eligendi amet vel voluptates quod repudiandae eum tempora iste
@@ -23,7 +32,11 @@ function Main(): JSX.Element {
         quidem soluta nam nemo! Voluptatum maiores quis iste r em.
       </div>
     </main>
-  );
+      <button type="button" onClick={onHandleLogout}>
+        logout
+      </button>
+      </>
+    );
 }
 
 export default Main;

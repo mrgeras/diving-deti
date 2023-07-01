@@ -1,6 +1,6 @@
 import { Admin, AdminWithOutId } from './type';
 
-const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
+export const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
   const res = await fetch('/api/auth/authorization', {
     method: 'POST',
     headers: {
@@ -11,4 +11,11 @@ const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
   return res.json();
 };
 
-export default authLogFetch;
+export const authCheckUserFetch = async (): Promise<Admin> => {
+  const res = await fetch('/api/auth/check');
+  return res.json();
+};
+
+export const logOutFetch = async (): Promise<void> => {
+  await fetch('/api/auth/logout');
+};
