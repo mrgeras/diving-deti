@@ -12,6 +12,7 @@ function CoursesList(): JSX.Element {
   }, []);
   return (
     <div>
+      Курсы
       {courses?.map((course) => (
         <CourseItem key={course.id} course={course} />
       ))}
