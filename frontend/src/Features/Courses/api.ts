@@ -1,7 +1,6 @@
-import { CourseState } from './types/CoursesState';
 import { Course } from './types/CoursesType';
 
-export const getCourses = async (): Promise<CourseState> => {
+export const getCourses = async (): Promise<Course[]> => {
   const res = await fetch('/api/courses');
   if (!res.ok) {
     const { message } = await res.json();
@@ -9,5 +8,7 @@ export const getCourses = async (): Promise<CourseState> => {
   }
   const data = await res.json();
 
-  return data.Course;
+  return data.courses;
 };
+
+export default getCourses;
