@@ -8,6 +8,7 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
       <img className="course-card" src={course.course_img} alt="" />
       <p>{course.course_name}</p>
       <p>{course.description}</p>
+      <button type="button">Подробнее</button>
     </div>
   );
 }

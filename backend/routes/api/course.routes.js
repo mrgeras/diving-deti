@@ -5,7 +5,7 @@ router.get('/', async (req, res) => {
   try {
     const course = await Course.findAll({
     });
-    console.log(course)
+    // console.log(course)
 
     res.json(course );
   } catch (err) {
@@ -13,5 +13,7 @@ router.get('/', async (req, res) => {
     res.json({ message: err.message });
   }
 });
+
+
 
 module.exports = router;
