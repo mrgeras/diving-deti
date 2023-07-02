@@ -12,11 +12,13 @@ function CoursesList(): JSX.Element {
     dispatch(coursesInit());
   }, []);
   return (
-    <div className="course-card-container">
-      Курсы
-      {courses.map((course) => (
-        <CourseItem key={course.id} course={course} />
-      ))}
+    <div className="course-card-wrapper">
+      <div className="course-card-container">
+        Курсы
+        {courses.map((course) => (
+          <CourseItem key={course.id} course={course} />
+        ))}
+      </div>
     </div>
   );
 }
