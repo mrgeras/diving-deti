@@ -10,5 +10,4 @@ export const getCourses = async (): Promise<Course[]> => {
 
   return data;
 };
-
 export default getCourses;
