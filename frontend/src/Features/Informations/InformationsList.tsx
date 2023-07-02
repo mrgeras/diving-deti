@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import InformationItem from './InformationItem';
 import { informationsInit } from '../../Redux/Reducers/InformationSlice';
-// import './InformationList.css';
 
 function InformationList(): JSX.Element {
   const { informations } = useAppSelector((store) => store.informations);
   const dispatch = useAppDispatch();
-console.log(informations);
+// console.log(informations);
   useEffect(() => {
     dispatch(informationsInit());
   }, []);
