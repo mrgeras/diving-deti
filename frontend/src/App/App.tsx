@@ -31,7 +31,7 @@ function App(): JSX.Element {
           <Route path="/admin" element={<FormLog />} />
           <Route path="/informations" element={<InformationList />} />
           <Route
-            path="/informations//:informationId"
+            path="/informations/:informationId"
             element={<InformationAbout />}
           />
           <Route path="/articles" element={<Articles />} />

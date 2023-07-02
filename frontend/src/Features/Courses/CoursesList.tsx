@@ -6,6 +6,7 @@ import './CourseList.css';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
+  console.log(courses);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
