@@ -8,6 +8,6 @@ const articleRouter = require('./api/article.routes');
 router.use('/api/auth', authApiRouter);
 router.use('/api/courses', coursesRouter);
 router.use('/api/informations', informationsRouter);
-router.use('./api/articles', articleRouter);
+router.use('/api/articles', articleRouter);
 
 module.exports = router;
