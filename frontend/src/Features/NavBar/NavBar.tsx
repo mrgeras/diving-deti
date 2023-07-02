@@ -18,12 +18,12 @@ function NavBar(): JSX.Element {
             </Link>
           </div>
           <div className="navItems">
-            <Link to="/" className="link" data-item="Новости">
+            <Link to="/informations" className="link" data-item="Новости">
               Новости
             </Link>
           </div>
           <div className="navItems">
-            <Link to="/" className="link" data-item="Статьи">
+            <Link to="/articles" className="link" data-item="Статьи">
               Статьи
             </Link>
           </div>
