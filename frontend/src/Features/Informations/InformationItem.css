@@ -1,18 +1,18 @@
-.article-card-img {
+.information-card-img {
   width: 400px;
   height: 300px;
 }
-.about-article-card {
-  width: 400px;
-  height: 300px;
-  word-break: break-all;
-}
-.about-article-btn {
+.about-card-info {
   width: 400px;
   height: 300px;
   word-break: break-all;
 }
-.article-card-container {
+.about-info-btn {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.information-card-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

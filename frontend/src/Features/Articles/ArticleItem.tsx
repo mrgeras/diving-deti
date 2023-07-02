@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Article } from './types/ArticlesType';
-// import './CourseItem.css';
+import './ArticleItem.css';
 
 function getAbout({
   article,
@@ -18,15 +18,15 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
 
   return (
     <div className="article-card">
-      <a className="about-card">
+      <a className="about-article-card">
         <button
-          className="about-btn"
+          className="about-article-btn"
           onClick={() => getAbout({ article, navigate })}
           type="button"
         >
           <img className="article-card-img" src={article.article_img} alt="" />
           <p>{article.article_name}</p>
-          <p>{article.description}</p>
+          <p>{article.article_text}</p>
         </button>
       </a>
     </div>
