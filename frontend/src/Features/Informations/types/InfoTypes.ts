@@ -10,4 +10,4 @@ export type InformationAbout = {
   information_name: string;
   information_text: string;
 };
-export type InformationlId = Information['id'];
+export type InformationId = Information['id'];

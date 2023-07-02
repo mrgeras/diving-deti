@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Information } from './types/InfoTypes';
-// import './InformationItem.css';
 
 function getAboutInformation({
   information,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Course } from './types/CoursesType';
-import './CourseItem.css';
+// import './CourseItem.css';
 
 function getAbout({
   course,

@@ -23,10 +23,7 @@ function InformationAbout(): JSX.Element {
         src={information?.information_img}
         alt="information"
       />
-      <p>
-        В статье рассмотрены особенности организации занятий подводным плаванием
-        для детей разных возрастов, а также преимущества этого вида…
-      </p>
+      <p>{information?.information_text}</p>
       <button onClick={() => navigate(-1)} type="button">
         Назад к списку новостей
       </button>

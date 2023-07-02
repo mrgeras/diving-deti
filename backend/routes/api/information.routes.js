@@ -3,10 +3,10 @@ const Information = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const informations = await Information.findAll({});
+    const information = await Information.findAll({});
     // console.log(information)
 
-    res.json(informations);
+    res.json(information);
   } catch (err) {
     console.log(err);
     res.json({ message: err.message });
