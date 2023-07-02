@@ -23,11 +23,9 @@ function ArticleAbout(): JSX.Element {
         src={article?.article_img}
         alt="article"
       />
-      <p>
-        Текст статьи
-      </p>
+      <p>{article?.article_text}</p>
       <button onClick={() => navigate(-1)} type="button">
-        Назад к курсам
+        Назад к списку статей
       </button>
     </>
   );

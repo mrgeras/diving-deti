@@ -10,4 +10,4 @@ export type CourseAbout = {
   course_name: string;
   description: string;
 };
-export type CourselId = Course['id'];
+export type CourseId = Course['id'];
