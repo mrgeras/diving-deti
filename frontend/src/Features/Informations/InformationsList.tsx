@@ -7,7 +7,7 @@ import { informationsInit } from '../../Redux/Reducers/InformationSlice';
 function InformationList(): JSX.Element {
   const { informations } = useAppSelector((store) => store.informations);
   const dispatch = useAppDispatch();
-
+console.log(informations);
   useEffect(() => {
     dispatch(informationsInit());
   }, []);

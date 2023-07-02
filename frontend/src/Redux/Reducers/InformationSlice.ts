@@ -9,7 +9,7 @@ export const informationsInit = createAsyncThunk('informations/init', () =>
 );
 
 const informationSlice = createSlice({
-  name: 'information',
+  name: 'informations',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

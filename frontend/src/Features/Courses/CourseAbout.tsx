@@ -93,7 +93,7 @@ function CourseAbout(): JSX.Element {
         приходил с большим удовольствием на урок.
       </p>
       <button onClick={() => navigate(-1)} type="button">
-        Назад курсам
+        Назад к курсам
       </button>
     </>
   );

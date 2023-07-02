@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Information } = require('../../db//models');
+const Information = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
@@ -17,7 +17,7 @@ router.get('/:informationId', async (req, res) => {
   try {
     const information = await Information.findOne({
       raw: true,
-      where: { id: req.params.informationId},
+      where: { id: req.params.informationId },
     });
     // console.log(information)
 
