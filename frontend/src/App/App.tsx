@@ -29,14 +29,14 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
           <Route path="/admin" element={<FormLog />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/courses" element={<CoursesList />} />
+          <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/informations" element={<InformationsList />} />
           <Route
             path="/informations/:informationId"
             element={<InformationAbout />}
           />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/courses" element={<CoursesList />} />
-          <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="*" element={<Error />} />
