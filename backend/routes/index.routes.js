@@ -6,6 +6,6 @@ const informationsRouter = require('./api/information.routes');
 
 router.use('/api/auth', authApiRouter);
 router.use('/api/courses', coursesRouter);
-router.use('/informations', informationsRouter);
+router.use('/api/informations', informationsRouter);
 
 module.exports = router;
