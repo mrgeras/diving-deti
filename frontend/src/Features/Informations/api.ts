@@ -7,7 +7,7 @@ export const getInformations = async (): Promise<Information[]> => {
     throw message;
   }
   const data = await res.json();
-
+console.log(data);
   return data;
 };
 export default getInformations;
