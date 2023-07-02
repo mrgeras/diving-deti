@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
-import { coursesInit } from './CourseSlices/courseSlice';
+import { coursesInit } from '../../Redux/Reducers/CourseSlice';
 import './CourseList.css';
 
 function CoursesList(): JSX.Element {
