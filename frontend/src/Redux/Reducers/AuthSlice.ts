@@ -1,7 +1,7 @@
 // import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AdminWithOutId, AuthState } from '../../Features/Admin/type';
-import authLogFetch from '../../Features/Admin/api';
+import * as api from '../../Features/Admin/api';
 
 const initialState: AuthState = {
   admin: undefined,
@@ -10,8 +10,14 @@ const initialState: AuthState = {
 
 export const authorization = createAsyncThunk(
   'auth/authorization',
-  (value: AdminWithOutId) => authLogFetch(value)
+  (value: AdminWithOutId) => api.authLogFetch(value)
 );
+
+export const authCheckAdmin = createAsyncThunk('auth/check', () =>
+  api.authCheckUserFetch()
+);
+
+export const logOut = createAsyncThunk('auth/logout', () => api.logOutFetch());
 
 const AuthSlice = createSlice({
   name: 'auth',
@@ -23,6 +29,20 @@ const AuthSlice = createSlice({
         state.admin = action.payload;
       })
       .addCase(authorization.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(authCheckAdmin.fulfilled, (state, action) => {
+        state.admin = action.payload;
+        state.error = undefined;
+      })
+      .addCase(authCheckAdmin.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.admin = undefined;
+        state.error = undefined;
+      })
+      .addCase(logOut.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },

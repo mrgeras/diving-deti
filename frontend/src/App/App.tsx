@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import FormLog from '../Features/Admin/FormLog';
@@ -9,8 +9,17 @@ import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
 import About from '../Features/About/About';
 import Error from '../Features/404/Error';
+import Background from '../Features/Background/Background';
+import { useAppDispatch } from '../Redux/store';
+import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 
 function App(): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(authCheckAdmin());
+  }, []);
+
   return (
     <div className="app">
       <Routes>
@@ -23,6 +32,7 @@ function App(): JSX.Element {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
+          <Background />
       <Footer />
     </div>
   );
