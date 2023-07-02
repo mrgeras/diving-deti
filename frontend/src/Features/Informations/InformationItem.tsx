@@ -31,7 +31,7 @@ function InformationItem({
           <img
             className="information-card-img"
             src={information.information_img}
-            alt=""
+            alt="info"
           />
           <p>{information.information_name}</p>
           <p>{information.information_text}</p>

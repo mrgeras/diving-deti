@@ -13,7 +13,6 @@ import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
-import Informations from '../Features/Informations/InformationItem';
 import InformationList from '../Features/Informations/InformationsList';
 import InformationAbout from '../Features/Informations/InformationAbout';
 

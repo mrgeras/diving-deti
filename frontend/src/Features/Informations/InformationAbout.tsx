@@ -13,7 +13,7 @@ function InformationAbout(): JSX.Element {
     information = informations.find((info) => info.id === +informationId);
   }
 
-  const error = <h1>Такого курса</h1>;
+  const error = <h1>Таких новостей нет</h1>;
 
   const content = (
     <>
