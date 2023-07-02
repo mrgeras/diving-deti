@@ -13,7 +13,7 @@ import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
-import InformationList from '../Features/Informations/InformationsList';
+import InformationsList from '../Features/Informations/InformationsList';
 import InformationAbout from '../Features/Informations/InformationAbout';
 
 function App(): JSX.Element {
@@ -29,7 +29,7 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
           <Route path="/admin" element={<FormLog />} />
-          <Route path="/informations" element={<InformationList />} />
+          <Route path="/informations" element={<InformationsList />} />
           <Route
             path="/informations/:informationId"
             element={<InformationAbout />}
