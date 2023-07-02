@@ -1,4 +1,22 @@
-.course-card {
-  width: 400;
-  height: 300;
+.course-card-img {
+  width: 400px;
+  height: 300px;
+}
+.about-card {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.about-btn {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.course-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
 }

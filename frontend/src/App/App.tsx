@@ -12,6 +12,7 @@ import Error from '../Features/404/Error';
 import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
+import CourseAbout from '../Features/Courses/CourseAbout';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -28,11 +29,12 @@ function App(): JSX.Element {
           <Route path="/admin" element={<FormLog />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/courses" element={<CoursesList />} />
+          <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
-          <Background />
+      <Background />
       <Footer />
     </div>
   );

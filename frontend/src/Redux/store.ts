@@ -4,11 +4,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AuthSlice from './Reducers/AuthSlice';
-import coursesSlice from '../Features/Courses/CourseSlices/courseSlice';
+import CoursesSlice from './Reducers/CourseSlice';
 
 const store = configureStore({
   reducer: {
-    courses: coursesSlice,
+    courses: CoursesSlice,
     auth: AuthSlice,
   },
 });
