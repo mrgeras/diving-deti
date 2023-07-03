@@ -18,17 +18,16 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
 
   return (
     <div className="course-card">
-      <a className="about-card">
-        <button
-          className="about-btn"
-          onClick={() => getAbout({ course, navigate })}
-          type="button"
-        >
-          <img className="course-card-img" src={course.course_img} alt="" />
-          <p>{course.course_name}</p>
-          <p>{course.description}</p>
-        </button>
-      </a>
+      <img className="course-card-img" src={course.course_img} alt="" />
+      <p>{course.course_name}</p>
+      <p>{course.description}</p>
+      <button
+        className="about-btn"
+        onClick={() => getAbout({ course, navigate })}
+        type="button"
+      >
+        Подробнее
+      </button>
     </div>
   );
 }
