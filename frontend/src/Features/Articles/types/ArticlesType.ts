@@ -11,3 +11,5 @@ export type ArticleAbout = {
   articleText: string;
 };
 export type ArticleId = Article['id'];
+
+export type ArticleWithOutId = Omit<Article, 'id'>;

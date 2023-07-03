@@ -28,4 +28,20 @@ router.get('/:articleId', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { articleImg, articleName, articleText } = req.body;
+
+    const article = await Article.create({
+      articleImg,
+      articleName,
+      articleText,
+    });
+
+    res.json(article);
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
 module.exports = router;

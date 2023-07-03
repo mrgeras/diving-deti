@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import ArticleItem from './ArticleItem';
 import { articlesInit } from '../../Redux/Reducers/ArticleSlice';
 import './ArticlesList.css';
+import FormAddArticles from './FormAddArticles';
 
 function ArticlesList(): JSX.Element {
   const { articles } = useAppSelector((store) => store.articles);
@@ -14,6 +15,7 @@ function ArticlesList(): JSX.Element {
   }, []);
   return (
     <div className="article-card-wrapper">
+      <FormAddArticles />
       <div className="article-card-container">
         Статьи
         {articles.map((article) => (
