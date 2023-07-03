@@ -17,8 +17,8 @@ function CourseAbout(): JSX.Element {
 
   const content = (
     <>
-      <h3>{course?.course_name}</h3>
-      <img className="course-page__img" src={course?.course_img} alt="course" />
+      <h3>{course?.courseName}</h3>
+      <img className="course-page__img" src={course?.courseImg} alt="course" />
       <p>
         Когда можно отдать ребенка на раннее плавание и справится ли мой малыш?
         Ответы можно начать с того, что вода, в принципе, является родной и

@@ -7,23 +7,21 @@ module.exports = {
       'Articles',
       [
         {
-          article_name: 'Статья 1',
-          article_img:
+          articleName: 'Статья 1',
+          articleImg:
             'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
-            article_text:
-            'Статья 1 текст',
+          articleText: 'Статья 1 текст',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-            article_name: 'Статья 2',
-            article_img:
-              'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
-              article_text:
-              'Статья 2 текст',
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
+          articleName: 'Статья 2',
+          articleImg:
+            'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
+          articleText: 'Статья 2 текст',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

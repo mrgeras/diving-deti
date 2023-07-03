@@ -14,15 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      coach_img: {
+      coachImg: {
         allowNull: false,
         type: DataTypes.TEXT
       },
-      coach_name: {
+      coachName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      coach_description: {
+      coachDescription: {
         allowNull: false,
         type: DataTypes.TEXT,
       },

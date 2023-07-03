@@ -13,7 +13,7 @@ module.exports = {
         allowNull: true,
         type: Sequelize.INTEGER,
       },
-      coach_id: {
+      coachId: {
         allowNull: true,
         type: Sequelize.INTEGER,
         references: {
@@ -23,7 +23,7 @@ module.exports = {
         onDelete: 'CASCADE',
       },
 
-      article_id: {
+      articleId: {
         allowNull: true,
         type: Sequelize.INTEGER,
         references: {
@@ -32,16 +32,16 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-      information_id: {
+      messageId: {
         allowNull: true,
         type: Sequelize.INTEGER,
         references: {
-          model: 'Informations',
+          model: 'Messages',
           key: 'id',
         },
         onDelete: 'CASCADE',
       },
-      course_id: {
+      courseId: {
         allowNull: true,
         type: Sequelize.INTEGER,
         references: {

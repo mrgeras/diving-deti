@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      course_id: {
+      courseId: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
@@ -23,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         onDelete: 'CASCADE',
       },
-      request_status: {
+      requestStatus: {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },
-      user_name: {
+      userName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },

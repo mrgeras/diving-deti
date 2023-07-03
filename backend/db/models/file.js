@@ -2,10 +2,10 @@
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class File extends Model {
-    static associate({ Coach, Article, Information, Course }) {
+    static associate({ Coach, Article, Message, Course }) {
       this.belongsTo(Coach, { foreignKey: 'coach_id' });
       this.belongsTo(Article, { foreignKey: 'article_id' });
-      this.belongsTo(Information, { foreignKey: 'information_id' });
+      this.belongsTo(Message, { foreignKey: 'message_id' });
       this.belongsTo(Course, { foreignKey: 'course_id' });
     }
   }
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
         type: DataTypes.TEXT,
       },
-      coach_id: {
+      coachId: {
         allowNull: true,
         type: DataTypes.INTEGER,
         references: {
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       },
 
-      article_id: {
+      articleId: {
         allowNull: true,
         type: DataTypes.INTEGER,
         references: {
@@ -40,16 +40,16 @@ module.exports = (sequelize, DataTypes) => {
         },
         onDelete: 'CASCADE',
       },
-      information_id: {
+      messageId: {
         allowNull: true,
         type: DataTypes.INTEGER,
         references: {
-          model: 'Informations',
+          model: 'Messages',
           key: 'id',
         },
         onDelete: 'CASCADE',
       },
-      course_id: {
+      courseId: {
         allowNull: true,
         type: DataTypes.INTEGER,
         references: {

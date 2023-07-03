@@ -17,13 +17,13 @@ function ArticleAbout(): JSX.Element {
 
   const content = (
     <>
-      <h3>{article?.article_name}</h3>
+      <h3>{article?.articleName}</h3>
       <img
         className="article-page__img"
-        src={article?.article_img}
+        src={article?.articleImg}
         alt="article"
       />
-      <p>{article?.article_text}</p>
+      <p>{article?.articleText}</p>
       <button onClick={() => navigate(-1)} type="button">
         Назад к списку статей
       </button>

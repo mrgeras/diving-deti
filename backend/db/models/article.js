@@ -14,15 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      article_img: {
+      articleImg: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      article_name: {
+      articleName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      article_text: {
+      articleText: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
