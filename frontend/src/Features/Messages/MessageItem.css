@@ -9,23 +9,26 @@
   position: relative;
   cursor: pointer;
   border-radius: 10px;
-  color:black;
-  font-size:small;
+  color: black;
+  font-size: small;
 }
-.message-card-item-div{
+.modal-message-text {
+  color: black;
+  z-index: 1;
+}
+.message-card-item-div {
   display: flex;
   flex-direction: row;
 }
-.message-card-name{
+.message-card-name {
   margin: 10px 10px;
-
 }
 .message-card-img {
   width: 300px;
   height: 250px;
 }
-.message-card-text{
- padding:0 10px;
+.message-card-text {
+  padding: 0 10px;
 }
 .link-text {
   text-decoration: none;
@@ -53,3 +56,98 @@
   transform: translate(0em, 0.2em);
 }
 
+.del-message-btn {
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background: rgb(189, 56, 56);
+  border-radius: 4px;
+  color: white;
+  margin-top: 10px;
+}
+.del-message-btn:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(236, 3, 3) 0%, rgb(209, 97, 97) 100%);
+}
+
+.message-btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-message-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(246, 240, 240, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+  transition: 0;
+}
+.modal-message-group:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
+  pointer-events: none;
+}
+
+.btn-modal-message-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-message-yes {
+  margin: 10px;
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  background: rgb(56, 189, 131);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.btn-message-yes:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(109, 178, 120) 0%,
+    rgb(45, 226, 78) 100%
+  );
+}
+
+.btn-message-no {
+  margin: 10px;
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  background: rgb(189, 56, 56);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.btn-message-no:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(202, 142, 142) 0%,
+    rgb(175, 46, 46) 100%
+  );
+}
