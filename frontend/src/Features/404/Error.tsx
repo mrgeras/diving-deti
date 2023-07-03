@@ -5,7 +5,6 @@ const loadimg = (value: number) => {
     .then((res) => res.json())
     .then((data) => console.log(data));
 };
-loadimg(1);
 function Error(): JSX.Element {
   return <div></div>;
 }
