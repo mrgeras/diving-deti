@@ -11,3 +11,5 @@ export type MessageAbout = {
   messageText: string;
 };
 export type MessageId = Message['id'];
+
+export type MessageWithOutId = Omit<Message, 'id'>;
