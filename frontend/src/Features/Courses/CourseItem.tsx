@@ -29,3 +29,5 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
 }
 
 export default CourseItem;
+
+//
