@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Courses/api';
 import { CoursesState } from '../../Features/Courses/types/CoursesState';
-import { CourseWithOutId } from '../../Features/Courses/types/CoursesType';
+import {
+  CourseId,
+  CourseWithOutId,
+} from '../../Features/Courses/types/CoursesType';
 
 const initialState: CoursesState = { courses: [], error: '' };
 
@@ -12,6 +15,11 @@ export const coursesInit = createAsyncThunk('courses/init', () =>
 export const addCourse = createAsyncThunk(
   'courses/add',
   (course: CourseWithOutId) => api.addCourseFetch(course)
+);
+
+export const deleteCourse = createAsyncThunk(
+  'courses/delete',
+  (value: CourseId) => api.deleteCourseFetch(value)
 );
 
 const coursesSlice = createSlice({
@@ -31,6 +39,14 @@ const coursesSlice = createSlice({
         state.courses.push(action.payload);
       })
       .addCase(addCourse.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(deleteCourse.fulfilled, (state, action) => {
+        state.courses = state.courses.filter(
+          (course) => course.id !== +action.payload
+        );
+      })
+      .addCase(deleteCourse.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },
