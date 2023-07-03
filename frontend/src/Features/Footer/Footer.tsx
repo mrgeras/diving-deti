@@ -8,10 +8,10 @@ function Footer(): JSX.Element {
     <footer className="footer">
       <div className="footer__info">
         <a href="https://vk.com/baltikakids" target="_blank" rel="noreferrer">
-        <img src={vkLogo} alt="vklogo" width="70px" />
+          <img src={vkLogo} alt="vklogo" width="70px" />
         </a>
-      <p>Новые статьи:</p>
-      <p>Телефоны в Санкт-Петербурге:</p>
+        <p>Новые статьи:</p>
+        <p>Телефоны в Санкт-Петербурге:</p>
       </div>
       <svg viewBox="0 0 120 28">
         <defs>
