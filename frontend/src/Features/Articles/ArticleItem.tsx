@@ -10,7 +10,7 @@ function getAbout({
   article: Article;
   navigate: (value: string) => void;
 }): void {
-  navigate(`/courses/${article.id}`);
+  navigate(`/article/${article.id}`);
 }
 
 function ArticleItem({ article }: { article: Article }): JSX.Element {
@@ -19,14 +19,15 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
   return (
     <div className="article-card">
       <a className="about-article-card">
+        <img className="article-card-img" src={article.articleImg} alt="" />
+        <p>{article.articleName}</p>
+        <p>{article.articleText}</p>
         <button
           className="about-article-btn"
           onClick={() => getAbout({ article, navigate })}
           type="button"
         >
-          <img className="article-card-img" src={article.articleImg} alt="" />
-          <p>{article.articleName}</p>
-          <p>{article.articleText}</p>
+          Подробнее
         </button>
       </a>
     </div>
