@@ -3,8 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import FormLog from '../Features/Admin/FormLog';
 import NavBar from '../Features/NavBar/NavBar';
-// import Footer from '../Features/Footer/Footer';
-import Articles from '../Features/Articles/Articles';
+import Footer from '../Features/Footer/Footer';
 import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
 import About from '../Features/About/About';
@@ -45,7 +44,7 @@ function App(): JSX.Element {
         <Route path="*" element={<Error />} />
       </Routes>
       <Background />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
