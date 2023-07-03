@@ -24,26 +24,42 @@ function MessageItem({ message }: { message: Message }): JSX.Element {
         />
         <p className="message-card-text">{message.messageText}</p>
       </div>
-      <button className="about-message-btn" type="button">
-        <Link to={`/messages/${message.id}`} className="link-text">
-          Подробнее
-        </Link>
-      </button>
-      {trigger ? (
-        <button type="button" onClick={() => setTrigger(false)}>
-          Удалить
+      <div className="message-btn-group">
+        <button className="about-message-btn" type="button">
+          <Link to={`/messages/${message.id}`} className="link-text">
+            Подробнее
+          </Link>
         </button>
-      ) : (
-        <div>
-          <h4>Вы точно хотите удалить?</h4>
-          <button type="button" onClick={() => onHandleRemove(message.id)}>
-            Да
+        {trigger ? (
+          <button
+            className="del-message-btn"
+            type="button"
+            onClick={() => setTrigger(false)}
+          >
+            Удалить
           </button>
-          <button type="button" onClick={() => setTrigger(true)}>
-            Нет
-          </button>
-        </div>
-      )}
+        ) : (
+          <div className="modal-message-group">
+            <h4 className="modal-message-text">Вы точно хотите удалить?</h4>
+            <div className="btn-modal-course-group">
+              <button
+                className="btn-message-yes"
+                type="button"
+                onClick={() => onHandleRemove(message.id)}
+              >
+                Да
+              </button>
+              <button
+                className="btn-message-no"
+                type="button"
+                onClick={() => setTrigger(true)}
+              >
+                Нет
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -9,17 +9,21 @@
   text-align: center;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4);
+  box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4),
+    0 4px 6px -4px rgba(33, 150, 243, 0.4);
   border-radius: 10px;
-  background-color: #6B6ECC;
+  background-color: #6b6ecc;
   background: linear-gradient(45deg, #04051dea 0%, #2b566e 100%);
   color: rgba(255, 255, 255, 0.64);
-  font-size:small;
+  font-size: small;
+}
+.modal-course-text {
+  color: black;
+  z-index: 1;
 }
 .course-card-img {
   width: 300px;
   height: 250px;
- 
 }
 .link-text {
   text-decoration: none;
@@ -44,4 +48,100 @@
 }
 .button:active {
   transform: translate(0em, 0.2em);
+}
+
+.del-course-btn {
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background: rgb(189, 56, 56);
+  border-radius: 4px;
+  color: white;
+  margin-top: 10px;
+}
+.del-course-btn:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(236, 3, 3) 0%, rgb(209, 97, 97) 100%);
+}
+
+.course-btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-course-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(246, 240, 240, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+  transition: 0;
+}
+.modal-course-group:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
+  pointer-events: none;
+}
+
+.btn-modal-course-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-course-yes {
+  margin: 10px;
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  background: rgb(56, 189, 131);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.btn-course-yes:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(109, 178, 120) 0%,
+    rgb(45, 226, 78) 100%
+  );
+}
+
+.btn-course-no {
+  margin: 10px;
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  background: rgb(189, 56, 56);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.btn-course-no:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(202, 142, 142) 0%,
+    rgb(175, 46, 46) 100%
+  );
 }

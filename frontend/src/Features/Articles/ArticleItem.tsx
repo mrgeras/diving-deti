@@ -22,28 +22,44 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
           src={article.articleImg}
           alt="article"
         />
-        <p className="message-card-text">{article.articleText}</p>
+        <p className="article-card-text">{article.articleText}</p>
       </div>
-
-      <button className="about-article-btn" type="button">
-        <Link to={`/articles/${article.id}`} className="link-text">
-          Подробнее
-        </Link>
-      </button>
-      {trigger ? (
-        <button type="button" onClick={() => setTrigger(false)}>
-          Удалить
+      <div className="article-btn-group">
+        <button className="about-article-btn" type="button">
+          <Link to={`/articles/${article.id}`} className="link-text">
+            Подробнее
+          </Link>
         </button>
-      ) : (
-        <div>
-          <button type="button" onClick={() => onHandleRemove(article.id)}>
-            Да
+        {trigger ? (
+          <button
+            className="del-article-btn"
+            type="button"
+            onClick={() => setTrigger(false)}
+          >
+            Удалить
           </button>
-          <button type="button" onClick={() => setTrigger(true)}>
-            нет
-          </button>
-        </div>
-      )}
+        ) : (
+          <div className="modal-article-group">
+            <h4 className="modal-article-text">Вы точно хотите удалить?</h4>
+            <div className="btn-modal-article-group">
+              <button
+                className="btn-article-yes"
+                type="button"
+                onClick={() => onHandleRemove(article.id)}
+              >
+                Да
+              </button>
+              <button
+                className="btn-article-no"
+                type="button"
+                onClick={() => setTrigger(true)}
+              >
+                нет
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

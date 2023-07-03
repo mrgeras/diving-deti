@@ -18,26 +18,42 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
       <img className="course-card-img" src={course.courseImg} alt="course" />
       <p className="course-card-name">{course.courseName}</p>
       <p className="course-card-description">{course.description}</p>
-      <button className="about-course-btn" type="button">
-        <Link to={`/courses/${course.id}`} className="link-text">
-          Подробнее
-        </Link>
-      </button>
-      {trigger ? (
-        <button type="button" onClick={() => setTrigger(false)}>
-          Удалить
+      <div className="course-btn-group">
+        <button className="about-course-btn" type="button">
+          <Link to={`/courses/${course.id}`} className="link-text">
+            Подробнее
+          </Link>
         </button>
-      ) : (
-        <div>
-          <h4>Вы точно хотите удалить?</h4>
-          <button type="button" onClick={() => onHandleRemove(course.id)}>
-            Да
+        {trigger ? (
+          <button
+            className="del-course-btn"
+            type="button"
+            onClick={() => setTrigger(false)}
+          >
+            Удалить
           </button>
-          <button type="button" onClick={() => setTrigger(true)}>
-            Нет
-          </button>
-        </div>
-      )}
+        ) : (
+          <div className="modal-course-group">
+            <h4 className="modal-course-text">Вы точно хотите удалить?</h4>
+            <div className="btn-modal-course-group">
+              <button
+                className="btn-course-yes"
+                type="button"
+                onClick={() => onHandleRemove(course.id)}
+              >
+                Да
+              </button>
+              <button
+                className="btn-course-no"
+                type="button"
+                onClick={() => setTrigger(true)}
+              >
+                Нет
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
