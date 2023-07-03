@@ -12,4 +12,8 @@ export type CourseAbout = {
 };
 export type CourseId = Course['id'];
 
-export type CourseWithOutId = Omit<Course, 'id'>;
+export type CourseWithOutId = {
+  courseImg: string;
+  courseName: string;
+  description: string;
+};
