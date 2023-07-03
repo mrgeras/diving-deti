@@ -1,7 +1,9 @@
 .wrapper {
   height: 100%;
   width: 100%;
-  background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #399fd6);
+  // background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #399fd6);
+  background: rgb(44,146,255);
+background: linear-gradient(0deg, rgba(44,146,255,1) 0%, rgba(141,188,251,1) 50%);
   position: absolute;
   z-index: -1;
 }
