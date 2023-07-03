@@ -13,6 +13,10 @@ import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
+import InformationsList from '../Features/Informations/InformationsList';
+import InformationAbout from '../Features/Informations/InformationAbout';
+import ArticlesList from '../Features/Articles/ArticlesList';
+import ArticleAbout from '../Features/Articles/ArticleAbout';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,9 +31,15 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
           <Route path="/admin" element={<FormLog />} />
-          <Route path="/articles" element={<Articles />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
+          <Route path="/informations" element={<InformationsList />} />
+          <Route
+            path="/informations/:informationId"
+            element={<InformationAbout />}
+          />
+          <Route path="/articles" element={<ArticlesList />} />
+          <Route path="/articles/:articleId" element={<ArticleAbout />} />
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="*" element={<Error />} />

@@ -1,0 +1,22 @@
+.article-card-img {
+  width: 400px;
+  height: 300px;
+}
+.about-article-card {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.about-article-btn {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.article-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
+}

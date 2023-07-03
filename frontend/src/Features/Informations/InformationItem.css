@@ -1,0 +1,22 @@
+.information-card-img {
+  width: 400px;
+  height: 300px;
+}
+.about-card-info {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.about-info-btn {
+  width: 400px;
+  height: 300px;
+  word-break: break-all;
+}
+.information-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: stretch;
+}
