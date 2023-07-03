@@ -7,9 +7,20 @@ module.exports = {
       'Courses',
       [
         {
-          course_name: 'Супер способность',
-          course_img: 'https://s6.stc.all.kpcdn.net/expert/wp-content/uploads/2021/12/glavnaya-1-960x540.jpg',
-          description: 'Научим плавать с уточкой',            
+          course_name: 'Группа раннего плавания',
+          course_img:
+            'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
+          description:
+            'Когда можно отдать ребенка на раннее плавание и справится ли мой малыш?',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          course_name: 'Обучение фридайвингу',
+          course_img:
+            'https://diving-deti.ru/wp-content/uploads/2017/12/fridayving.jpg',
+          description:
+            'Фридайвинг — погружение под воду на задержке дыхания (апноэ). Одна из ранних форм подводного плавания. Мы в нашей школе плавания в Санкт-Петербурге решили дать подробную информацию об этой дисциплине.',
           createdAt: new Date(),
           updatedAt: new Date(),
         },

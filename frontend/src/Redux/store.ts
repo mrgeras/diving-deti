@@ -4,12 +4,16 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AuthSlice from './Reducers/AuthSlice';
-import coursesSlice from '../Features/Courses/CourseSlices/courseSlice';
+import CoursesSlice from './Reducers/CourseSlice';
+import InformationSlice from './Reducers/InformationSlice';
+import ArticleSlice from './Reducers/ArticleSlice';
 
 const store = configureStore({
   reducer: {
-    courses: coursesSlice,
+    courses: CoursesSlice,
     auth: AuthSlice,
+    informations: InformationSlice,
+    articles: ArticleSlice,
   },
 });
 
@@ -20,5 +24,3 @@ export const useAppSelector: <T>(fn: (state: RootState) => T) => T =
 export type RootState = ReturnType<typeof store.getState>;
 
 export default store;
-
-//

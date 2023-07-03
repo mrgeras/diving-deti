@@ -8,7 +8,6 @@ export const getCourses = async (): Promise<Course[]> => {
   }
   const data = await res.json();
 
-  return data.courses;
+  return data;
 };
-
 export default getCourses;
