@@ -28,4 +28,20 @@ router.get('/:courseId', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { courseImg, courseName, description } = req.body;
+
+    const course = await Course.create({
+      courseImg,
+      courseName,
+      description,
+    });
+
+    res.json(course);
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
 module.exports = router;
