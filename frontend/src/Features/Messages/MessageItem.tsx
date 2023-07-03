@@ -6,7 +6,6 @@ import { useAppDispatch } from '../../Redux/store';
 import { deleteMessage } from '../../Redux/Reducers/MessageSlice';
 import './MessageItem.css';
 
-
 function MessageItem({ message }: { message: Message }): JSX.Element {
   const dispatch = useAppDispatch();
 

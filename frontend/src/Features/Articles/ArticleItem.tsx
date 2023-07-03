@@ -29,6 +29,9 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
           Подробнее
         </Link>
       </button>
+      <button type="button" onClick={() => onHandleRemove(article.id)}>
+        Удалить
+      </button>
     </div>
   );
 }
