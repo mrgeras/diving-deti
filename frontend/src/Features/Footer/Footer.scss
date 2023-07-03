@@ -10,6 +10,11 @@
     justify-content: space-around;
     align-items: center;
   }
+  &__icons {
+    width: 150px;
+    display: flex;
+    justify-content: space-between
+  }
   p {
     color: white;
     font-family: 'Roboto', sans-serif;

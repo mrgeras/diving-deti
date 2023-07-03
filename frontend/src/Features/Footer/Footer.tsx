@@ -2,14 +2,24 @@ import React from 'react';
 // import image from './footer_img.svg';
 import './Footer.scss';
 import vkLogo from './vk_logo.png';
+import instLogo from './inst_logo.png';
 
 function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <div className="footer__info">
-        <a href="https://vk.com/baltikakids" target="_blank" rel="noreferrer">
-          <img src={vkLogo} alt="vklogo" width="70px" />
-        </a>
+        <div className="footer__icons">
+          <a href="https://vk.com/baltikakids" target="_blank" rel="noreferrer">
+            <img src={vkLogo} alt="vklogo" width="70px" />
+          </a>
+          <a
+            href="https://www.instagram.com/baltikakids/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={instLogo} alt="instlogo" width="70px" />
+          </a>
+        </div>
         <p>Новые статьи:</p>
         <p>Телефоны в Санкт-Петербурге:</p>
       </div>
