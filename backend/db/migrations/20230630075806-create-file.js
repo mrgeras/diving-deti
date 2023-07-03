@@ -10,9 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       file: {
-        type: Sequelize.TEXT,
+        allowNull: true,
+        type: Sequelize.INTEGER,
       },
       coach_id: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Coaches',
@@ -20,7 +22,9 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
+
       article_id: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Articles',
@@ -29,6 +33,7 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       information_id: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Informations',
@@ -37,6 +42,7 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       course_id: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Courses',

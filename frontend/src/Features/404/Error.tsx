@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+const loadimg = (value: number) => {
+  fetch(`api/photo/${value}`)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+};
+loadimg(1);
 function Error(): JSX.Element {
-  return <div>Error</div>;
+  return <div></div>;
 }
 
 export default Error;

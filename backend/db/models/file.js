@@ -18,9 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       file: {
+        allowNull: true,
         type: DataTypes.TEXT,
       },
       coach_id: {
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Coaches',
@@ -30,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       article_id: {
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Articles',
@@ -38,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       },
       information_id: {
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Informations',
@@ -46,6 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       },
       course_id: {
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Courses',
