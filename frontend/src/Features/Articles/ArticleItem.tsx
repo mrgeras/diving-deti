@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Article, ArticleId } from './types/ArticlesType';
 import './ArticleItem.css';
@@ -6,6 +6,7 @@ import { useAppDispatch } from '../../Redux/store';
 import { deleteArticle } from '../../Redux/Reducers/ArticleSlice';
 
 function ArticleItem({ article }: { article: Article }): JSX.Element {
+  const [trigger, setTrigger] = useState(true);
   const dispatch = useAppDispatch();
 
   const onHandleRemove = (value: ArticleId): void => {
@@ -29,9 +30,20 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
           Подробнее
         </Link>
       </button>
-      <button type="button" onClick={() => onHandleRemove(article.id)}>
-        Удалить
-      </button>
+      {trigger ? (
+        <button type="button" onClick={() => setTrigger(false)}>
+          Удалить
+        </button>
+      ) : (
+        <div>
+          <button type="button" onClick={() => onHandleRemove(article.id)}>
+            Да
+          </button>
+          <button type="button" onClick={() => setTrigger(true)}>
+            нет
+          </button>
+        </div>
+      )}
     </div>
   );
 }

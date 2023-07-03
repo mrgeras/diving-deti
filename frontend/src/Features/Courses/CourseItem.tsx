@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Course, CourseId } from './types/CoursesType';
 import './CourseItem.css';
@@ -7,6 +7,7 @@ import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
+  const [trigger, setTrigger] = useState(true);
 
   const onHandleRemove = (value: CourseId): void => {
     dispatch(deleteCourse(value));
@@ -22,9 +23,21 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
           Подробнее
         </Link>
       </button>
-      <button type="button" onClick={() => onHandleRemove(course.id)}>
-        Удалить
-      </button>
+      {trigger ? (
+        <button type="button" onClick={() => setTrigger(false)}>
+          Удалить
+        </button>
+      ) : (
+        <div>
+          <h4>Вы точно хотите удалить?</h4>
+          <button type="button" onClick={() => onHandleRemove(course.id)}>
+            Да
+          </button>
+          <button type="button" onClick={() => setTrigger(true)}>
+            Нет
+          </button>
+        </div>
+      )}
     </div>
   );
 }
