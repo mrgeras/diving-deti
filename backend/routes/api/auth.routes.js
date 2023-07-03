@@ -37,10 +37,10 @@ router.get('/check', async (req, res) => {
   try {
     if (req.session.userId) {
       const user = await Admin.findOne({ where: { id: req.session.userId } });
-      res.json(user);
+      res.json(user.login);
       return;
     }
-    res.json({ message: 'no' });
+    res.json(undefined);
   } catch ({ message }) {
     res.json({ message });
   }

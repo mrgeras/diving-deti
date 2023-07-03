@@ -1,4 +1,4 @@
-import { Article, ArticleWithOutId } from './types/ArticlesType';
+import { Article, ArticleId, ArticleWithOutId } from './types/ArticlesType';
 
 export const getArticles = async (): Promise<Article[]> => {
   const res = await fetch('/api/articles');
@@ -22,6 +22,13 @@ export const addArticleFetch = async (
     body: JSON.stringify(article),
   });
 
+  return res.json();
+};
+
+export const deleteArticleFetch = async (value: ArticleId): Promise<ArticleId> => {
+  const res = await fetch(`/api/articles/${value}`, {
+    method: 'DELETE',
+  });
   return res.json();
 };
 

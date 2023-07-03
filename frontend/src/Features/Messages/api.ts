@@ -1,4 +1,4 @@
-import { Message, MessageWithOutId } from './types/MessageTypes';
+import { Message, MessageId, MessageWithOutId } from './types/MessageTypes';
 
 export const getMessages = async (): Promise<Message[]> => {
   const res = await fetch('/api/messages');
@@ -22,6 +22,15 @@ export const addMessageFetch = async (
     body: JSON.stringify(message),
   });
 
+  return res.json();
+};
+
+export const deleteMessageFetch = async (
+  value: MessageId
+): Promise<MessageId> => {
+  const res = await fetch(`/api/messages/${value}`, {
+    method: 'DELETE',
+  });
   return res.json();
 };
 

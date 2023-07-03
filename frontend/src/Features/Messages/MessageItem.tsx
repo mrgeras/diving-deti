@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Message } from './types/MessageTypes';
+
+import { Message, MessageId } from './types/MessageTypes';
+import { useAppDispatch } from '../../Redux/store';
+import { deleteMessage } from '../../Redux/Reducers/MessageSlice';
 import './MessageItem.css';
 
+
 function MessageItem({ message }: { message: Message }): JSX.Element {
+  const dispatch = useAppDispatch();
+
+  const onHandleRemove = (value: MessageId): void => {
+    dispatch(deleteMessage(value));
+  };
+
   return (
     <div className="message-card-item">
       <h1 className="message-card-name">{message.messageName}</h1>
@@ -19,6 +29,9 @@ function MessageItem({ message }: { message: Message }): JSX.Element {
         <Link to={`/messages/${message.id}`} className="link-text">
           Подробнее
         </Link>
+      </button>
+      <button type="button" onClick={() => onHandleRemove(message.id)}>
+        Удалить
       </button>
     </div>
   );

@@ -44,4 +44,18 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:courseId', async (req, res) => {
+  try {
+    const { courseId } = req.params;
+    const result = await Course.destroy({ where: { id: courseId } });
+    if (result > 0) {
+      res.json(courseId);
+      return;
+    }
+    throw new Error();
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
 module.exports = router;
