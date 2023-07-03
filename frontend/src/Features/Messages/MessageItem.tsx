@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Message, MessageId } from './types/MessageTypes';
@@ -8,7 +8,7 @@ import './MessageItem.css';
 
 function MessageItem({ message }: { message: Message }): JSX.Element {
   const dispatch = useAppDispatch();
-
+  const [trigger, setTrigger] = useState(true);
   const onHandleRemove = (value: MessageId): void => {
     dispatch(deleteMessage(value));
   };
@@ -29,9 +29,21 @@ function MessageItem({ message }: { message: Message }): JSX.Element {
           Подробнее
         </Link>
       </button>
-      <button type="button" onClick={() => onHandleRemove(message.id)}>
-        Удалить
-      </button>
+      {trigger ? (
+        <button type="button" onClick={() => setTrigger(false)}>
+          Удалить
+        </button>
+      ) : (
+        <div>
+          <h4>Вы точно хотите удалить?</h4>
+          <button type="button" onClick={() => onHandleRemove(message.id)}>
+            Да
+          </button>
+          <button type="button" onClick={() => setTrigger(true)}>
+            Нет
+          </button>
+        </div>
+      )}
     </div>
   );
 }
