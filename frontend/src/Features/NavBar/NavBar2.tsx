@@ -2,16 +2,19 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './NavBar2.scss';
 import logo from './logo.png';
+import { useAppSelector } from '../../Redux/store';
 
 function NavBar(): JSX.Element {
+  const { admin } = useAppSelector((store) => store.auth);
   return (
     <>
       <nav className="header">
+        { admin && <div>ADMIN</div>}
         <div className="topnav2">
-          <div className='logo'>
-            <img src={logo} alt="logo" width="100px"/>
+          <div className="logo">
+            <img src={logo} alt="logo" width="100px" />
           </div>
-          <div className='nums'>
+          <div className="nums">
             <div>8 (812) 214 32 14</div>
             <div>8 (812) 214 32 14</div>
             <div>8 (812) 214 32 14</div>
