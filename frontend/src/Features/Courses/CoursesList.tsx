@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
 import { coursesInit } from '../../Redux/Reducers/CourseSlice';
 import './CourseList.css';
+import FormAddCourses from './FormAddCourses';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
@@ -14,6 +15,7 @@ function CoursesList(): JSX.Element {
   }, []);
   return (
     <div className="course-card-wrapper">
+      <FormAddCourses />
       <div className="course-card-container">
         Курсы
         {courses.map((course) => (

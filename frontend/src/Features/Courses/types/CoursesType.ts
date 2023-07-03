@@ -11,3 +11,9 @@ export type CourseAbout = {
   description: string;
 };
 export type CourseId = Course['id'];
+
+export type CourseWithOutId = {
+  course_img: string;
+  course_name: string;
+  description: string;
+};
