@@ -12,8 +12,8 @@ import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
-import InformationsList from '../Features/Informations/InformationsList';
-import InformationAbout from '../Features/Informations/InformationAbout';
+import MessagesList from '../Features/Messages/MessagesList';
+import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 
@@ -32,10 +32,10 @@ function App(): JSX.Element {
           <Route path="/admin" element={<FormLog />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
-          <Route path="/informations" element={<InformationsList />} />
+          <Route path="/messages" element={<MessagesList />} />
           <Route
-            path="/informations/:informationId"
-            element={<InformationAbout />}
+            path="/messages/:messageId"
+            element={<MessageAbout />}
           />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />

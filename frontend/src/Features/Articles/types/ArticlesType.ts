@@ -1,13 +1,13 @@
 export type Article = {
   id: number;
-  article_img: string;
-  article_name: string;
-  article_text: string;
+  articleImg: string;
+  articleName: string;
+  articleText: string;
 };
 export type ArticleAbout = {
   id: number;
-  article_img: string;
-  article_name: string;
-  article_text: string;
+  articleImg: string;
+  articleName: string;
+  articleText: string;
 };
 export type ArticleId = Article['id'];

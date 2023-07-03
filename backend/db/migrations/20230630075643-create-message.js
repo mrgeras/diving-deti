@@ -2,22 +2,22 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Informations', {
+    await queryInterface.createTable('Messages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      information_img: {
+      messageImg: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      information_name: {
+      messageName: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      information_text: {
+      messageText: {
         allowNull: false,
         type: Sequelize.TEXT
       },
@@ -32,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Informations');
+    await queryInterface.dropTable('Messages');
   }
 };

@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      user_name: {
+      userName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      review_text: {
+      reviewText: {
         allowNull: false,
         type: DataTypes.TEXT,
       },

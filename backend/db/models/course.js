@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      course_img: {
+      courseImg: {
         allowNull: false,
         type: DataTypes.TEXT
       },
-      course_name: {
+      courseName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
