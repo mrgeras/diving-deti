@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
 import { coursesInit } from '../../Redux/Reducers/CourseSlice';
-import './CourseList.css';
+import './CoursesList.css';
 import FormAddCourses from './FormAddCourses';
 
 function CoursesList(): JSX.Element {
@@ -15,9 +15,8 @@ function CoursesList(): JSX.Element {
   }, []);
   return (
     <div className="course-card-wrapper">
-      <FormAddCourses />
+      <FormAddCourses /> <h1>Курсы</h1>
       <div className="course-card-container">
-        Курсы
         {courses.map((course) => (
           <CourseItem key={course.id} course={course} />
         ))}

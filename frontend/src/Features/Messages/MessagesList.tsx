@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import MessageItem from './MessageItem';
 import { messagesInit } from '../../Redux/Reducers/MessageSlice';
 import FormAddMessage from './FormAddMessage';
+import './MessagesList.css';
 
 function MessageList(): JSX.Element {
   const { messages } = useAppSelector((store) => store.messages);
@@ -14,8 +15,8 @@ function MessageList(): JSX.Element {
   return (
     <div className="message-card-wrapper">
       <FormAddMessage />
+      <h1>НОВОСТИ</h1>
       <div className="message-card-container">
-        Новости
         {messages.map((message) => (
           <MessageItem key={message.id} message={message} />
         ))}

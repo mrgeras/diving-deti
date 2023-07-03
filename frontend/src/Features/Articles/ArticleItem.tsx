@@ -5,15 +5,22 @@ import './ArticleItem.css';
 
 function ArticleItem({ article }: { article: Article }): JSX.Element {
   return (
-    <div className="article-card">
-      <a className="about-article-card">
-        <img className="article-card-img" src={article.articleImg} alt="" />
-        <p>{article.articleName}</p>
-        <p>{article.articleText}</p>
-        <button className="about-article-btn" type="button">
-          <Link to={`/articles/${article.id}`}>Подробнее</Link>
-        </button>
-      </a>
+    <div className="article-card-item">
+      <h1 className="article-card-name">{article.articleName}</h1>
+      <div className="article-card-item-div">
+        <img
+          className="article-card-img"
+          src={article.articleImg}
+          alt="article"
+        />
+        <p className="message-card-text">{article.articleText}</p>
+      </div>
+
+      <button className="about-article-btn" type="button">
+        <Link to={`/articles/${article.id}`} className="link-text">
+          Подробнее
+        </Link>
+      </button>
     </div>
   );
 }
