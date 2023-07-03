@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import FormLog from '../Features/Admin/FormLog';
-import NavBar from '../Features/NavBar/NavBar';
+import NavBar from '../Features/NavBar/NavBar2';
 import Footer from '../Features/Footer/Footer';
 import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
