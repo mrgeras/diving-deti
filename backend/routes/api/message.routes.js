@@ -28,4 +28,20 @@ router.get('/:messageId', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { messageImg, messageName, messageText } = req.body;
+
+    const message = await Message.create({
+      messageImg,
+      messageName,
+      messageText,
+    });
+
+    res.json(message);
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
 module.exports = router;
