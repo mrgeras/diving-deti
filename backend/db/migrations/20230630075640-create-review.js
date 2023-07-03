@@ -9,11 +9,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_name: {
+      userName: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      review_text: {
+      reviewText: {
         allowNull: false,
         type: Sequelize.TEXT
       },

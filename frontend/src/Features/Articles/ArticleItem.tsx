@@ -24,9 +24,9 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
           onClick={() => getAbout({ article, navigate })}
           type="button"
         >
-          <img className="article-card-img" src={article.article_img} alt="" />
-          <p>{article.article_name}</p>
-          <p>{article.article_text}</p>
+          <img className="article-card-img" src={article.articleImg} alt="" />
+          <p>{article.articleName}</p>
+          <p>{article.articleText}</p>
         </button>
       </a>
     </div>

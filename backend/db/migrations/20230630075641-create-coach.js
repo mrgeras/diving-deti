@@ -9,15 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      coach_img: {
+      coachImg: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      coach_name: {
+      coachName: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      coach_description: {
+      coachDescription: {
         allowNull: false,
         type: Sequelize.TEXT
       },

@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      course_id: {
+      courseId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
@@ -18,11 +18,11 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-      request_status: {
+      requestStatus: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
-      user_name: {
+      userName: {
         allowNull: false,
         type: Sequelize.TEXT,
       },

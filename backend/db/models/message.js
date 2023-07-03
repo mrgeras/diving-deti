@@ -1,12 +1,12 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Information extends Model {
+  class Message extends Model {
     static associate({ File }) {
-      this.hasMany(File, { foreignKey: 'information_id' });
+      this.hasMany(File, { foreignKey: 'message_id' });
     }
   }
-  Information.init(
+  Message.init(
     {
       id: {
         allowNull: false,
@@ -14,23 +14,23 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      information_img: {
-        allowNull: false,
-        type: DataTypes.TEXT
-      },
-      information_name: {
+      messageImg: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
-      information_text: {
+      messageName: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      messageText: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
     },
     {
       sequelize,
-      modelName: 'Information',
+      modelName: 'Message',
     }
   );
-  return Information;
+  return Message;
 };

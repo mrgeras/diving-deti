@@ -7,8 +7,8 @@ module.exports = {
       'Courses',
       [
         {
-          course_name: 'Группа раннего плавания',
-          course_img:
+          courseName: 'Группа раннего плавания',
+          courseImg:
             'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
           description:
             'Когда можно отдать ребенка на раннее плавание и справится ли мой малыш?',
@@ -16,8 +16,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          course_name: 'Обучение фридайвингу',
-          course_img:
+          courseName: 'Обучение фридайвингу',
+          courseImg:
             'https://diving-deti.ru/wp-content/uploads/2017/12/fridayving.jpg',
           description:
             'Фридайвинг — погружение под воду на задержке дыхания (апноэ). Одна из ранних форм подводного плавания. Мы в нашей школе плавания в Санкт-Петербурге решили дать подробную информацию об этой дисциплине.',
