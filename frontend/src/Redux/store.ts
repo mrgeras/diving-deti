@@ -8,6 +8,7 @@ import CoursesSlice from './Reducers/CourseSlice';
 import MessageSlice from './Reducers/MessageSlice';
 import ArticleSlice from './Reducers/ArticleSlice';
 import RequestSlice from './Reducers/RequestSlice';
+import rewiewSlice from './Reducers/RewiewSlice';
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     messages: MessageSlice,
     articles: ArticleSlice,
     requests: RequestSlice,
+    rewiews: rewiewSlice,
   },
 });
 

@@ -18,6 +18,7 @@ import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 import AddFiles from '../Features/Admin/AddFiles';
 import RequestsList from '../Features/Requests/RequestsList';
+import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -32,7 +33,6 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
           <Route path="/admin" element={<FormLog />} />
-          <Route path="/admin/add" element={<AddFiles />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/messages" element={<MessagesList />} />
@@ -41,6 +41,7 @@ function App(): JSX.Element {
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
           <Route path="/admin/requests" element={<RequestsList />} />
           <Route path="/about" element={<About />} />
+          <Route path="/konstrukt" element={<KonstruktItem />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
