@@ -13,7 +13,7 @@ function Footer(): JSX.Element {
             <img src={vkLogo} alt="vklogo" width="70px" />
           </a>
           <a
-            href="https://www.instagram.com/baltikakids/"
+            href="https://instagram.com/baltikakids/"
             target="_blank"
             rel="noreferrer"
           >
@@ -35,9 +35,9 @@ function Footer(): JSX.Element {
               in="blur"
               mode="matrix"
               values="
-           1 0 0 0 0  
-           0 1 0 0 0  
-           0 0 1 0 0  
+           1 0 0 0 0
+           0 1 0 0 0
+           0 0 1 0 0
            0 0 0 13 -9"
               result="goo"
             />
@@ -49,8 +49,8 @@ function Footer(): JSX.Element {
           />
         </defs>
 
-        <use id="wave3" className="wave" xlinkHref="#wave" x="0" y="-2"></use>
-        <use id="wave2" className="wave" xlinkHref="#wave" x="0" y="0"></use>
+        <use id="wave3" className="wave" xlinkHref="#wave" x="0" y="-2" />
+        <use id="wave2" className="wave" xlinkHref="#wave" x="0" y="0" />
 
         <g className="gooeff">
           <circle className="drop drop1" cx="20" cy="2" r="1.8" />
