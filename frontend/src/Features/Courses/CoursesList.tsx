@@ -10,12 +10,15 @@ function CoursesList(): JSX.Element {
   // console.log(courses);
   const dispatch = useAppDispatch();
 
+  const { admin } = useAppSelector((store) => store.auth);
+
   useEffect(() => {
     dispatch(coursesInit());
   }, []);
   return (
     <div className="course-card-wrapper">
-      <FormAddCourses /> <h1>Курсы</h1>
+      {admin && <FormAddCourses />}
+      <h1>Курсы</h1>
       <div className="course-card-container">
         {courses.map((course) => (
           <CourseItem key={course.id} course={course} />

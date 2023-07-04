@@ -8,13 +8,15 @@ import './MessagesList.css';
 function MessageList(): JSX.Element {
   const { messages } = useAppSelector((store) => store.messages);
   const dispatch = useAppDispatch();
-  // console.log(messages);
+
+  const { admin } = useAppSelector((store) => store.auth);
+
   useEffect(() => {
     dispatch(messagesInit());
   }, []);
   return (
     <div className="message-card-wrapper">
-      <FormAddMessage />
+      {admin && <FormAddMessage />}
       <h1>НОВОСТИ</h1>
       <div className="message-card-container">
         {messages.map((message) => (
