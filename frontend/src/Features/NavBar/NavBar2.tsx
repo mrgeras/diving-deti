@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import './NavBar2.scss';
 import logo from './logo2.png';
 import { useAppSelector } from '../../Redux/store';
@@ -9,9 +9,58 @@ function NavBar(): JSX.Element {
   return (
     <>
       <nav className="header">
+        {/* <div>
+          <div className="topnav2">
+            <div className="logo">
+              <img src={logo} alt="logo" width="100px" />
+            </div>
+            <div className="nums">
+              <div>8 (812) 214 32 14</div>
+              <div>8 (812) 214 32 14</div>
+              <div>8 (812) 214 32 14</div>
+            </div>
+          </div>
+          <div className="topnav">
+            <div>
+              <h1>ДАЙВИНГ И ПЛАВАНЬЕ ДЛЯ ДЕТЕЙ</h1>
+            </div>
+          </div>
+          <div className="navBody">
+            <div className="navItems">
+              <Link to="/" className="link" data-item="Главная">
+                Главная
+              </Link>
+            </div>
+            <div className="navItems">
+              <Link to="/courses" className="link" data-item="Курсы">
+                Курсы
+              </Link>
+            </div>
+            <div className="navItems">
+              <Link to="/messages" className="link" data-item="Новости">
+                Новости
+              </Link>
+            </div>
+            <div className="navItems">
+              <Link to="/articles" className="link" data-item="Статьи">
+                Статьи
+              </Link>
+            </div>
+            <div className="navItems">
+              <Link to="/" className="link" data-item="Потом">
+                Потом
+              </Link>
+            </div>
+            <div className="navItems">
+              <Link to="/about" className="link" data-item="О нас">
+                О нас
+              </Link>
+            </div>
+          </div>
+        </div> */}
         <div className="topnav2">
           <div className="logo">
-            <img src={logo} alt="logo" width="150px" />
+            <img src={logo} alt="logo" width="100px" />
           </div>
           <div className="CenterNav">
             <div className="topnav">
@@ -19,42 +68,40 @@ function NavBar(): JSX.Element {
             </div>
             <div className="navBody">
               <div className="navItems">
-                <NavLink to="/" className="link" data-item="Главная">
+                <Link to="/" className="link" data-item="Главная">
                   Главная
-                </NavLink>
+                </Link>
               </div>
               <div className="navItems">
-                <NavLink to="/courses" className="link" data-item="Курсы">
+                <Link to="/courses" className="link" data-item="Курсы">
                   Курсы
-                </NavLink>
+                </Link>
               </div>
               <div className="navItems">
-                <NavLink to="/messages" className="link" data-item="Новости">
+                <Link to="/messages" className="link" data-item="Новости">
                   Новости
-                </NavLink>
+                </Link>
               </div>
               <div className="navItems">
-                <NavLink to="/articles" className="link" data-item="Статьи">
+                <Link to="/articles" className="link" data-item="Статьи">
                   Статьи
-                </NavLink>
+                </Link>
               </div>
               <div className="navItems">
-                <NavLink to="/" className="link" data-item="Потом">
+                <Link to="/" className="link" data-item="Потом">
                   Потом
-                </NavLink>
+                </Link>
               </div>
               <div className="navItems">
-                <NavLink to="/about" className="link" data-item="О нас">
+                <Link to="/about" className="link" data-item="О нас">
                   О нас
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>
           <div className="nums">
             {admin && <div>ADMIN</div>}
-            <a className="tel" href="tel:+78127038643">
-              +7 (812) 703-86-43
-            </a>
+            <div>8 (812) 214 32 14</div>
           </div>
         </div>
       </nav>

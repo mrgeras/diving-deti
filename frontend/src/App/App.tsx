@@ -16,6 +16,8 @@ import MessagesList from '../Features/Messages/MessagesList';
 import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
+import RequestsList from '../Features/Requests/RequestsList';
+import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -33,13 +35,12 @@ function App(): JSX.Element {
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/messages" element={<MessagesList />} />
-          <Route
-            path="/messages/:messageId"
-            element={<MessageAbout />}
-          />
+          <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
+          <Route path="/admin/requests" element={<RequestsList />} />
           <Route path="/about" element={<About />} />
+          <Route path="/konstrukt" element={<KonstruktItem />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

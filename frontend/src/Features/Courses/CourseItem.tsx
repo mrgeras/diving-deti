@@ -4,6 +4,7 @@ import { Course, CourseId } from './types/CoursesType';
 import './CourseItem.css';
 import { useAppDispatch } from '../../Redux/store';
 import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
+import FormRequest from '../Requests/FormRequest';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -54,6 +55,7 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
           </div>
         )}
       </div>
+      <FormRequest key={course.id} course={course} />
     </div>
   );
 }
