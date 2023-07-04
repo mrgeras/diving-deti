@@ -10,14 +10,12 @@ function ArticlesList(): JSX.Element {
   // console.log(articles);
   const dispatch = useAppDispatch();
 
-  const { admin } = useAppSelector((store) => store.auth);
-
   useEffect(() => {
     dispatch(articlesInit());
   }, []);
   return (
     <div className="article-card-wrapper">
-      {admin && <FormAddArticles />}
+      <FormAddArticles />
       <h1>Статьи</h1>
       <div className="article-card-container">
         {articles.map((article) => (
