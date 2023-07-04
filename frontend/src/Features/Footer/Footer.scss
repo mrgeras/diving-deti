@@ -4,6 +4,7 @@
   width: 100vw;
   position: relative;
   bottom: 0px;
+  font-family: 'Montserrat', sans-serif;
   &__info {
     display: flex;
     position: relative;
@@ -14,11 +15,10 @@
   &__icons {
     width: 150px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-around;
   }
   p {
     color: white;
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 500;
   }

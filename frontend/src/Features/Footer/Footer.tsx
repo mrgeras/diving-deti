@@ -10,18 +10,23 @@ function Footer(): JSX.Element {
       <div className="footer__info">
         <div className="footer__icons">
           <a href="https://vk.com/baltikakids" target="_blank" rel="noreferrer">
-            <img src={vkLogo} alt="vklogo" width="70px" />
+            <img src={vkLogo} alt="vklogo" width="50px" />
           </a>
           <a
             href="https://instagram.com/baltikakids/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={instLogo} alt="instlogo" width="70px" />
+            <img src={instLogo} alt="instlogo" width="50px" />
           </a>
         </div>
         <p>Новые статьи:</p>
-        <p>Телефоны в Санкт-Петербурге:</p>
+        <p>
+          Телефон в Санкт-Петербурге: <br />
+          <a className="tel" href="tel:+78127038643">
+            +7 (812) 703-86-43
+          </a>
+        </p>
       </div>
       <svg viewBox="0 0 120 28">
         <defs>
