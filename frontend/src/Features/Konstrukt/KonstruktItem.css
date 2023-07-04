@@ -1,0 +1,7 @@
+.mainkonstrukt {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  background-color: aqua;
+}

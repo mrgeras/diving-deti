@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.scss';
 import { useAppDispatch } from '../../Redux/store';
 import { logOut } from '../../Redux/Reducers/AuthSlice';
+import ReviewList from '../Review/ReviewList';
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -15,6 +16,7 @@ function Main(): JSX.Element {
   return (
     <>
       <main className="main">
+        <ReviewList />
         <div className="main__content">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
           similique eligendi amet vel voluptates quod repudiandae eum tempora

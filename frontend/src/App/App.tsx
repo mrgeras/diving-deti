@@ -17,6 +17,7 @@ import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 import AddFiles from '../Features/Admin/AddFiles';
+import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -42,6 +43,7 @@ function App(): JSX.Element {
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
           <Route path="/about" element={<About />} />
+          <Route path="/konstrukt" element={<KonstruktItem />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
