@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Request extends Model {
     static associate({ Course }) {
-      this.belongsTo(Course, { foreignKey: 'course_id' });
+      this.belongsTo(Course, { foreignKey: 'courseId' });
     }
   }
   Request.init(
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       tel: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.TEXT,
       },
       email: {
         allowNull: false,

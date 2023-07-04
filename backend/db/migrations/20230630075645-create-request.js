@@ -28,7 +28,7 @@ module.exports = {
       },
       tel: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
       },
       email: {
         allowNull: false,
