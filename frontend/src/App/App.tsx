@@ -9,7 +9,7 @@ import CoursesList from '../Features/Courses/CoursesList';
 import About from '../Features/About/About';
 import Error from '../Features/404/Error';
 import Background from '../Features/Background/Background';
-import { useAppDispatch } from '../Redux/store';
+import { useAppDispatch, useAppSelector } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
 import MessagesList from '../Features/Messages/MessagesList';
@@ -17,13 +17,20 @@ import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 import AddFiles from '../Features/Admin/AddFiles';
+import RequestsList from '../Features/Requests/RequestsList';
+// import { loadRequests } from '../Redux/Reducers/RequestSlice';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(authCheckAdmin());
+    // dispatch(loadRequests());
   }, []);
+
+  const check = useAppSelector((state) => state.requests.requests);
+
+  console.log(check);
 
   return (
     <div className="app">
@@ -35,12 +42,10 @@ function App(): JSX.Element {
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/messages" element={<MessagesList />} />
-          <Route
-            path="/messages/:messageId"
-            element={<MessageAbout />}
-          />
+          <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
+          <Route path="/admin/requests" element={<RequestsList />} />
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="*" element={<Error />} />

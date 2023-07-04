@@ -1,6 +1,13 @@
-import { RequestWithOutId } from './types/request';
+import { Request, RequestWithOutId } from './types/request';
 
-const addRequest = async (request: RequestWithOutId): Promise<Request> => {
+export const loadRequestsFetch = async (): Promise<Request[]> => {
+  const res = await fetch('/api/admin/requests');
+  return res.json();
+};
+
+export const addRequestFetch = async (
+  request: RequestWithOutId
+): Promise<Request> => {
   const res = await fetch('/api/admin/requests', {
     method: 'POST',
     headers: {
@@ -11,5 +18,3 @@ const addRequest = async (request: RequestWithOutId): Promise<Request> => {
 
   return res.json();
 };
-
-export default addRequest;

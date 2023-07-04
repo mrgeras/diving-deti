@@ -10,3 +10,8 @@ export type Request = {
 export type RequestId = Request['id'];
 
 export type RequestWithOutId = Omit<Request, 'id'>;
+
+export type RequestState = {
+  requests: Request[];
+  error: string | undefined;
+};
