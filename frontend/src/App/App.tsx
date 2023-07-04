@@ -16,7 +16,6 @@ import MessagesList from '../Features/Messages/MessagesList';
 import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
-import AddFiles from '../Features/Admin/AddFiles';
 import RequestsList from '../Features/Requests/RequestsList';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 
