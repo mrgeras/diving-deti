@@ -31,21 +31,13 @@ const RequestSlice = createSlice({
       })
       .addCase(loadRequests.rejected, (state, action) => {
         state.error = action.error.message;
+      })
+      .addCase(addRequest.fulfilled, (state, action) => {
+        state.requests.push(action.payload);
+      })
+      .addCase(addRequest.rejected, (state, action) => {
+        state.error = action.error.message;
       });
-    //   .addCase(addMessage.fulfilled, (state, action) => {
-    //     state.messages.push(action.payload);
-    //   })
-    //   .addCase(addMessage.rejected, (state, action) => {
-    //     state.error = action.error.message;
-    //   })
-    //   .addCase(deleteMessage.fulfilled, (state, action) => {
-    //     state.messages = state.messages.filter(
-    //       (message) => message.id !== +action.payload
-    //     );
-    //   })
-    //   .addCase(deleteMessage.rejected, (state, action) => {
-    //     state.error = action.error.message;
-    //   });
   },
 });
 

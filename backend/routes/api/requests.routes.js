@@ -13,15 +13,17 @@ router.get('/requests', async (req, res) => {
 
 router.post('/requests', async (req, res) => {
   try {
-    const { courseId, userName, tel, email } = req.body;
+    const { courseId, requestStatus, userName, tel, email } = req.body;
 
     const request = await Request.create({
       courseId,
-      requestStatus: false,
+      requestStatus,
       userName,
       tel,
       email,
     });
+
+    console.log(request, '------------------------------');
 
     res.json(request);
   } catch ({ message }) {
