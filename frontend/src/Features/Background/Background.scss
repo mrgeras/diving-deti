@@ -1,15 +1,9 @@
 .wrapper {
   height: 100%;
   width: 100%;
-  background: rgb(53, 151, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(53, 151, 255, 1) 0%,
-    rgba(21, 121, 255, 1) 25%,
-    rgba(33, 128, 255, 1) 50%,
-    rgba(84, 157, 255, 1) 75%,
-    rgba(141, 188, 251, 1) 100%
-  );
+  // background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #399fd6);
+  background: rgb(44,146,255);
+background: linear-gradient(0deg, rgba(44,146,255,1) 0%, rgba(141,188,251,1) 50%);
   position: absolute;
   z-index: -1;
 }
