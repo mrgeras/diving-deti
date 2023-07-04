@@ -7,6 +7,7 @@ import './MessagesList.css';
 
 function MessageList(): JSX.Element {
   const { messages } = useAppSelector((store) => store.messages);
+  const { admin } = useAppSelector((store) => store.auth);
   const dispatch = useAppDispatch();
   // console.log(messages);
   useEffect(() => {
