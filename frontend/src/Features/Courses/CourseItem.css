@@ -115,6 +115,7 @@
   background: rgb(56, 189, 131);
   z-index: 2;
   pointer-events: auto;
+  border-radius: 4px;
 }
 
 .btn-course-yes:hover {
@@ -135,6 +136,7 @@
   background: rgb(189, 56, 56);
   z-index: 2;
   pointer-events: auto;
+  border-radius: 4px;
 }
 
 .btn-course-no:hover {

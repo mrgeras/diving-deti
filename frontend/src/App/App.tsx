@@ -16,6 +16,7 @@ import MessagesList from '../Features/Messages/MessagesList';
 import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
+import AddFiles from '../Features/Admin/AddFiles';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Main />} />
           <Route path="/admin" element={<FormLog />} />
+          <Route path="/admin/add" element={<AddFiles />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
           <Route path="/messages" element={<MessagesList />} />
