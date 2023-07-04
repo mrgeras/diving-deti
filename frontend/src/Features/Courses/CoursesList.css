@@ -1,13 +1,15 @@
-.course-card-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.course-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.course-card-container{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
+.course-card-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 h1 {
   display: flex;
