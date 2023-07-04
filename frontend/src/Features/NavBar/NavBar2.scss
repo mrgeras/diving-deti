@@ -7,6 +7,7 @@
 
 .header {
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navBody {
@@ -15,7 +16,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
 }
 
@@ -25,11 +25,13 @@
 }
 
 .link {
+  padding-bottom: 0.25em;
   text-decoration: none;
   color: white;
   font-size: 20px;
   transition: all 0.5s ease-in-out;
   position: relative;
+  background-position: bottom;
 }
 
 .link:hover {
@@ -49,7 +51,6 @@
   align-items: center;
 }
 .topnav {
-  font-family: 'Montserrat', sans-serif;
   color: white;
   position: relative;
   font-weight: 900;
@@ -64,9 +65,8 @@
 }
 .nums {
   width: 200px;
-  font-family: 'Roboto';
   color: white;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 18px;
 }
 
