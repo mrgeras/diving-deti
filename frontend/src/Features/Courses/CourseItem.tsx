@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Course, CourseId } from './types/CoursesType';
 import './CourseItem.css';
-import { useAppDispatch } from '../../Redux/store';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
   const [trigger, setTrigger] = useState(true);
+
+  const { admin } = useAppSelector((store) => store.auth);
 
   const onHandleRemove = (value: CourseId): void => {
     dispatch(deleteCourse(value));
@@ -24,35 +26,36 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
             Подробнее
           </Link>
         </button>
-        {trigger ? (
-          <button
-            className="del-course-btn"
-            type="button"
-            onClick={() => setTrigger(false)}
-          >
-            Удалить
-          </button>
-        ) : (
-          <div className="modal-course-group">
-            <h4 className="modal-course-text">Вы точно хотите удалить?</h4>
-            <div className="btn-modal-course-group">
-              <button
-                className="btn-course-yes"
-                type="button"
-                onClick={() => onHandleRemove(course.id)}
-              >
-                Да
-              </button>
-              <button
-                className="btn-course-no"
-                type="button"
-                onClick={() => setTrigger(true)}
-              >
-                Нет
-              </button>
+        {admin &&
+          (trigger ? (
+            <button
+              className="del-course-btn"
+              type="button"
+              onClick={() => setTrigger(false)}
+            >
+              Удалить
+            </button>
+          ) : (
+            <div className="modal-course-group">
+              <h4 className="modal-course-text">Вы точно хотите удалить?</h4>
+              <div className="btn-modal-course-group">
+                <button
+                  className="btn-course-yes"
+                  type="button"
+                  onClick={() => onHandleRemove(course.id)}
+                >
+                  Да
+                </button>
+                <button
+                  className="btn-course-no"
+                  type="button"
+                  onClick={() => setTrigger(true)}
+                >
+                  Нет
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          ))}
       </div>
     </div>
   );
