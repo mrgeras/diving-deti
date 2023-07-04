@@ -15,51 +15,41 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto';
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
 }
 
 .navItems {
   display: flex;
-  padding: 15px 50px 25px 50px;
+  padding: 15px 40px 25px 40px;
 }
 
 .link {
-  padding-bottom: .25em;
   text-decoration: none;
   color: white;
   font-size: 20px;
   transition: all 0.5s ease-in-out;
   position: relative;
-  background-position: bottom;
 }
 
-// .link::before {
-//   content: attr(data-item);
-//   transition: 0.5s;
-//   background-color: #4478e3;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   width: 0;
-//   overflow: hidden;
-// }
+.link::before {
+  content: attr(data-item);
+  transition: 0.5s;
+  background-color: #4478e3;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
 
 .link:hover::before {
   width: 100%;
   transition: all 0.5s ease-in-out;
-}
-
-.link:hover {
-  scale: 1.2;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .8s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 20%;
-  text-decoration: none;
 }
 
 .topnav,
@@ -71,7 +61,7 @@
   align-items: center;
 }
 .topnav {
-  font-family: 'Roboto';
+  font-family: 'Montserrat', sans-serif;
   color: white;
   position: relative;
   font-weight: 900;
@@ -82,28 +72,12 @@
   margin-bottom: 30px;
 }
 .logo {
-  width: 200px;
-  display: flex;
-  justify-content: flex-end;
+  width: 150px;
 }
 .nums {
-  width: 200px;
+  width: 150px;
   font-family: 'Roboto';
   color: white;
   font-weight: 900;
   font-size: 18px;
-}
-
-.tel {
-  text-decoration: none;
-  color: white;
-}
-
-.active {
-  color: #f37f41;
-  &:hover {
-    scale: 1;
-    background-image: none;
-    cursor: default;
-  }
 }

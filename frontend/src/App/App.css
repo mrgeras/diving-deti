@@ -1,7 +1,8 @@
 .app {
   width: 100%;
-  position: relative;
   height: 100%;
+  min-height: 100vh;
+  position: relative;
 
   display: grid;
   grid:
@@ -9,6 +10,7 @@
     'main' 1fr
     'footer' auto
     / 1fr;
+  gap: 8px;
 }
 
 .header {
@@ -19,8 +21,4 @@
 }
 .footer {
   grid-area: footer;
-}
-
-.main {
-  font-size: 70px;
 }

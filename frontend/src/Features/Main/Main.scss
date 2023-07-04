@@ -1,7 +1,15 @@
 .main {
     justify-self: center;
+    font-family: 'Montserrat', sans-serif;
     &__content {
         width: 50vw;
-        background-color: tomato;
+        padding: 10px;
+        background-color: rgba($color: #eeeeee, $alpha: 0.9);
+        border-radius: 10px;
+    }
+    &__text {
+        color: tomato;
+        font-size: 24px;
+        font-weight: 800;
     }
 }
