@@ -8,12 +8,12 @@ const fileUpload = require("express-fileupload");
 // const ssr = require('../middleware/ssr');
 
 const config = (app) => {
-  app.use(fileUpload());
   app.use(cookieParser());
   app.use(session(sessionConfig));
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   app.use(express.static(path.join(__dirname, '../public')));
+  app.use(fileUpload());
   // app.use(getUser);
   // app.use(ssr);
 };

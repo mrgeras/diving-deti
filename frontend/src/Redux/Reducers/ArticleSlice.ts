@@ -2,8 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Articles/api';
 import { ArticlesState } from '../../Features/Articles/types/ArticlesState';
 import {
-  ArticleId,
-  ArticleWithOutId,
+  ArticleId
 } from '../../Features/Articles/types/ArticlesType';
 
 const initialState: ArticlesState = { articles: [], error: '' };
@@ -14,7 +13,7 @@ export const articlesInit = createAsyncThunk('articles/init', () =>
 
 export const addArticle = createAsyncThunk(
   'articles/add',
-  (article: ArticleWithOutId) => api.addArticleFetch(article)
+  (article: FormData) => api.addArticleFetch(article)
 );
 
 export const deleteArticle = createAsyncThunk(

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Article } = require('../../db/models');
+const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 
 router.get('/', async (req, res) => {
   try {
@@ -28,21 +29,21 @@ router.get('/:articleId', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
-  try {
-    const { articleImg, articleName, articleText } = req.body;
+// router.post('/', async (req, res) => {
+//   try {
+//     const { articleImg, articleName, articleText } = req.body;
 
-    const article = await Article.create({
-      articleImg,
-      articleName,
-      articleText,
-    });
+//     const article = await Article.create({
+//       articleImg,
+//       articleName,
+//       articleText,
+//     });
 
-    res.json(article);
-  } catch ({ message }) {
-    res.json({ message });
-  }
-});
+//     res.json(article);
+//   } catch ({ message }) {
+//     res.json({ message });
+//   }
+// });
 
 router.delete('/:articleId', async (req, res) => {
   try {
@@ -57,5 +58,33 @@ router.delete('/:articleId', async (req, res) => {
     res.json({ message });
   }
 });
+
+router.post('/', async (req, res) => {
+  try {
+    if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).send('Нет фала для загрузки');
+    }
+    const { file } = req.files;
+    const { name, text } = req.body;
+    const fileName = file.name.split(' ')[0];
+    const URL = await fileuploadMiddeleware(file);
+    const articleFile = await Article.create({
+      articleImg: URL,
+      articleName: name,
+      articleText: text,
+    });
+    console.log(name, text);
+
+    file.mv(`./public/img/${fileName}`, (error) => {
+      if (error) {
+        return res.status(500).send(error);
+      }
+      res.json(articleFile)
+    });
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
 
 module.exports = router;
