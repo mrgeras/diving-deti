@@ -35,13 +35,13 @@ router.post('/', async (req, res) => {
       return res.status(400).send('Нет фала для загрузки');
     }
     const { file } = req.files;
-    const { name, description } = req.body;
+    const { name, text } = req.body;
     const fileName = file.name.split(' ')[0];
     const URL = await fileuploadMiddeleware(file);
     const messageFile = await Message.create({
       messageImg: URL,
       messageName: name,
-      messageText: description,
+      messageText: text,
     });
     console.log(name, text);
 

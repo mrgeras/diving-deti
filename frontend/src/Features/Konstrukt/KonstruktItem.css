@@ -1,7 +1,51 @@
 .mainkonstrukt {
-  width: 80%;
+}
+.first_yar,
+.title_yar,
+.third_yar,
+.buttons_yar {
   display: flex;
   justify-content: center;
-  justify-self: center;
-  background-color: aqua;
 }
+
+.form1 {
+  width: 40vw;
+  height: 20vh;
+  resize: none;
+  margin-bottom: 50px;
+}
+.main_photo {
+  display: flex;
+  align-self: center;
+  width: 40vw;
+}
+.title {
+  margin-bottom: 20px;
+  width: 30vw;
+  height: 5vh;
+  resize: none;
+}
+.maintext {
+  width: 80vw;
+  height: 30vh;
+}
+.buttons_yar {
+  margin-top: 50px;
+}
+.title_yar,
+.second_yar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.third_yar_yar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.glavt,
+.neglavt,
+.titlet {
+  margin-bottom: 10px;
+}
+

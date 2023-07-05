@@ -25,7 +25,6 @@ function FormAddMessage(): JSX.Element {
       formData.append('file', file);
       formData.append('name', name);
       formData.append('text', text);
-
       dispatch(addMessage(formData));
     }
   };
