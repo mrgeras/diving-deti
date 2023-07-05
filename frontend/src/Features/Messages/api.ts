@@ -1,4 +1,4 @@
-import { Message, MessageId, MessageWithOutId } from './types/MessageTypes';
+import { Message, MessageId } from './types/MessageTypes';
 
 export const getMessages = async (): Promise<Message[]> => {
   const res = await fetch('/api/messages');
@@ -11,18 +11,13 @@ export const getMessages = async (): Promise<Message[]> => {
   return data;
 };
 
-export const addMessageFetch = async (
-  message: MessageWithOutId
-): Promise<Message> => {
+export const addMessageFetch = async (message: FormData): Promise<Message> => {
   const res = await fetch('/api/messages', {
     method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(message),
+    body: message,
   });
-
-  return res.json();
+  const data = await res.json();
+  return data;
 };
 
 export const deleteMessageFetch = async (

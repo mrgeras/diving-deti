@@ -1,10 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Messages/api';
 import { MessagesState } from '../../Features/Messages/types/MessageState';
-import {
-  MessageId,
-  MessageWithOutId,
-} from '../../Features/Messages/types/MessageTypes';
+import { MessageId } from '../../Features/Messages/types/MessageTypes';
 
 const initialState: MessagesState = { messages: [], error: '' };
 
@@ -14,7 +11,7 @@ export const messagesInit = createAsyncThunk('messages/init', () =>
 
 export const addMessage = createAsyncThunk(
   'messages/add',
-  (message: MessageWithOutId) => api.addMessageFetch(message)
+  (message: FormData) => api.addMessageFetch(message)
 );
 
 export const deleteMessage = createAsyncThunk(
