@@ -6,7 +6,6 @@
   .button__course {
     width: 100px;
     height: 30px;
-    margin-left: 50px;
   }
 
   .blob-btn {
@@ -104,7 +103,7 @@
       filter: url('#goo');
     }
   
-    &__blob {
+    &__blob, &__blob__req {
       position: absolute;
       top: $borderW;
       width: 100% / $numOfBlobs;

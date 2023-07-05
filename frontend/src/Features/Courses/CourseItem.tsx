@@ -22,13 +22,8 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
       <div className="course__card">
         <img className="course__card__img" src={course.courseImg} alt="" />
         <div className="course__card__description">
-          <p className="course__card__description__name">{course.courseName}</p>
-          <p className="course__card__description__text">
-            {course.description}
-          </p>
-          <div className="course__card__description__btn__group">
-            <ButtonCourse course={course} />
-            <ButtonRequest />
+          <div className="course__card__description__name">
+            {course.courseName}
             {admin &&
               (trigger ? (
                 <button
@@ -36,7 +31,7 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
                   type="button"
                   onClick={() => setTrigger(false)}
                 >
-                  Удалить
+                  X
                 </button>
               ) : (
                 <div className="course__card__description__modal__group">
@@ -61,6 +56,13 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
                   </div>
                 </div>
               ))}
+          </div>
+          <p className="course__card__description__text">
+            {course.description}
+          </p>
+          <div className="course__card__description__btn__group">
+            <ButtonCourse course={course} />
+            <ButtonRequest />
           </div>
           <FormRequest key={course.id} course={course} />
         </div>
