@@ -1,11 +1,18 @@
 import React from 'react';
-import './ButtonExample.scss';
+import './ButtonCourse.scss';
+import { Link } from 'react-router-dom';
+import { Course } from '../types/CoursesType';
 
-function ButtonExample(): JSX.Element {
+function ButtonExample({ course }: { course: Course }): JSX.Element {
   return (
-    <div className="buttons">
+    <div className="button__course">
       <button type="button" className="blob-btn ">
-        Blob Button
+        <Link
+          to={`/courses/${course.id}`}
+          className="blob-btn__link"
+        >
+          Подробнее
+        </Link>
         <span className="blob-btn__inner">
           <span className="blob-btn__blobs">
             <span className="blob-btn__blob" />

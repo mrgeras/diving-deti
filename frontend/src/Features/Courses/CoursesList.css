@@ -6,10 +6,11 @@
 }
 .course-card-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 80%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 }
 h1 {
   display: flex;

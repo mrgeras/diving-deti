@@ -7,7 +7,7 @@ import FormAddCourses from './FormAddCourses';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
-  // console.log(courses);
+  const { admin } = useAppSelector((store) => store.auth);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function CoursesList(): JSX.Element {
   }, []);
   return (
     <div className="course-card-wrapper">
-      <FormAddCourses /> <h1>Курсы</h1>
+      {admin && <FormAddCourses />}
       <div className="course-card-container">
         {courses.map((course) => (
           <CourseItem key={course.id} course={course} />
