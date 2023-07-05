@@ -1,4 +1,4 @@
-import { Course, CourseId, CourseWithOutId } from './types/CoursesType';
+import { Course, CourseId } from './types/CoursesType';
 
 export const getCourses = async (): Promise<Course[]> => {
   const res = await fetch('/api/courses');
@@ -11,18 +11,13 @@ export const getCourses = async (): Promise<Course[]> => {
   return data;
 };
 
-export const addCourseFetch = async (
-  course: CourseWithOutId
-): Promise<Course> => {
+export const addCourseFetch = async (course: FormData): Promise<Course> => {
   const res = await fetch('/api/courses', {
     method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(course),
+    body: course,
   });
-
-  return res.json();
+  const data = await res.json();
+  return data;
 };
 
 export const deleteCourseFetch = async (value: CourseId): Promise<CourseId> => {

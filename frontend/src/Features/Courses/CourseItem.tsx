@@ -5,7 +5,7 @@ import './Course.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
 import FormRequest from '../Requests/FormRequest';
-import ButtonCourse from './Buttons/ButtonCourse'
+import ButtonCourse from './Buttons/ButtonCourse';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -26,38 +26,39 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
             {course.description}
           </p>
           <div className="course__card__description__btn__group">
-              <ButtonCourse course={course} />
-            {admin && (trigger ? (
-              <button
-                className="course__card__description__btn__del"
-                type="button"
-                onClick={() => setTrigger(false)}
-              >
-                Удалить
-              </button>
-            ) : (
-              <div className="course__card__description__modal__group">
-                <h4 className="course__card__description__modal__text">
-                  Вы точно хотите удалить этот курс?
-                </h4>
-                <div className="course__card__description__btn__modal">
-                  <button
-                    className="course__card__description__btn__modal__yes"
-                    type="button"
-                    onClick={() => onHandleRemove(course.id)}
-                  >
-                    Да
-                  </button>
-                  <button
-                    className="course__card__description__btn__modal__no"
-                    type="button"
-                    onClick={() => setTrigger(true)}
-                  >
-                    Нет
-                  </button>
+            <ButtonCourse course={course} />
+            {admin &&
+              (trigger ? (
+                <button
+                  className="course__card__description__btn__del"
+                  type="button"
+                  onClick={() => setTrigger(false)}
+                >
+                  Удалить
+                </button>
+              ) : (
+                <div className="course__card__description__modal__group">
+                  <h4 className="course__card__description__modal__text">
+                    Вы точно хотите удалить этот курс?
+                  </h4>
+                  <div className="course__card__description__btn__modal">
+                    <button
+                      className="course__card__description__btn__modal__yes"
+                      type="button"
+                      onClick={() => onHandleRemove(course.id)}
+                    >
+                      Да
+                    </button>
+                    <button
+                      className="course__card__description__btn__modal__no"
+                      type="button"
+                      onClick={() => setTrigger(true)}
+                    >
+                      Нет
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <FormRequest key={course.id} course={course} />
         </div>

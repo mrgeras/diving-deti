@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useAppDispatch } from '../../Redux/store';
 import { addCourse } from '../../Redux/Reducers/CourseSlice';
 
 function FormAddCourses(): JSX.Element {
-  const [courseImg, setCourseImg] = useState('');
-  const [courseName, setCourseName] = useState('');
-  const [description, setDescription] = useState('');
+  const courseImg = useRef<HTMLInputElement>(null);
+  const courseName = useRef<HTMLInputElement>(null);
+  const description = useRef<HTMLInputElement>(null);
 
   const dispatch = useAppDispatch();
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    dispatch(addCourse({ courseImg, courseName, description }));
+    if (
+      courseImg.current?.files?.length &&
+      courseName.current?.value &&
+      description.current?.value
+    ) {
+      const file = courseImg.current.files[0];
+      const name = courseName.current.value;
+      const text = description.current.value;
 
-    setCourseImg('');
-    setCourseName('');
-    setDescription('');
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('name', name);
+      formData.append('text', text);
+
+      dispatch(addCourse(formData));
+    }
   };
 
   return (
@@ -24,27 +35,15 @@ function FormAddCourses(): JSX.Element {
       <form onSubmit={onHandleSubmit}>
         <label>
           Фото
-          <input
-            type="text"
-            value={courseImg}
-            onChange={(e) => setCourseImg(e.target.value)}
-          />
+          <input type="file" name="courseImg" ref={courseImg} />
         </label>
         <label>
           Название
-          <input
-            type="text"
-            value={courseName}
-            onChange={(e) => setCourseName(e.target.value)}
-          />
+          <input type="text" name="courseName" ref={courseName} />
         </label>
         <label>
           Описание
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <input type="text" name="description" ref={description} />
         </label>
         <button type="submit">Добавить</button>
       </form>
