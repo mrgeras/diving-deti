@@ -5,6 +5,11 @@ export const loadRequestsFetch = async (): Promise<Request[]> => {
   return res.json();
 };
 
+export const loadRequestsFetch2 = async (): Promise<Request[]> => {
+  const res = await fetch('/api/admin/requests/true');
+  return res.json();
+};
+
 export const addRequestFetch = async (
   request: RequestWithOutId
 ): Promise<Request> => {

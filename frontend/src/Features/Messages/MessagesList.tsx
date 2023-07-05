@@ -15,10 +15,9 @@ function MessageList(): JSX.Element {
   }, []);
   return (
     <div className="message-card-wrapper">
-
       {admin && <FormAddMessage />}
-      <h1 className='HeadName'>НОВОСТИ</h1>
-      
+      <h1 className="HeadName">НОВОСТИ</h1>
+
       <div className="message-card-container">
         {messages.map((message) => (
           <MessageItem key={message.id} message={message} />

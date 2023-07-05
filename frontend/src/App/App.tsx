@@ -16,8 +16,8 @@ import MessagesList from '../Features/Messages/MessagesList';
 import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
-import RequestsList from '../Features/Requests/RequestsList';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
+import RequestsList from '../Features/Requests/RequestsList';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
