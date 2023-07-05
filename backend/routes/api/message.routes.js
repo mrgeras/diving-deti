@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Message } = require('../../db/models');
+const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 
 router.get('/', async (req, res) => {
   try {
@@ -30,15 +31,26 @@ router.get('/:messageId', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { messageImg, messageName, messageText } = req.body;
-
-    const message = await Message.create({
-      messageImg,
-      messageName,
-      messageText,
+    if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).send('Нет фала для загрузки');
+    }
+    const { file } = req.files;
+    const { name, text } = req.body;
+    const fileName = file.name.split(' ')[0];
+    const URL = await fileuploadMiddeleware(file);
+    const messageFile = await Message.create({
+      messageImg: URL,
+      messageName: name,
+      messageText: text,
     });
+    console.log(name, text);
 
-    res.json(message);
+    file.mv(`./public/img/${fileName}`, (error) => {
+      if (error) {
+        return res.status(500).send(error);
+      }
+      res.json(messageFile);
+    });
   } catch ({ message }) {
     res.json({ message });
   }
