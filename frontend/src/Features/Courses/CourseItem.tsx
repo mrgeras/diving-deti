@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
 import FormRequest from '../Requests/FormRequest';
 import ButtonCourse from './Buttons/ButtonCourse';
+import ButtonRequest from './Buttons/ButtonRequest';
 
 function CourseItem({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,6 +28,7 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
           </p>
           <div className="course__card__description__btn__group">
             <ButtonCourse course={course} />
+            <ButtonRequest />
             {admin &&
               (trigger ? (
                 <button

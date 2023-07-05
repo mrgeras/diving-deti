@@ -1,18 +1,13 @@
 import React from 'react';
 import './ButtonCourse.scss';
-import { Link } from 'react-router-dom';
-import { Course } from '../types/CoursesType';
+// import { Link } from 'react-router-dom';
+// import { Course } from '../types/CoursesType';
 
-function ButtonExample({ course }: { course: Course }): JSX.Element {
+function ButtonRequest():JSX.Element {
   return (
     <div className="button__course">
       <button type="button" className="blob-btn">
-        <Link
-          to={`/courses/${course.id}`}
-          className="blob-btn__link"
-        >
-          Подробнее
-        </Link>
+        <a className="blob-btn__req" href="#">Записаться</a>
         <span className="blob-btn__inner">
           <span className="blob-btn__blobs">
             <span className="blob-btn__blob" />
@@ -46,4 +41,4 @@ function ButtonExample({ course }: { course: Course }): JSX.Element {
   );
 }
 
-export default ButtonExample;
+export default ButtonRequest;
