@@ -1,3 +1,5 @@
+import { Course } from '../../Courses/types/CoursesType';
+
 export type Request = {
   id: number;
   courseId: number;
@@ -5,6 +7,7 @@ export type Request = {
   userName: string;
   tel: string;
   email: string;
+  Course?: Course;
 };
 
 export type RequestId = Request['id'];
@@ -14,4 +17,9 @@ export type RequestWithOutId = Omit<Request, 'id'>;
 export type RequestState = {
   requests: Request[];
   error: string | undefined;
+};
+
+export type ObjRequest = {
+  id: RequestId;
+  requestStatus: boolean;
 };

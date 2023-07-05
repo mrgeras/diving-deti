@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Requests/api';
 import {
+  ObjRequest,
   RequestState,
   RequestWithOutId,
 } from '../../Features/Requests/types/request';
@@ -17,6 +18,11 @@ export const loadRequests = createAsyncThunk('request/load', () =>
 export const addRequest = createAsyncThunk(
   'request/add',
   (request: RequestWithOutId) => api.addRequestFetch(request)
+);
+
+export const updateRequests = createAsyncThunk(
+  'request/update',
+  (value: ObjRequest) => api.updateRequestsFetch(value)
 );
 
 const RequestSlice = createSlice({
@@ -36,6 +42,14 @@ const RequestSlice = createSlice({
         state.requests.push(action.payload);
       })
       .addCase(addRequest.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(updateRequests.fulfilled, (state, action) => {
+        state.requests = state.requests.map((request) =>
+          request.id === action.payload.id ? action.payload : request
+        );
+      })
+      .addCase(updateRequests.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },

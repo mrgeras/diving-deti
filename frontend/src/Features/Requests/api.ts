@@ -1,4 +1,4 @@
-import { Request, RequestWithOutId } from './types/request';
+import { ObjRequest, Request, RequestWithOutId } from './types/request';
 
 export const loadRequestsFetch = async (): Promise<Request[]> => {
   const res = await fetch('/api/admin/requests');
@@ -14,6 +14,22 @@ export const addRequestFetch = async (
       'Content-type': 'application/json',
     },
     body: JSON.stringify(request),
+  });
+
+  return res.json();
+};
+
+export const updateRequestsFetch = async (
+  value: ObjRequest
+): Promise<Request> => {
+  const res = await fetch(`/api/admin/requests/${value.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      requestStatus: value.requestStatus,
+    }),
   });
 
   return res.json();
