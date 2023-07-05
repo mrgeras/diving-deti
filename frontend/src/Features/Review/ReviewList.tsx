@@ -23,35 +23,40 @@ function ReviewList(): JSX.Element {
   }
 
   return (
-    <div className="ReviewListmain">
-      <button
-        className="butmin"
-        type="button"
-        onClick={() => {
-          if (num > 0) {
-            setNum(num - 1);
-          }
-        }}
-      >
-        ᐸ
-      </button>
-      <div className="textall">
-        <div className="nameofrew">{rewiews[num].userName}</div>
-        <div className="textofrew">{rewiews[num].reviewText}</div>
+    <>
+      <div>
+        <h1 className='mainfoot'>ОТЗЫВЫ:</h1>
       </div>
+      <div className="ReviewListmain">
+        <button
+          className="butmin"
+          type="button"
+          onClick={() => {
+            if (num > 0) {
+              setNum(num - 1);
+            }
+          }}
+        >
+          ᐸ
+        </button>
+        <div className="textall">
+          <div className="nameofrew">{rewiews[num].userName}</div>
+          <div className="textofrew">{rewiews[num].reviewText}</div>
+        </div>
 
-      <button
-        type="button"
-        className="butplus"
-        onClick={() => {
-          if (num <= rewiews.length - 2) {
-            setNum(num + 1);
-          }
-        }}
-      >
-        ᐳ
-      </button>
-    </div>
+        <button
+          type="button"
+          className="butplus"
+          onClick={() => {
+            if (num <= rewiews.length - 2) {
+              setNum(num + 1);
+            }
+          }}
+        >
+          ᐳ
+        </button>
+      </div>
+    </>
   );
 }
 
