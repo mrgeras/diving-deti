@@ -3,6 +3,7 @@ import './Main.scss';
 import { useAppDispatch } from '../../Redux/store';
 import { logOut } from '../../Redux/Reducers/AuthSlice';
 import ReviewList from '../Review/ReviewList';
+import Three_otzov from '../Three_otzov/Three_otzov';
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -16,15 +17,17 @@ function Main(): JSX.Element {
   return (
     <>
       <main className="main">
-        <ReviewList />
         <div className="main__content">
-          <p className="main__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-            similique eligendi amet vel voluptates quod repudiandae eum tempora
-            iste voluptatum, provident aspernatur molestias error mollitia
-            dolores necessitatibus.
-          </p>
-
+          <ReviewList />
+          <Three_otzov />
+          <div>
+            <p className="main__text">
+              ТАКЖЕ НАШ КЛУБ ПРЕДЛАГАЕТ ОТПРАЗДНОВАТЬ ЛЮБОЙ ПРАЗДНИК НА ВОДЕ,
+              БУДЬ ТО ДЕНЬ РОЖДЕНИЯ ИЛИ НОВЫЙ ГОД. МЫ УСТРОИМ КОНКУРСЫ И
+              ЭСТАФЕТЫ, И КОНЕЧНО ПОГРУЖЕНИЯ С АКВАЛАНГОМ! МЕРОПРИЯТИЕ ДЛЯ ДЕТЕЙ
+              ОТ 10 ЛЕТ.
+            </p>
+          </div>
         </div>
       </main>
       <button type="button" onClick={onHandleLogout}>
