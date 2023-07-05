@@ -1,0 +1,40 @@
+.three_main {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.column1,
+.column2,
+.column3 {
+  margin-left: 50px;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.column1_ul,
+.column2_ul,
+.column3_ul {
+  flex-grow: 1;
+  color: white;
+}
+.column1_ull {
+  width: 100%;
+  justify-content: space-between;
+}
+.text1,
+.text2,
+.text3 {
+  margin-bottom: 20px;
+  color: white;
+}
+.all_reki {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zapis_button {
+    margin-bottom: 50px;
+}
