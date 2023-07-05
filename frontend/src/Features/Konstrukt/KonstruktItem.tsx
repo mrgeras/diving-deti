@@ -1,8 +1,98 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './KonstruktItem.css';
+import { useAppDispatch } from '../../Redux/store';
+import { addArticle } from '../../Redux/Reducers/ArticleSlice';
+import { addMessage } from '../../Redux/Reducers/MessageSlice';
+import { redirect } from 'react-router-dom';
 
-function KonstruktItem() {
-  return <div className="mainkonstrukt">KonstruktItem</div>;
+function KonstruktItem(): JSX.Element {
+  const MainImg = useRef<HTMLInputElement>(null);
+  const [titleValue, setTitleValue] = useState('');
+  const [form1Value, setForm1Value] = useState('');
+  const [maintextValue, setMaintextValue] = useState('');
+  const [selectValue, setSelectValue] = useState('1');
+
+  const dispatch = useAppDispatch();
+  const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+    if (
+      MainImg.current?.files?.length &&
+      titleValue &&
+      form1Value &&
+      maintextValue &&
+      selectValue
+    ) {
+      const file = MainImg.current.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('name', titleValue);
+      formData.append('text', form1Value);
+      // formData.append('maintext', maintextValue);
+      if (selectValue == '1') {
+        dispatch(addMessage(formData));
+        window.location.href = '/messages';
+      } else {
+        dispatch(addArticle(formData));
+        window.location.href = '/articles';
+      }
+    }
+  };
+
+  return (
+    <div>
+      <h1>СОЗДАНИЕ НОВОЙ ЗАПИСИ</h1>
+      <form onSubmit={onHandleSubmit} className="mainkonstrukt">
+        <div className="title_yar">
+          <p className='titlet'>Заголовок</p>
+          <textarea
+            className="title"
+            value={titleValue}
+            onChange={(e) => setTitleValue(e.target.value)}
+          >
+            Заголовок
+          </textarea>
+        </div>
+        <div className="first_yar">
+          <div className="main_photo">
+            <input type="file" name="courseImg" ref={MainImg} />
+          </div>
+          <div className="second_yar">
+            <p className='neglavt'>Текст</p>
+            <textarea
+              className="form1"
+              value={form1Value}
+              onChange={(e) => setForm1Value(e.target.value)}
+            >
+              Текст
+            </textarea>
+          </div>
+        </div>
+        <div className="third_yar">
+          <div className="third_yar_yar">
+            <p className='glavt'>Главный текст</p>
+            <textarea
+              className="maintext"
+              value={maintextValue}
+              onChange={(e) => setMaintextValue(e.target.value)}
+            >
+              Главный текст
+            </textarea>
+          </div>
+        </div>
+        <div className="buttons_yar">
+          <button type="submit">Add</button>
+          <select
+            value={selectValue}
+            onChange={(e) => setSelectValue(e.target.value)}
+          >
+            {' '}
+            <option value="1">Новость</option>
+            <option value="2">Статья</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  );
 }
 
 export default KonstruktItem;
