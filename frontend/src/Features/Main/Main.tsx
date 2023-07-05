@@ -3,7 +3,8 @@ import './Main.scss';
 import { useAppDispatch } from '../../Redux/store';
 import { logOut } from '../../Redux/Reducers/AuthSlice';
 import ReviewList from '../Review/ReviewList';
-import Three_otzov from '../Three_otzov/Three_otzov';
+import ThreeOtzov from '../Three_otzov/Three_otzov';
+import Ya from '../Map';
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -19,7 +20,8 @@ function Main(): JSX.Element {
       <main className="main">
         <div className="main__content">
           <ReviewList />
-          <Three_otzov />
+          <ThreeOtzov />
+          <Ya /> <br />
           <div>
             <p className="main__text">
               ТАКЖЕ НАШ КЛУБ ПРЕДЛАГАЕТ ОТПРАЗДНОВАТЬ ЛЮБОЙ ПРАЗДНИК НА ВОДЕ,
