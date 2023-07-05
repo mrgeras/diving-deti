@@ -1,9 +1,9 @@
 import React from 'react';
 import './Three_otzov.css';
 
-function Three_otzov(): JSX.Element {
+function ThreeOtzov(): JSX.Element {
   return (
-    <div className='all_reki'>
+    <div className="all_reki">
       <div className="three_main">
         <div className="column1">
           <div className="text1">Безопасно</div>
@@ -73,4 +73,4 @@ function Three_otzov(): JSX.Element {
   );
 }
 
-export default Three_otzov;
+export default ThreeOtzov;

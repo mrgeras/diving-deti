@@ -10,7 +10,7 @@ function ReviewList(): JSX.Element {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchReviews = async () => {
+    const fetchReviews = async (): Promise<any> => {
       await dispatch(reviewsInit());
       setLoading(false);
     };
@@ -25,7 +25,7 @@ function ReviewList(): JSX.Element {
   return (
     <>
       <div>
-        <h1 className='mainfoot'>ОТЗЫВЫ:</h1>
+        <h1 className="mainfoot">ОТЗЫВЫ:</h1>
       </div>
       <div className="ReviewListmain">
         <button
