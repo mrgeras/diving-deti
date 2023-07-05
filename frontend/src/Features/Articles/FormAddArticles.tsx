@@ -27,9 +27,9 @@ function FormAddArticles(): JSX.Element {
       formData.append('text', text);
 
       dispatch(addArticle(formData));
+      // console.log(file);
     }
   };
-
   return (
     <div>
       <form onSubmit={onHandleSubmit}>

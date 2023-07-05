@@ -1,4 +1,4 @@
-import { Article, ArticleId, ArticleWithOutId } from './types/ArticlesType';
+import { Article, ArticleId } from './types/ArticlesType';
 
 export const getArticles = async (): Promise<Article[]> => {
   const res = await fetch('/api/articles');
@@ -16,8 +16,8 @@ export const addArticleFetch = async (article: FormData): Promise<Article> => {
     method: 'POST',
     body: article,
   });
-
-  return res.json();
+  const data = await res.json();
+  return data;
 };
 
 export const deleteArticleFetch = async (

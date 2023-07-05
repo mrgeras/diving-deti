@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Article } = require('../../db/models');
+const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 
 router.get('/', async (req, res) => {
   try {
@@ -66,22 +67,24 @@ router.post('/', async (req, res) => {
     const { file } = req.files;
     const { name, text } = req.body;
     const fileName = file.name.split(' ')[0];
+    const URL = await fileuploadMiddeleware(file);
     const articleFile = await Article.create({
-      articleImg: fileName,
+      articleImg: URL,
       articleName: name,
       articleText: text,
     });
     console.log(name, text);
-    // console.log(file);
-    file.mv(`./${text}.jpeg`, (error) => {
+
+    file.mv(`./public/img/${fileName}`, (error) => {
       if (error) {
         return res.status(500).send(error);
       }
-      res.json(articleFile);
+      res.json(articleFile)
     });
   } catch ({ message }) {
     res.json({ message });
   }
 });
+
 
 module.exports = router;

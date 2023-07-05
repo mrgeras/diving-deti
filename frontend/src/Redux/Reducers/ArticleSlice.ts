@@ -2,8 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Articles/api';
 import { ArticlesState } from '../../Features/Articles/types/ArticlesState';
 import {
-  ArticleId,
-  ArticleWithOutId,
+  ArticleId
 } from '../../Features/Articles/types/ArticlesType';
 
 const initialState: ArticlesState = { articles: [], error: '' };
