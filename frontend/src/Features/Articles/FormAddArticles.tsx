@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useAppDispatch } from '../../Redux/store';
 import { addArticle } from '../../Redux/Reducers/ArticleSlice';
 
 function FormAddArticles(): JSX.Element {
-  const [articleImg, setArticleImg] = useState('');
-  const [articleName, setArticleName] = useState('');
-  const [articleText, setArticleText] = useState('');
+  const articleImg = useRef<HTMLInputElement>(null);
+  const articleName = useRef<HTMLInputElement>(null);
+  const articleText = useRef<HTMLInputElement>(null);
 
   const dispatch = useAppDispatch();
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    dispatch(addArticle({ articleImg, articleName, articleText }));
+    if (
+      articleImg.current?.files?.length &&
+      articleName.current?.value &&
+      articleText.current?.value
+    ) {
+      const file = articleImg.current.files[0];
+      const name = articleName.current.value;
+      const text = articleText.current.value;
 
-    setArticleImg('');
-    setArticleName('');
-    setArticleText('');
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('name', name);
+      formData.append('text', text);
+
+      dispatch(addArticle(formData));
+    }
   };
 
   return (
@@ -24,27 +35,15 @@ function FormAddArticles(): JSX.Element {
       <form onSubmit={onHandleSubmit}>
         <label>
           Фото
-          <input
-            type="text"
-            value={articleImg}
-            onChange={(e) => setArticleImg(e.target.value)}
-          />
+          <input type="file" name="img" ref={articleImg} />
         </label>
         <label>
           Название
-          <input
-            type="text"
-            value={articleName}
-            onChange={(e) => setArticleName(e.target.value)}
-          />
+          <input type="text" name="articleName" ref={articleName} />
         </label>
         <label>
           Описание
-          <input
-            type="text"
-            value={articleText}
-            onChange={(e) => setArticleText(e.target.value)}
-          />
+          <input type="text" name="articleText" ref={articleText} />
         </label>
         <button type="submit">Добавить</button>
       </form>

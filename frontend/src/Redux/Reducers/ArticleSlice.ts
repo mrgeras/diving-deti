@@ -14,7 +14,7 @@ export const articlesInit = createAsyncThunk('articles/init', () =>
 
 export const addArticle = createAsyncThunk(
   'articles/add',
-  (article: ArticleWithOutId) => api.addArticleFetch(article)
+  (article: FormData) => api.addArticleFetch(article)
 );
 
 export const deleteArticle = createAsyncThunk(
