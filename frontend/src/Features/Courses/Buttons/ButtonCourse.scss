@@ -5,7 +5,8 @@
   
   .button__course {
     width: 100px;
-    height: 100px;
+    height: 30px;
+    margin-left: 50px;
   }
 
   .blob-btn {
@@ -25,23 +26,29 @@
     cursor: pointer;
     border-radius:30px;
 
-    &__link {
+    &__link, &__req {
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       color: $cyan;
       transition: color 0.5s;
       text-decoration: none;
+      position: absolute;
+      left: 48px;
+      bottom: 10px;
+    }
+
+    &__req {
+      color: lightblue;
     }
   
     &:before {
       content: "";
-      z-index: 1;
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      border: $borderW solid $cyan;
+      // border: $borderW solid $cyan;
       border-radius:30px;
     }
   
@@ -61,6 +68,10 @@
     &:hover {
       .blob-btn__link {
         color: $dark;
+      }
+
+      .blob-btn__req {
+        color: black;
       }
       
       border-radius:30px;
@@ -82,7 +93,7 @@
       width: 100%;
       height: 100%;
       border-radius:30px;
-      background:#ffffff;
+      // background:#ffffff;
     }
   
     // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter

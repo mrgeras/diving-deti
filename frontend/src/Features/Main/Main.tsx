@@ -2,8 +2,8 @@ import React from 'react';
 import './Main.scss';
 import { useAppDispatch } from '../../Redux/store';
 import { logOut } from '../../Redux/Reducers/AuthSlice';
-import ReviewList from '../Review/ReviewList';
 import Three_otzov from '../Three_otzov/Three_otzov';
+import ReviewList from '../Review/ReviewList';
 
 function Main(): JSX.Element {
   const dispatch = useAppDispatch();
