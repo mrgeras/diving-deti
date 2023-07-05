@@ -15,6 +15,10 @@ export const loadRequests = createAsyncThunk('request/load', () =>
   api.loadRequestsFetch()
 );
 
+export const loadRequests2 = createAsyncThunk('request/load2', () =>
+  api.loadRequestsFetch2()
+);
+
 export const addRequest = createAsyncThunk(
   'request/add',
   (request: RequestWithOutId) => api.addRequestFetch(request)
@@ -50,6 +54,13 @@ const RequestSlice = createSlice({
         );
       })
       .addCase(updateRequests.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(loadRequests2.fulfilled, (state, action) => {
+        state.requests = action.payload;
+        state.error = '';
+      })
+      .addCase(loadRequests2.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },

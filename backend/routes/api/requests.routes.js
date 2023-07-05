@@ -3,11 +3,26 @@ const { Request, Course } = require('../../db/models');
 
 router.get('/requests', async (req, res) => {
   try {
-    const requests = await Request.findAll({ include: [{ model: Course }] });
-
-    console.log(requests[0].Course);
+    const requests = await Request.findAll({
+      include: [{ model: Course }],
+    });
 
     res.json(requests);
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
+router.get('/requests/true', async (req, res) => {
+  try {
+    const requests2 = await Request.findAll({
+      where: {
+        requestStatus: true,
+      },
+      include: [{ model: Course }],
+    });
+
+    res.json(requests2);
   } catch ({ message }) {
     res.json({ message });
   }
