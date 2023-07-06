@@ -103,7 +103,7 @@ function CourseAbout(): JSX.Element {
         <button
           onClick={() => navigate(-1)}
           type="button"
-          className="course__about__btn"
+          className="course__about__btn__back"
         >
           Назад к курсам
         </button>

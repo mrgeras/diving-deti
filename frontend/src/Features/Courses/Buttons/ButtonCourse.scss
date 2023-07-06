@@ -26,7 +26,7 @@ $borderW: 2px;
   border-radius: 30px;
 
   &__link,
-  &__req {
+  &__link__req {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: $orang;
@@ -70,8 +70,8 @@ $borderW: 2px;
       color: $dark;
     }
 
-    .blob-btn__req {
-      color: $dark;
+    .blob-btn__link__req {
+      color: $blue;
     }
 
     border-radius: 30px;
@@ -132,6 +132,74 @@ $borderW: 2px;
       @supports (filter: url('#goo')) {
         transform: translateZ(0) scale(1.4);
       }
+    }
+  }
+}
+
+.course__request__modal {
+  &__group {
+    position: absolute;
+    left: 35%;
+    bottom: 5.5%;
+    width: 570px;
+    height: 240px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    border-radius: 35px;
+    z-index: 2;
+  }
+
+  &__name,
+  &__tel,
+  &__email {
+    width: 180px;
+    height: 30px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  &__label {
+    &__name,
+    &__tel,
+    &__email {
+      width: 200px;
+      height: 20px;
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    &__group {
+      display: flex;
+      justify-content: space-around;
+      width: 200px;
+    }
+
+    &__cancel {
+      width: 90px;
+      height: 30px;
+      border: none;
+      background-color: $orang;
+      color: white;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    &__send {
+      width: 90px;
+      height: 30px;
+      border: none;
+      background-color: $blue;
+      color: white;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
     }
   }
 }

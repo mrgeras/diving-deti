@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ButtonRequest.scss';
+import './ButtonCourse.scss';
 import { useAppDispatch } from '../../../Redux/store';
 import { addRequest } from '../../../Redux/Reducers/RequestSlice';
 import { Course } from '../types/CoursesType';
@@ -39,19 +39,19 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
   return (
     <div>
       {trigger ? (
-        <div className="button__course__req">
+        <div className="button__course">
           <button
             type="button"
-            className="blob-btn__req"
+            className="blob-btn"
             onClick={() => setTrigger(false)}
           >
             <a className="blob-btn__link__req">Записаться</a>
-            <span className="blob-btn__inner__req">
-              <span className="blob-btn__blobs__req">
-                <span className="blob-btn__blob__req" />
-                <span className="blob-btn__blob__req" />
-                <span className="blob-btn__blob__req" />
-                <span className="blob-btn__blob__req" />
+            <span className="blob-btn__inner">
+              <span className="blob-btn__blobs">
+                <span className="blob-btn__blob" />
+                <span className="blob-btn__blob" />
+                <span className="blob-btn__blob" />
+                <span className="blob-btn__blob" />
               </span>
             </span>
           </button>
@@ -77,32 +77,41 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
           </svg>
         </div>
       ) : (
-        <form onSubmit={onHandleSubmit}>
-          <label>
+        <form
+          className="course__request__modal__group"
+          onSubmit={onHandleSubmit}
+        >
+          <label className="course__request__modal__label__name">
             Имя
             <input
               required
               type="text"
+              placeholder="Введите имя"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              className="course__request__modal__name"
             />
           </label>
-          <label>
+          <label className="course__request__modal__label__tel">
             Телефон
             <input
               required
               type="text"
+              placeholder="Введите номер телефона"
               value={tel}
               onChange={(e) => setTel(e.target.value)}
+              className="course__request__modal__tel"
             />
           </label>
-          <label>
-            Почта
+          <label className="course__request__modal__label__email">
+            Email
             <input
               required
               type="text"
+              placeholder="Введите Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="course__request__modal__email"
             />
           </label>
           {undefined && (
@@ -115,11 +124,18 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
               </label>
             </>
           )}
-
-          <button type="button" onClick={() => setTrigger(true)}>
-            Отменить
-          </button>
-          <button type="submit">Отправить</button>
+          <div className="course__request__modal__btn__group">
+            <button
+              className="course__request__modal__btn__cancel"
+              type="button"
+              onClick={() => setTrigger(true)}
+            >
+              Отменить
+            </button>
+            <button className="course__request__modal__btn__send" type="submit">
+              Отправить
+            </button>
+          </div>
         </form>
       )}
     </div>
