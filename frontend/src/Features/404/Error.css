@@ -1,0 +1,20 @@
+.er4text {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.er4,
+.imgerror {
+  width: 400px;
+}
+.er4 {
+  font-size: 400px;
+  color: white;
+  text-align: center;
+}
+.opps {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+}
