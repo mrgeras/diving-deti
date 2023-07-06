@@ -13,7 +13,7 @@ function CourseAbout(): JSX.Element {
     course = courses.find((cours) => cours.id === +courseId);
   }
 
-  const error = <h1>Такого курса</h1>;
+  const error = <h1>Такого курса нет</h1>;
 
   const content = (
     <>

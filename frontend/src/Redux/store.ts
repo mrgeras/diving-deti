@@ -9,6 +9,7 @@ import MessageSlice from './Reducers/MessageSlice';
 import ArticleSlice from './Reducers/ArticleSlice';
 import RequestSlice from './Reducers/RequestSlice';
 import rewiewSlice from './Reducers/RewiewSlice';
+import CoachesSlice from './Reducers/CoachSlice';
 
 const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
     articles: ArticleSlice,
     requests: RequestSlice,
     rewiews: rewiewSlice,
+    coaches: CoachesSlice,
   },
 });
 
