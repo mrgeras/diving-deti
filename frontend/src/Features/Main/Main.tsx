@@ -8,35 +8,21 @@ import Ya from '../Map';
 import { Course } from '../Courses/types/CoursesType';
 
 function Main({ course }: { course: Course }): JSX.Element {
-  const dispatch = useAppDispatch();
-
-  const onHandleLogout: React.MouseEventHandler<HTMLButtonElement> = async (
-    e
-  ) => {
-    e.preventDefault();
-    dispatch(logOut());
-  };
   return (
-    <>
-      <main className="main">
-        <div className="main__content">
-          <ReviewList />
-          <ThreeOtzov course={course} />
-          <Ya /> <br />
-          <div>
-            <p className="main__text">
-              ТАКЖЕ НАШ КЛУБ ПРЕДЛАГАЕТ ОТПРАЗДНОВАТЬ ЛЮБОЙ ПРАЗДНИК НА ВОДЕ,
-              БУДЬ ТО ДЕНЬ РОЖДЕНИЯ ИЛИ НОВЫЙ ГОД. МЫ УСТРОИМ КОНКУРСЫ И
-              ЭСТАФЕТЫ, И КОНЕЧНО ПОГРУЖЕНИЯ С АКВАЛАНГОМ! МЕРОПРИЯТИЕ ДЛЯ ДЕТЕЙ
-              ОТ 10 ЛЕТ.
-            </p>
-          </div>
+    <main className="main">
+      <div className="main__content">
+        <ReviewList />
+        <ThreeOtzov course={course} />
+        <Ya /> <br />
+        <div>
+          <p className="main__text">
+            ТАКЖЕ НАШ КЛУБ ПРЕДЛАГАЕТ ОТПРАЗДНОВАТЬ ЛЮБОЙ ПРАЗДНИК НА ВОДЕ, БУДЬ
+            ТО ДЕНЬ РОЖДЕНИЯ ИЛИ НОВЫЙ ГОД. МЫ УСТРОИМ КОНКУРСЫ И ЭСТАФЕТЫ, И
+            КОНЕЧНО ПОГРУЖЕНИЯ С АКВАЛАНГОМ! МЕРОПРИЯТИЕ ДЛЯ ДЕТЕЙ ОТ 10 ЛЕТ.
+          </p>
         </div>
-      </main>
-      <button type="button" onClick={onHandleLogout}>
-        logout
-      </button>
-    </>
+      </div>
+    </main>
   );
 }
 
