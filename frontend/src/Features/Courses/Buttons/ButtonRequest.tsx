@@ -19,6 +19,12 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
+    const phoneRegExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    if (!phoneRegExp.test(tel)) {
+      alert('Введен неверный номер телефона');
+      return;
+    }
+
     dispatch(addRequest({ courseId, requestStatus, userName, tel, email }));
 
     setUserName('');
