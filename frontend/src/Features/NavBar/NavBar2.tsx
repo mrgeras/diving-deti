@@ -39,8 +39,8 @@ function NavBar(): JSX.Element {
                 </NavLink>
               </div>
               <div className="navItems">
-                <NavLink to="/" className="link" data-item="Потом">
-                  Потом
+                <NavLink to="/price" className="link" data-item="Потом">
+                  Цены
                 </NavLink>
               </div>
               <div className="navItems">
