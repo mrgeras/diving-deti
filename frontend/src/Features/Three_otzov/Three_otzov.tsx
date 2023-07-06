@@ -16,7 +16,9 @@ function ThreeOtzov({ course }: { course: Course }): JSX.Element {
     e.preventDefault();
 
     const phoneMailRegExp =
+      // eslint-disable-next-line no-useless-escape
       /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/ &&
+      // eslint-disable-next-line no-useless-escape
       /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i;
     if (!phoneMailRegExp.test(tel) && !phoneMailRegExp.test(email)) {
       alert('Введен неверный номер телефона или адрес электронной почты');
