@@ -19,6 +19,7 @@ import { Course } from '../Features/Courses/types/CoursesType';
 import NewsList from '../Features/Messages/NewsList';
 import Price from '../Features/Price/Price';
 import AboutList from '../Features/About/AboutList';
+import RequestsList from '../Features/Requests/RequestsList';
 
 function App({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -39,7 +40,7 @@ function App({ course }: { course: Course }): JSX.Element {
           <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
-          <Route path="/admin/requests" element={<RequestsList />} />
+          <Route path="/admin/requests" element={<RequestsList/>} />
           <Route path="/about" element={<AboutList />} />
           <Route path="/price" element={<Price />} />
           <Route path="/konstrukt" element={<KonstruktItem />} />
