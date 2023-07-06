@@ -39,6 +39,7 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
         Телефон
         <input
           required
+          id="tel"
           type="text"
           value={tel}
           onChange={(e) => setTel(e.target.value)}

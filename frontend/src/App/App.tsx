@@ -15,7 +15,6 @@ import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
-import RequestsList from '../Features/Requests/RequestsList';
 import { Course } from '../Features/Courses/types/CoursesType';
 import NewsList from '../Features/Messages/NewsList';
 import Price from '../Features/Price/Price';
