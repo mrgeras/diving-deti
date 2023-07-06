@@ -1,0 +1,6 @@
+.slider {
+  display: flex;
+  align-self: center;
+  width: 960px;
+  height: 540px;
+}
