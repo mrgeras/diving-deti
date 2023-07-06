@@ -34,7 +34,7 @@ function Footer(): JSX.Element {
             <circle cx="7" cy="12" r="40" fill="#fff" />
           </mask>
 
-          <filter id="goo">
+          <filter id="goofooter">
             <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
             <feColorMatrix
               in="blur"
@@ -44,9 +44,9 @@ function Footer(): JSX.Element {
            0 1 0 0 0
            0 0 1 0 0
            0 0 0 13 -9"
-              result="goo"
+              result="goofooter"
             />
-            <feBlend in="SourceGraphic" in2="goo" />
+            <feBlend in="SourceGraphic" in2="goofooter" />
           </filter>
           <path
             id="wave"
