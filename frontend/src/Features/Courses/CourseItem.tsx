@@ -18,7 +18,7 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
   return (
     <>
       <div className="course__card">
-        <img className="course__card__img" src={course.courseImg} alt="" />
+        <img className="course__card__img" src={course.courseImg} alt="Фото курса" />
         <div className="course__card__description">
           <div className="course__card__description__name">
             {course.courseName}

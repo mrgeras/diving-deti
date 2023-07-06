@@ -16,7 +16,7 @@ function ArticlesList(): JSX.Element {
   return (
     <div className="article-card-wrapper">
       {/* <FormAddArticles /> */}
-      <h1>Статьи</h1>
+      <h1 className="title">Статьи</h1>
       <div className="article-card-container">
         {articles.map((article) => (
           <ArticleItem key={article.id} article={article} />
