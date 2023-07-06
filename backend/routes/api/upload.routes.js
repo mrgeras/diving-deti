@@ -15,10 +15,10 @@ router.route('/').get(async (req, res) => {
       ],
     });
 
-    res.json({ files });
-  } catch (err) {
-    console.log(err);
-    res.json({ message: err.message });
+    res.status(200).json({ files });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 });
 router.post('/', async (req, res) => {
@@ -42,12 +42,17 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/urlFoto', async (req, res) => {
-  const file = req.files?.homesImg;
+  try {
+    const file = req.files?.homesImg;
 
-  const arrImg = await Promise.all(
-    file.map(async (el) => await fileuploadMiddeleware(el))
-  );
-  res.json(arrImg);
+    const arrImg = await Promise.all(
+      file.map(async (el) => await fileuploadMiddeleware(el))
+    );
+    res.status(200).json(arrImg);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 });
 
 module.exports = router;

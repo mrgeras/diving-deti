@@ -5,14 +5,14 @@ const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 router.get('/', async (req, res) => {
   try {
     const article = await Article.findAll({
-      order: [['id', 'DESC']]
+      order: [['id', 'DESC']],
     });
     // console.log(course)
 
     res.json(article);
-  } catch (err) {
-    console.log(err);
-    res.json({ message: err.message });
+  } catch (error) {
+    console.log(error);
+    res.json({ message: error.message });
   }
 });
 
@@ -25,9 +25,9 @@ router.get('/:articleId', async (req, res) => {
     // console.log(article)
 
     res.json(article);
-  } catch (err) {
-    console.log(err);
-    res.json({ message: err.message });
+  } catch (error) {
+    console.log(error);
+    res.json({ message: error.message });
   }
 });
 
@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
       articleImg: URL,
       articleName: name,
       articleText: text,
-      articleText2: text2
+      articleText2: text2,
     });
     console.log(name, text);
 
@@ -66,12 +66,11 @@ router.post('/', async (req, res) => {
       if (error) {
         return res.status(500).send(error);
       }
-      res.json(articleFile)
+      res.json(articleFile);
     });
   } catch ({ message }) {
     res.json({ message });
   }
 });
-
 
 module.exports = router;

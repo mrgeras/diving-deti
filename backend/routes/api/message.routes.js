@@ -5,12 +5,12 @@ const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 router.get('/', async (req, res) => {
   try {
     const message = await Message.findAll({
-      order: [['id', 'DESC']]
+      order: [['id', 'DESC']],
     });
-    res.json(message);
-  } catch (err) {
-    console.log(err);
-    res.json({ message: err.message });
+    res.status(200).json(message);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -22,10 +22,10 @@ router.get('/:messageId', async (req, res) => {
     });
     // console.log(message)
 
-    res.json(message);
-  } catch (err) {
-    console.log(err);
-    res.json({ message: err.message });
+    res.status(200).json(message);
+  } catch (error) {
+    console.log(error);
+    res.status(200).json({ message: error.message });
   }
 });
 
@@ -44,16 +44,16 @@ router.post('/', async (req, res) => {
       messageText: text,
       messageText2: text2,
     });
-    console.log(name, text);
+    // console.log(name, text);
 
     file.mv(`./public/img/${fileName}`, (error) => {
       if (error) {
         return res.status(500).send(error);
       }
-      res.json(messageFile);
+      res.status(200).json(messageFile);
     });
   } catch ({ message }) {
-    res.json({ message });
+    res.status(500).json({ message });
   }
 });
 
@@ -62,12 +62,12 @@ router.delete('/:messageId', async (req, res) => {
     const { messageId } = req.params;
     const result = await Message.destroy({ where: { id: messageId } });
     if (result > 0) {
-      res.json(messageId);
+      res.status(200).json(messageId);
       return;
     }
     throw new Error();
   } catch ({ message }) {
-    res.json({ message });
+    res.status(500).json({ message });
   }
 });
 
