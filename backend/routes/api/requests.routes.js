@@ -42,7 +42,7 @@ router.post('/requests', async (req, res) => {
 
     if (request) {
       res.status(200).json({
-        message: 'Ваша заявка отправлена',
+        message: 'Ваша заявка отправлена!',
         data: request,
       });
     } else {

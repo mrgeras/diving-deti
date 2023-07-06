@@ -8,6 +8,7 @@ import {
 
 const initialState: RequestState = {
   requests: [],
+  answers: [],
   error: undefined,
 };
 
@@ -43,7 +44,13 @@ const RequestSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(addRequest.fulfilled, (state, action) => {
-        state.requests.push(action.payload);
+        if (action.payload.data) {
+          state.requests.push(action.payload.data);
+          state.answers.push({
+            id: action.payload.data.courseId,
+            text: action.payload.message,
+          });
+        }
       })
       .addCase(addRequest.rejected, (state, action) => {
         state.error = action.error.message;
