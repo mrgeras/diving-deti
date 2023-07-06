@@ -22,7 +22,11 @@ export const logOut = createAsyncThunk('auth/logout', () => api.logOutFetch());
 const AuthSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    clearError: (state) => {
+      state.error = undefined;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(authorization.fulfilled, (state, action) => {
@@ -35,9 +39,6 @@ const AuthSlice = createSlice({
         state.admin = action.payload;
         state.error = undefined;
       })
-      .addCase(authCheckAdmin.rejected, (state, action) => {
-        state.error = action.error.message;
-      })
       .addCase(logOut.fulfilled, (state) => {
         state.admin = undefined;
         state.error = undefined;
@@ -47,5 +48,5 @@ const AuthSlice = createSlice({
       });
   },
 });
-
+export const { clearError } = AuthSlice.actions;
 export default AuthSlice.reducer;
