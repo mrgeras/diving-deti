@@ -177,7 +177,7 @@
   width: 90%;
 }
 .card-v2:nth-child(2n + 1) {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   margin-bottom: 1px;
   flex-direction: row-reverse;
 }
