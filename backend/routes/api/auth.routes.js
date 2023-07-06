@@ -8,7 +8,6 @@ router.post('/authorization', async (req, res) => {
 
     const user = await Admin.findOne({ where: { login } });
 
-
     let compare = false;
 
     if (user) {
@@ -16,7 +15,9 @@ router.post('/authorization', async (req, res) => {
     }
 
     if (!user || !compare) {
-      res.json({ message: 'Администратора не существует или пароль неверный' });
+      res
+        .status(400)
+        .json({ message: 'Администратора не существует или пароль неверный' });
       return;
     }
 

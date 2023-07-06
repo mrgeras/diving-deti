@@ -7,9 +7,9 @@ router.get('/requests', async (req, res) => {
       include: [{ model: Course }],
     });
 
-    res.json(requests);
+    res.status(200).json(requests);
   } catch ({ message }) {
-    res.json({ message });
+    res.status(500).json({ message });
   }
 });
 
@@ -22,9 +22,9 @@ router.get('/requests/true', async (req, res) => {
       include: [{ model: Course }],
     });
 
-    res.json(requests2);
+    res.status(200).json(requests2);
   } catch ({ message }) {
-    res.json({ message });
+    res.status(500).json({ message });
   }
 });
 
@@ -40,9 +40,21 @@ router.post('/requests', async (req, res) => {
       email,
     });
 
-    res.json(request);
+    if (request) {
+      res.status(200).json({
+        message: 'Ваша заявка отправлена',
+      });
+    }
+
+    if (!request) {
+      res.status(400).json({
+        message: 'Ошибка отправки заявки, попробуйте еще раз',
+      });
+    }
+    req.session.userId = user.id;
+    res.status(200).json(request);
   } catch ({ message }) {
-    res.json({ message });
+    res.status(400).json({ message });
   }
 });
 
@@ -57,9 +69,9 @@ router.put('/requests/:requestId', async (req, res) => {
 
     request.save();
 
-    res.json(request);
+    res.status(200).json(request);
   } catch ({ message }) {
-    res.json(message);
+    res.status(500).json({ message });
   }
 });
 
