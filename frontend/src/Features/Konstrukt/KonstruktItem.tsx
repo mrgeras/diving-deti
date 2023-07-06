@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-import './KonstruktItem.css';
+import { redirect } from 'react-router-dom';
+import './KonstruktItem.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { addArticle } from '../../Redux/Reducers/ArticleSlice';
 import { addMessage } from '../../Redux/Reducers/MessageSlice';
-import { redirect } from 'react-router-dom';
 
 function KonstruktItem(): JSX.Element {
   const { admin } = useAppSelector((store) => store.auth);
@@ -42,7 +42,7 @@ function KonstruktItem(): JSX.Element {
 
   return (
     <div>
-      <h1 className="titlet">СОЗДАНИЕ НОВОЙ ЗАПИСИ</h1>
+      <h1 className="titletmain">СОЗДАНИЕ НОВОЙ ЗАПИСИ</h1>
       {admin && (
         <form onSubmit={onHandleSubmit} className="mainkonstrukt">
           <div className="title_yar">
@@ -86,8 +86,9 @@ function KonstruktItem(): JSX.Element {
             </div>
           </div>
           <div className="buttons_yar">
-            <button type="submit">Add</button>
+            <button className="submit" type="submit">Add</button>
             <select
+              className="submitnear"
               value={selectValue}
               onChange={(e) => setSelectValue(e.target.value)}
             >

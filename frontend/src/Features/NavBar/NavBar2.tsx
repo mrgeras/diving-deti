@@ -6,12 +6,24 @@ import { useAppSelector } from '../../Redux/store';
 
 function NavBar(): JSX.Element {
   const { admin } = useAppSelector((store) => store.auth);
+  const handleAdminClick = () => {
+    window.location.href = '/admin';
+  };
+  const handlemainClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <>
       <nav className="header">
         <div className="topnav2">
           <div className="logo">
-            <img src={logo} alt="logo" width="150px" />
+            <img
+              src={logo}
+              onClick={handlemainClick}
+              alt="logo"
+              width="150px"
+            />
           </div>
           <div className="CenterNav">
             <div className="topnav">
@@ -51,7 +63,11 @@ function NavBar(): JSX.Element {
             </div>
           </div>
           <div className="nums">
-            {admin && <div>ADMIN</div>}
+            {admin && (
+              <div className="admintext" onClick={handleAdminClick}>
+                ADMIN
+              </div>
+            )}
             <a className="tel" href="tel:+78127038643">
               +7 (812) 703-86-43
             </a>
