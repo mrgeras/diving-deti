@@ -40,7 +40,7 @@ function App({ course }: { course: Course }): JSX.Element {
           <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
-          <Route path="/admin/requests" element={<RequestsList/>} />
+          <Route path="/admin/requests" element={<RequestsList />} />
           <Route path="/about" element={<AboutList />} />
           <Route path="/price" element={<Price />} />
           <Route path="/konstrukt" element={<KonstruktItem />} />

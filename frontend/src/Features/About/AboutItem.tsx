@@ -38,22 +38,6 @@ function AboutItem({ coach }: { coach: Coach }): JSX.Element {
           <h3 className="couch-name">{coach.coachName}</h3>
           <img src={coach.coachImg} alt="Матвеев Максим Викторович" />
           <p className="about-couch">{coach.coachDescription}</p>
-          <br />
-          <h3 className="couch-name">{coach.coachName}</h3>
-          <img src={coach.coachImg} alt="Берешкова Мария Андреевна" />
-          <p className="about-couch">{coach.coachDescription}</p>
-          <br />
-          <h3 className="couch-name">{coach.coachName}</h3>
-          <img src={coach.coachImg} alt="Матвеева Анастасия Максимовна" />
-          <p className="about-couch">{coach.coachDescription}</p>
-          <br />
-          <h3 className="couch-name">{coach.coachName}</h3>
-          <img src={coach.coachImg} alt="Гаврилов Елисей Алексеевич" />
-          <p className="about-couch">{coach.coachDescription}</p>
-          <br />
-          <h3 className="couch-name">{coach.coachName}</h3>
-          <img src={coach.coachImg} alt="Агеев Никита Николаевич" />
-          <p className="about-couch">{coach.coachDescription}</p>
         </div>
       </div>
       <br />
