@@ -29,6 +29,7 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
       <label>
         Имя
         <input
+          required
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
@@ -37,6 +38,7 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
       <label>
         Телефон
         <input
+          required
           type="text"
           value={tel}
           onChange={(e) => setTel(e.target.value)}
@@ -45,6 +47,7 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
       <label>
         Почта
         <input
+          required
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -53,10 +56,10 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
       {undefined && (
         <>
           <label>
-            <input type="text" value={course.id} />
+            <input type="text" required value={course.id} />
           </label>
           <label>
-            <input type="text" value="" />
+            <input type="text" required value="" />
           </label>
         </>
       )}

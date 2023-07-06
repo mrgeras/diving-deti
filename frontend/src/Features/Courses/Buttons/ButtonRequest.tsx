@@ -81,6 +81,7 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
           <label>
             Имя
             <input
+              required
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
@@ -89,6 +90,7 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
           <label>
             Телефон
             <input
+              required
               type="text"
               value={tel}
               onChange={(e) => setTel(e.target.value)}
@@ -97,6 +99,7 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
           <label>
             Почта
             <input
+              required
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

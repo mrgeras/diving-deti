@@ -35,15 +35,15 @@ function FormAddCourses(): JSX.Element {
       <form onSubmit={onHandleSubmit}>
         <label>
           Фото
-          <input type="file" name="courseImg" ref={courseImg} />
+          <input type="file" name="courseImg" ref={courseImg}                  required />
         </label>
         <label>
           Название
-          <input type="text" name="courseName" ref={courseName} />
+          <input type="text" name="courseName" ref={courseName}                   required/>
         </label>
         <label>
           Описание
-          <input type="text" name="description" ref={description} />
+          <input type="text" name="description" ref={description}                   required/>
         </label>
         <button type="submit">Добавить</button>
       </form>

@@ -24,6 +24,7 @@ function FormLog(): JSX.Element {
         <label>
           Имя
           <input
+                            required
             type="text"
             value={login}
             onChange={(e) => setLogin(e.target.value)}
@@ -32,6 +33,7 @@ function FormLog(): JSX.Element {
         <label>
           Пароль
           <input
+                            required
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
