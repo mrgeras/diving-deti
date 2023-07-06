@@ -16,7 +16,8 @@ function CourseAbout(): JSX.Element {
     course1 = courses.find((cours) => cours.id === +courseId);
   }
 
-  const error = <Error />;
+  const error = <h1>Такого курса нет</h1>;
+
 
   const content = (
     <div className="course__about__content">

@@ -6,13 +6,11 @@ import NavBar from '../Features/NavBar/NavBar2';
 import Footer from '../Features/Footer/Footer';
 import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
-import About from '../Features/About/About';
 import Error from '../Features/404/Error';
 import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
 import { authCheckAdmin } from '../Redux/Reducers/AuthSlice';
 import CourseAbout from '../Features/Courses/CourseAbout';
-import MessagesList from '../Features/Messages/MessagesList';
 import MessageAbout from '../Features/Messages/MessageAbout';
 import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
@@ -21,6 +19,7 @@ import RequestsList from '../Features/Requests/RequestsList';
 import { Course } from '../Features/Courses/types/CoursesType';
 import NewsList from '../Features/Messages/NewsList';
 import Price from '../Features/Price/Price';
+import AboutList from '../Features/About/AboutList';
 
 function App({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -33,7 +32,7 @@ function App({ course }: { course: Course }): JSX.Element {
     <div className="app">
       <Routes>
         <Route path="/" element={<NavBar />}>
-          <Route index element={<Main course={course}/>} />
+          <Route index element={<Main course={course} />} />
           <Route path="/admin" element={<FormLog />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
@@ -42,7 +41,7 @@ function App({ course }: { course: Course }): JSX.Element {
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
           <Route path="/admin/requests" element={<RequestsList />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutList />} />
           <Route path="/price" element={<Price />} />
           <Route path="/konstrukt" element={<KonstruktItem />} />
         </Route>

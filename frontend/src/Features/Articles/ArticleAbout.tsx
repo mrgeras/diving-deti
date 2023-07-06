@@ -8,7 +8,6 @@ function ArticleAbout(): JSX.Element {
   const navigate = useNavigate();
 
   const { articles } = useAppSelector((store) => store.articles);
-  console.log(articles);
 
   let article;
   if (articleId) {
