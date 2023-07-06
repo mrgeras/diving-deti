@@ -34,15 +34,15 @@ function FormAddMessage(): JSX.Element {
       <form onSubmit={onHandleSubmit}>
         <label>
           Фото
-          <input type="file" name="img" ref={messageImg} />
+          <input type="file" name="img" ref={messageImg}                   required/>
         </label>
         <label>
           Название
-          <input type="text" name="articleName" ref={messageName} />
+          <input type="text" name="articleName" ref={messageName}                   required/>
         </label>
         <label>
           Описание
-          <input type="text" name="articleText" ref={messageText} />
+          <input type="text" name="articleText" ref={messageText}                   required/>
         </label>
         <button type="submit">Добавить</button>
       </form>

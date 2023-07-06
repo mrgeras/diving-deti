@@ -35,15 +35,15 @@ function FormAddArticles(): JSX.Element {
       <form onSubmit={onHandleSubmit}>
         <label>
           Фото
-          <input type="file" name="img" ref={articleImg} />
+          <input type="file" name="img" ref={articleImg} required />
         </label>
         <label>
           Название
-          <input type="text" name="articleName" ref={articleName} />
+          <input type="text" name="articleName" ref={articleName} required />
         </label>
         <label>
           Описание
-          <input type="text" name="articleText" ref={articleText} />
+          <input type="text" name="articleText" ref={articleText} required />
         </label>
         <button type="submit">Добавить</button>
       </form>

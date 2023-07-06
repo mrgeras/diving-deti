@@ -23,6 +23,7 @@ function RequestItem({ request }: { request: Request }): JSX.Element {
       <label>
         Статус:{' '}
         <input
+          required
           type="checkbox"
           checked={request.requestStatus}
           onChange={onHandleUpdate}

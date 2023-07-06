@@ -43,8 +43,9 @@ function KonstruktItem(): JSX.Element {
       <h1>СОЗДАНИЕ НОВОЙ ЗАПИСИ</h1>
       <form onSubmit={onHandleSubmit} className="mainkonstrukt">
         <div className="title_yar">
-          <p className='titlet'>Заголовок</p>
+          <p className="titlet">Заголовок</p>
           <textarea
+            required
             className="title"
             value={titleValue}
             onChange={(e) => setTitleValue(e.target.value)}
@@ -57,8 +58,9 @@ function KonstruktItem(): JSX.Element {
             <input type="file" name="courseImg" ref={MainImg} />
           </div>
           <div className="second_yar">
-            <p className='neglavt'>Текст</p>
+            <p className="neglavt">Текст</p>
             <textarea
+              required
               className="form1"
               value={form1Value}
               onChange={(e) => setForm1Value(e.target.value)}
@@ -69,8 +71,9 @@ function KonstruktItem(): JSX.Element {
         </div>
         <div className="third_yar">
           <div className="third_yar_yar">
-            <p className='glavt'>Главный текст</p>
+            <p className="glavt">Главный текст</p>
             <textarea
+              required
               className="maintext"
               value={maintextValue}
               onChange={(e) => setMaintextValue(e.target.value)}
