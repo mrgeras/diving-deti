@@ -8,28 +8,17 @@ router.post('/authorization', async (req, res) => {
 
     const user = await Admin.findOne({ where: { login } });
 
-    // let compare = false;
-
-    // if (user) {
-    //   compare = await bcrypt.compare(password, user.password);
-    // }
-
-    // if (!user || !compare) {
-    //   res.json({ message: 'Пользователя не существует или пароль неверный' });
-    //   return;
-    // }
-
-    // if (!email || !password) {
-    //   res.json({ message: 'Заполнены не все поля' });
-    //   return;
-    // }
+    if (!login || !password) {
+      res.status(400).json({ message: 'Заполнены не все поля' });
+      return;
+    }
 
     req.session.userId = user.id;
 
-    res.json(user);
+    res.status(200).json(user);
   } catch (e) {
     const message = e.message;
-    res.json({ message });
+    res.status(400).json({ message });
   }
 });
 
@@ -40,27 +29,17 @@ router.get('/check', async (req, res) => {
       res.json(user.login);
       return;
     }
-    res.json(undefined);
+    res.status(200).json(undefined);
   } catch ({ message }) {
-    res.json({ message });
+    res.status(400).json({ message });
   }
 });
-
-// router.get('/logout',(req, res) => {
-//   req.session.destroy((error) => {
-//     if (error) {
-//       return res.status(500).json({ message: 'Ошибка при удалении сессии' });
-//     } else {
-//       res.clearCookie('user_sid').redirect('/');
-//     }
-//   });
-// });
 
 router.get('/logout', (req, res) => {
   req.session.destroy();
   if (!req.session) {
     res.clearCookie('user_sid').redirect('/');
-    res.json({ message: 'ok' });
+    res.status(200).json({ message: 'ok' });
   } else {
     return res.status(500).json({ message: 'Ошибка при удалении сессии' });
   }
