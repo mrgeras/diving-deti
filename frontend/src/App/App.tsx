@@ -19,6 +19,7 @@ import ArticleAbout from '../Features/Articles/ArticleAbout';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 import RequestsList from '../Features/Requests/RequestsList';
 import { Course } from '../Features/Courses/types/CoursesType';
+import NewsList from '../Features/Messages/NewsList';
 
 function App({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -35,7 +36,7 @@ function App({ course }: { course: Course }): JSX.Element {
           <Route path="/admin" element={<FormLog />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
-          <Route path="/messages" element={<MessagesList />} />
+          <Route path="/messages" element={<NewsList />} />
           <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
