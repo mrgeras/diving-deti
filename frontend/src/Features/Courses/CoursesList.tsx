@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
 import { coursesInit } from '../../Redux/Reducers/CourseSlice';
-import './CoursesList.css';
-// import FormAddCourses from './FormAddCourses';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
@@ -13,10 +11,10 @@ function CoursesList(): JSX.Element {
   useEffect(() => {
     dispatch(coursesInit());
   }, []);
+
   return (
-    <div className="course-card-wrapper">
-      {/* {admin && <FormAddCourses />} */}
-      <div className="course-card-container">
+    <div className="course__card__wrapper">
+      <div className="course__card__container">
         {courses.map((course) => (
           <CourseItem key={course.id} course={course} />
         ))}
