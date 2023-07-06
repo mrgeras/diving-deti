@@ -7,14 +7,19 @@ import {
   logOut,
 } from '../../Redux/Reducers/AuthSlice';
 import RequestsList from '../Requests/RequestsList';
+import { Link } from 'react-router-dom';
 
 function FormLog(): JSX.Element {
   const { admin, error } = useAppSelector((store) => store.auth);
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
+  const handleClickk = () => {
+    // Выполните необходимые действия перед редиректом, если нужно
 
-  // const navigate = useNavigate();
+    // Выполните редирект на определенный маршрут
+    window.location.href = '/konstrukt';
+  };
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     e
@@ -79,6 +84,7 @@ function FormLog(): JSX.Element {
           logout
         </button>
       )}
+      {admin && <button type="button" onClick={handleClickk}>Создать пост</button>}
     </div>
   );
 }

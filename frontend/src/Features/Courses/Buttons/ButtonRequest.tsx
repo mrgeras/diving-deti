@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ButtonCourse.scss';
+import './ButtonRequest.scss';
 import { useAppDispatch } from '../../../Redux/store';
 import { addRequest } from '../../../Redux/Reducers/RequestSlice';
 import { Course } from '../types/CoursesType';
@@ -10,7 +10,7 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
   const [userName, setUserName] = useState('');
   const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
-  const [courseId, setCourseId] = useState(course.id);
+  const [courseId] = useState(course.id);
   const [requestStatus, setRequestStatus] = useState(false);
   const [trigger, setTrigger] = useState(true);
 
@@ -32,26 +32,26 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
     setUserName('');
     setTel('');
     setEmail('');
-    setCourseId(0);
     setRequestStatus(false);
+    setTrigger(true);
   };
 
   return (
     <div>
       {trigger ? (
-        <div className="button__course">
+        <div className="button__course__req">
           <button
             type="button"
-            className="blob-btn"
+            className="blob-btn__req"
             onClick={() => setTrigger(false)}
           >
-            <a className="blob-btn__req">Записаться</a>
-            <span className="blob-btn__inner">
-              <span className="blob-btn__blobs">
-                <span className="blob-btn__blob" />
-                <span className="blob-btn__blob" />
-                <span className="blob-btn__blob" />
-                <span className="blob-btn__blob" />
+            <a className="blob-btn__link__req">Записаться</a>
+            <span className="blob-btn__inner__req">
+              <span className="blob-btn__blobs__req">
+                <span className="blob-btn__blob__req" />
+                <span className="blob-btn__blob__req" />
+                <span className="blob-btn__blob__req" />
+                <span className="blob-btn__blob__req" />
               </span>
             </span>
           </button>

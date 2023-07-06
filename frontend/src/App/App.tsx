@@ -6,7 +6,6 @@ import NavBar from '../Features/NavBar/NavBar2';
 import Footer from '../Features/Footer/Footer';
 import Main from '../Features/Main/Main';
 import CoursesList from '../Features/Courses/CoursesList';
-import About from '../Features/About/About';
 import Error from '../Features/404/Error';
 import Background from '../Features/Background/Background';
 import { useAppDispatch } from '../Redux/store';
@@ -18,6 +17,8 @@ import ArticleAbout from '../Features/Articles/ArticleAbout';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 import { Course } from '../Features/Courses/types/CoursesType';
 import NewsList from '../Features/Messages/NewsList';
+import Price from '../Features/Price/Price';
+import AboutList from '../Features/About/AboutList';
 
 function App({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -38,7 +39,9 @@ function App({ course }: { course: Course }): JSX.Element {
           <Route path="/messages/:messageId" element={<MessageAbout />} />
           <Route path="/articles" element={<ArticlesList />} />
           <Route path="/articles/:articleId" element={<ArticleAbout />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/admin/requests" element={<RequestsList />} />
+          <Route path="/about" element={<AboutList />} />
+          <Route path="/price" element={<Price />} />
           <Route path="/konstrukt" element={<KonstruktItem />} />
         </Route>
         <Route path="*" element={<Error />} />

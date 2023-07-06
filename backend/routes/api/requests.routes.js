@@ -27,7 +27,6 @@ router.get('/requests/true', async (req, res) => {
     res.status(500).json({ message });
   }
 });
-
 router.post('/requests', async (req, res) => {
   try {
     const { courseId, requestStatus, userName, tel, email } = req.body;
@@ -40,19 +39,18 @@ router.post('/requests', async (req, res) => {
       email,
     });
 
+
     if (request) {
       res.status(200).json({
-        message: 'Ваша заявка отправлена',
+        message: 'Ваша заявка отправлена!',
+        data: request,
       });
-    }
+    } else {
 
-    if (!request) {
       res.status(400).json({
         message: 'Ошибка отправки заявки, попробуйте еще раз',
       });
     }
-    req.session.userId = user.id;
-    res.status(200).json(request);
   } catch ({ message }) {
     res.status(400).json({ message });
   }
