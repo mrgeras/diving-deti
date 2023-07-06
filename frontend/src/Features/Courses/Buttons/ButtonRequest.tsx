@@ -10,7 +10,7 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
   const [userName, setUserName] = useState('');
   const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
-  const [courseId, setCourseId] = useState(course.id);
+  const [courseId] = useState(course.id);
   const [requestStatus, setRequestStatus] = useState(false);
   const [trigger, setTrigger] = useState(true);
 
@@ -32,8 +32,8 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
     setUserName('');
     setTel('');
     setEmail('');
-    setCourseId(0);
     setRequestStatus(false);
+    setTrigger(true);
   };
 
   return (
