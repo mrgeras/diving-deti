@@ -8,21 +8,21 @@ router.post('/authorization', async (req, res) => {
 
     const user = await Admin.findOne({ where: { login } });
 
-    // let compare = false;
+    let compare = false;
 
-    // if (user) {
-    //   compare = await bcrypt.compare(password, user.password);
-    // }
+    if (user) {
+      compare = await bcrypt.compare(password, user.password);
+    }
 
-    // if (!user || !compare) {
-    //   res.json({ message: 'Пользователя не существует или пароль неверный' });
-    //   return;
-    // }
+    if (!user || !compare) {
+      res.json({ message: 'Администратора не существует или пароль неверный' });
+      return;
+    }
 
-    // if (!email || !password) {
-    //   res.json({ message: 'Заполнены не все поля' });
-    //   return;
-    // }
+    if (!login || !password) {
+      res.json({ message: 'Заполнены не все поля' });
+      return;
+    }
 
     req.session.userId = user.id;
 
