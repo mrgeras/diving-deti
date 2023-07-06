@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 // import MessageItem from './MessageItem';
 import { messagesInit } from '../../Redux/Reducers/MessageSlice';
@@ -7,13 +7,22 @@ import './MessagesList.css';
 import NewsItem from './NewsItem';
 
 function MessageList(): JSX.Element {
+  
   const { messages } = useAppSelector((store) => store.messages);
-  // const { admin } = useAppSelector((store) => store.auth);
+  const [loading, setLoading] = useState(true);
   const dispatch = useAppDispatch();
-  // console.log(messages);
+
   useEffect(() => {
-    dispatch(messagesInit());
+    const fetchcourses = async (): Promise<any> => {
+      await dispatch(messagesInit());
+      setLoading(false);
+    };
+
+    fetchcourses();
   }, []);
+  if (loading) {
+    return <div className="loader">dfff</div>;
+  }
   return (
     <div className="news__card__wrapper">
       <div className="news__card__container">
