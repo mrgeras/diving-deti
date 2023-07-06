@@ -8,6 +8,18 @@ router.post('/authorization', async (req, res) => {
 
     const user = await Admin.findOne({ where: { login } });
 
+
+    let compare = false;
+
+    if (user) {
+      compare = await bcrypt.compare(password, user.password);
+    }
+
+    if (!user || !compare) {
+      res.json({ message: 'Администратора не существует или пароль неверный' });
+      return;
+    }
+
     if (!login || !password) {
       res.status(400).json({ message: 'Заполнены не все поля' });
       return;

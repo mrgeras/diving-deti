@@ -3,11 +3,11 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
 import { coursesInit } from '../../Redux/Reducers/CourseSlice';
 import './CoursesList.css';
-import FormAddCourses from './FormAddCourses';
+// import FormAddCourses from './FormAddCourses';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
-  const { admin } = useAppSelector((store) => store.auth);
+  // const { admin } = useAppSelector((store) => store.auth);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

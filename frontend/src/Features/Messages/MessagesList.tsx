@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import MessageItem from './MessageItem';
 import { messagesInit } from '../../Redux/Reducers/MessageSlice';
-import FormAddMessage from './FormAddMessage';
+// import FormAddMessage from './FormAddMessage';
 import './MessagesList.css';
 
 function MessageList(): JSX.Element {
   const { messages } = useAppSelector((store) => store.messages);
-  const { admin } = useAppSelector((store) => store.auth);
+  // const { admin } = useAppSelector((store) => store.auth);
   const dispatch = useAppDispatch();
   // console.log(messages);
   useEffect(() => {
