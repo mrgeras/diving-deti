@@ -25,47 +25,45 @@ function FormRequest({ course }: { course: Course }): JSX.Element {
   };
 
   return (
-    <div>
-      <form onSubmit={onHandleSubmit}>
-        <label>
-          Имя
-          <input
-            type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
-        <label>
-          Телефон
-          <input
-            type="text"
-            value={tel}
-            onChange={(e) => setTel(e.target.value)}
-          />
-        </label>
-        <label>
-          Почта
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        {undefined && (
-          <>
-            <label>
-              <input type="text" value={course.id} />
-            </label>
-            <label>
-              <input type="text" value="" />
-            </label>
-          </>
-        )}
+    <form onSubmit={onHandleSubmit}>
+      <label>
+        Имя
+        <input
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </label>
+      <label>
+        Телефон
+        <input
+          type="text"
+          value={tel}
+          onChange={(e) => setTel(e.target.value)}
+        />
+      </label>
+      <label>
+        Почта
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </label>
+      {undefined && (
+        <>
+          <label>
+            <input type="text" value={course.id} />
+          </label>
+          <label>
+            <input type="text" value="" />
+          </label>
+        </>
+      )}
 
-        <button type="button">Отменить</button>
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
+      <button type="button">Отменить</button>
+      <button type="submit">Отправить</button>
+    </form>
   );
 }
 
