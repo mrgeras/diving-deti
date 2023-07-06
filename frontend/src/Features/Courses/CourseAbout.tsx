@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../Redux/store';
+import Error from '../404/Error';
+import { Course } from './types/CoursesType';
+import ButtonRequest from './Buttons/ButtonRequest';
 
 function CourseAbout(): JSX.Element {
   const { courseId } = useParams();
@@ -8,18 +11,23 @@ function CourseAbout(): JSX.Element {
 
   const { courses } = useAppSelector((store) => store.courses);
 
-  let course;
+  let course1;
   if (courseId) {
-    course = courses.find((cours) => cours.id === +courseId);
+    course1 = courses.find((cours) => cours.id === +courseId);
   }
 
   const error = <h1>Такого курса нет</h1>;
 
+
   const content = (
-    <>
-      <h3>{course?.courseName}</h3>
-      <img className="course-page__img" src={course?.courseImg} alt="course" />
-      <p>
+    <div className="course__about__content">
+      <h1 className="course__about__name">{course1?.courseName}</h1>
+      <img
+        className="course__about__img"
+        src={course1?.courseImg}
+        alt="Фото курса"
+      />
+      <p className="course__about__text">
         Когда можно отдать ребенка на раннее плавание и справится ли мой малыш?
         Ответы можно начать с того, что вода, в принципе, является родной и
         привычной средой для человека, так как ещё в утробе матери, ребёнок
@@ -92,14 +100,21 @@ function CourseAbout(): JSX.Element {
         все условия, чтобы малыш чувствовал себя максимально комфортно и
         приходил с большим удовольствием на урок.
       </p>
-      <button onClick={() => navigate(-1)} type="button">
-        Назад к курсам
-      </button>
-    </>
+      <div className="course__about__btn__group">
+        <button
+          onClick={() => navigate(-1)}
+          type="button"
+          className="course__about__btn"
+        >
+          Назад к курсам
+        </button>
+        {course1 && <ButtonRequest course={course1} />}
+      </div>
+    </div>
   );
 
   return (
-    <div className="course-page__container">{!course ? error : content}</div>
+    <div className="course__about__container">{!course1 ? error : content}</div>
   );
 }
 
