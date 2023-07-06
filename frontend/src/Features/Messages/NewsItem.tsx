@@ -18,7 +18,11 @@ function NewsItem({ message }: { message: Message }): JSX.Element {
   return (
     <div className="news__card">
       <div className="news__card__left">
-        <img className="news__card__img" src={message.messageImg} alt="Фото новости" />
+        <img
+          className="news__card__img"
+          src={message.messageImg}
+          alt="Фото новости"
+        />
       </div>
       <div className="news__card__right">
         <h1 className="news__card__name">{message.messageName}</h1>
@@ -32,35 +36,38 @@ function NewsItem({ message }: { message: Message }): JSX.Element {
               Подробнее
             </Link>
           </button>
-          {admin && trigger ? (
-            <button
-              type="button"
-              className="news__card__btn__del"
-              onClick={() => setTrigger(false)}
-            >
-              Удалить
-            </button>
-          ) : (
-            <div className="news__card__modal__group">
-              <h1 className="news__card__modal__text">Вы точно хотите удалить эту новость?</h1>
-              <div className="news__card__modal__btn__group">
-                <button
-                  type="button"
-                  className="news__card__modal__btn__yes"
-                  onClick={() => onHandleRemove(message.id)}
-                >
-                  Да
-                </button>
-                <button
-                  type="button"
-                  className="news__card__modal__btn__no"
-                  onClick={() => setTrigger(true)}
-                >
-                  Нет
-                </button>
+          {admin &&
+            (trigger ? (
+              <button
+                type="button"
+                className="news__card__btn__del"
+                onClick={() => setTrigger(false)}
+              >
+                Удалить
+              </button>
+            ) : (
+              <div className="news__card__modal__group">
+                <h1 className="news__card__modal__text">
+                  Вы точно хотите удалить эту новость?
+                </h1>
+                <div className="news__card__modal__btn__group">
+                  <button
+                    type="button"
+                    className="news__card__modal__btn__yes"
+                    onClick={() => onHandleRemove(message.id)}
+                  >
+                    Да
+                  </button>
+                  <button
+                    type="button"
+                    className="news__card__modal__btn__no"
+                    onClick={() => setTrigger(true)}
+                  >
+                    Нет
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            ))}
         </div>
       </div>
     </div>
