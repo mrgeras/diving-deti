@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useAppSelector } from '../../Redux/store';
+import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import Error from '../404/Error';
 import { Course } from './types/CoursesType';
 import ButtonRequest from './Buttons/ButtonRequest';
+import { coursesInit } from '../../Redux/Reducers/CourseSlice';
 
 function CourseAbout(): JSX.Element {
   const { courseId } = useParams();
   const navigate = useNavigate();
-
   const { courses } = useAppSelector((store) => store.courses);
+  const [loading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const fetchReviews = async (): Promise<any> => {
+      await dispatch(coursesInit());
+      setLoading(false);
+    };
+
+    fetchReviews();
+  }, []);
+
+  if (loading) {
+    return <div className="loader"></div>;
+  }
 
   let course1;
   if (courseId) {
@@ -17,7 +31,6 @@ function CourseAbout(): JSX.Element {
   }
 
   const error = <h1>Такого курса нет</h1>;
-
 
   const content = (
     <div className="course__about__content">
@@ -104,7 +117,7 @@ function CourseAbout(): JSX.Element {
         <button
           onClick={() => navigate(-1)}
           type="button"
-          className="course__about__btn"
+          className="course__about__btn__back"
         >
           Назад к курсам
         </button>
