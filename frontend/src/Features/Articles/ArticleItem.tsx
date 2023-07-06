@@ -22,7 +22,7 @@ function ArticleItem({ article }: { article: Article }): JSX.Element {
           src={article.articleImg}
           alt="article"
         />
-        <p className="article-card-text">{article.articleText}</p>
+        {/* <p className="article-card-text">{article.articleText}</p> */}
       </div>
       <div className="article-btn-group">
         <button className="about-article-btn" type="button">

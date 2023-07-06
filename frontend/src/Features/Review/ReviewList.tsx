@@ -19,7 +19,7 @@ function ReviewList(): JSX.Element {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
@@ -40,8 +40,8 @@ function ReviewList(): JSX.Element {
           ᐸ
         </button>
         <div className="textall">
-          <div className="nameofrew">{rewiews[num].userName}</div>
-          <div className="textofrew">{rewiews[num].reviewText}</div>
+          <h1 className="nameofrew">{rewiews[num]?.userName}</h1>
+          <div className="textofrew">{rewiews[num]?.reviewText}</div>
         </div>
 
         <button
