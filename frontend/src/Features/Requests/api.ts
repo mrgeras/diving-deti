@@ -12,7 +12,7 @@ export const loadRequestsFetch2 = async (): Promise<Request[]> => {
 
 export const addRequestFetch = async (
   request: RequestWithOutId
-): Promise<Request> => {
+): Promise<{ data?: Request; message: string }> => {
   const res = await fetch('/api/admin/requests', {
     method: 'POST',
     headers: {
