@@ -18,8 +18,9 @@ import ArticlesList from '../Features/Articles/ArticlesList';
 import ArticleAbout from '../Features/Articles/ArticleAbout';
 import KonstruktItem from '../Features/Konstrukt/KonstruktItem';
 import RequestsList from '../Features/Requests/RequestsList';
+import { Course } from '../Features/Courses/types/CoursesType';
 
-function App(): JSX.Element {
+function App({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -30,7 +31,7 @@ function App(): JSX.Element {
     <div className="app">
       <Routes>
         <Route path="/" element={<NavBar />}>
-          <Route index element={<Main />} />
+          <Route index element={<Main course={course}/>} />
           <Route path="/admin" element={<FormLog />} />
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:courseId" element={<CourseAbout />} />
