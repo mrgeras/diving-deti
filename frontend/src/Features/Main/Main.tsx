@@ -13,6 +13,7 @@ function Main({ course }: { course: Course }): JSX.Element {
 
     <main className="main">
       <div className="main__content">
+        <Slider />
         <ReviewList />
         <ThreeOtzov course={course} />
         <Ya /> <br />
