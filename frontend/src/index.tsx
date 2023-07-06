@@ -13,7 +13,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App
+        course={{
+          id: 0,
+          courseImg: '',
+          courseName: '',
+          description: '',
+        }}
+      />
     </BrowserRouter>
   </Provider>
 );

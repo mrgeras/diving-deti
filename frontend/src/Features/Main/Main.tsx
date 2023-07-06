@@ -5,8 +5,9 @@ import { logOut } from '../../Redux/Reducers/AuthSlice';
 import ReviewList from '../Review/ReviewList';
 import ThreeOtzov from '../Three_otzov/Three_otzov';
 import Ya from '../Map';
+import { Course } from '../Courses/types/CoursesType';
 
-function Main(): JSX.Element {
+function Main({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
 
   const onHandleLogout: React.MouseEventHandler<HTMLButtonElement> = async (
@@ -20,7 +21,7 @@ function Main(): JSX.Element {
       <main className="main">
         <div className="main__content">
           <ReviewList />
-          <ThreeOtzov />
+          <ThreeOtzov course={course} />
           <Ya /> <br />
           <div>
             <p className="main__text">
