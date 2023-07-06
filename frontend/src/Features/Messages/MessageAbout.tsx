@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppSelector } from '../../Redux/store';
+import './MessageAbout.css';
 
 function MessageAbout(): JSX.Element {
   const { messageId } = useParams();
@@ -18,12 +19,15 @@ function MessageAbout(): JSX.Element {
   const content = (
     <>
       <h3>{message?.messageName}</h3>
-      <img
-        className="message-page__img"
-        src={message?.messageImg}
-        alt="message"
-      />
-      <p>{message?.messageText}</p>
+      <div className="firstyar">
+        <img
+          className="message-page__img"
+          src={message?.messageImg}
+          alt="message"
+        />
+        <p>{message?.messageText}</p>
+      </div>
+      <p>{message?.messageText2}</p>
       <button onClick={() => navigate(-1)} type="button">
         Назад к списку новостей
       </button>
@@ -31,9 +35,7 @@ function MessageAbout(): JSX.Element {
   );
 
   return (
-    <div className="message-page__container">
-      {!message ? error : content}
-    </div>
+    <div className="message-page__container">{!message ? error : content}</div>
   );
 }
 

@@ -11,6 +11,7 @@ module.exports = {
           articleImg:
             'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
           articleText: 'Статья 1 текст',
+          articleText2: 'Основной текст',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -19,6 +20,7 @@ module.exports = {
           articleImg:
             'https://diving-deti.ru/wp-content/uploads/2017/12/rannee-plavanie-1.jpg',
           articleText: 'Статья 2 текст',
+          articleText2: 'Основной текст',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
