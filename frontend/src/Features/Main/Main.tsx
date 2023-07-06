@@ -6,6 +6,7 @@ import ReviewList from '../Review/ReviewList';
 import ThreeOtzov from '../Three_otzov/Three_otzov';
 import Ya from '../Map';
 import { Course } from '../Courses/types/CoursesType';
+import Slider from '../Slider/Slider';
 
 function Main({ course }: { course: Course }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -20,6 +21,7 @@ function Main({ course }: { course: Course }): JSX.Element {
     <>
       <main className="main">
         <div className="main__content">
+          <Slider />
           <ReviewList />
           <ThreeOtzov course={course} />
           <Ya /> <br />
