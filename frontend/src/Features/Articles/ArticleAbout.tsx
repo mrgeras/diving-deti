@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useAppSelector } from '../../Redux/store';
+import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import './ArticleAbout.css';
+import { articlesInit } from '../../Redux/Reducers/ArticleSlice';
 
 function ArticleAbout(): JSX.Element {
   const { articleId } = useParams();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
 
   const { articles } = useAppSelector((store) => store.articles);
+  useEffect(() => {
+    const fetchReviews = async (): Promise<any> => {
+      await dispatch(articlesInit());
+      setLoading(false);
+    };
 
+    fetchReviews();
+  }, []);
+
+  if (loading) {
+    return <div className="loader"></div>;
+  }
   let article;
   if (articleId) {
     article = articles.find((artic) => artic.id === +articleId);
