@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../Features/Courses/api';
 import { CoursesState } from '../../Features/Courses/types/CoursesState';
-import {
-  CourseId
-} from '../../Features/Courses/types/CoursesType';
+import { CourseId } from '../../Features/Courses/types/CoursesType';
 
 const initialState: CoursesState = { courses: [], error: '' };
 
@@ -11,9 +9,8 @@ export const coursesInit = createAsyncThunk('courses/init', () =>
   api.getCourses()
 );
 
-export const addCourse = createAsyncThunk(
-  'courses/add',
-  (course: FormData) => api.addCourseFetch(course)
+export const addCourse = createAsyncThunk('courses/add', (course: FormData) =>
+  api.addCourseFetch(course)
 );
 
 export const deleteCourse = createAsyncThunk(

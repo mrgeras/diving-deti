@@ -1,16 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import CourseItem from './CourseItem';
 import { coursesInit } from '../../Redux/Reducers/CourseSlice';
 
 function CoursesList(): JSX.Element {
   const { courses } = useAppSelector((store) => store.courses);
-  // const { admin } = useAppSelector((store) => store.auth);
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(coursesInit());
+    const fetchcourses = async (): Promise<any> => {
+      await dispatch(coursesInit());
+      setLoading(false);
+    };
+
+    fetchcourses();
   }, []);
+  if (loading) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <div className="course__card__wrapper">
