@@ -51,13 +51,14 @@ router.post('/', async (req, res) => {
       return res.status(400).send('Нет фала для загрузки');
     }
     const { file } = req.files;
-    const { name, text } = req.body;
+    const { name, text, text2 } = req.body;
     const fileName = file.name.split(' ')[0];
     const URL = await fileuploadMiddeleware(file);
     const articleFile = await Article.create({
       articleImg: URL,
       articleName: name,
       articleText: text,
+      articleText2: text2
     });
     console.log(name, text);
 

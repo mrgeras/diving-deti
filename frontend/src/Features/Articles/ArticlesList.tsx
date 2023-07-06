@@ -15,7 +15,7 @@ function ArticlesList(): JSX.Element {
   }, []);
   return (
     <div className="article-card-wrapper">
-      <FormAddArticles />
+      {/* <FormAddArticles /> */}
       <h1>Статьи</h1>
       <div className="article-card-container">
         {articles.map((article) => (

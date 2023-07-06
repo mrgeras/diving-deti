@@ -27,7 +27,7 @@ function KonstruktItem(): JSX.Element {
       formData.append('file', file);
       formData.append('name', titleValue);
       formData.append('text', form1Value);
-      // formData.append('maintext', maintextValue);
+      formData.append('text2', maintextValue);
       if (selectValue == '1') {
         dispatch(addMessage(formData));
         window.location.href = '/messages';

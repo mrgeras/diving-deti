@@ -15,7 +15,7 @@ function CoursesList(): JSX.Element {
   }, []);
   return (
     <div className="course-card-wrapper">
-      {admin && <FormAddCourses />}
+      {/* {admin && <FormAddCourses />} */}
       <div className="course-card-container">
         {courses.map((course) => (
           <CourseItem key={course.id} course={course} />

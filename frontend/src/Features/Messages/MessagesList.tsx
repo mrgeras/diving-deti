@@ -15,7 +15,7 @@ function MessageList(): JSX.Element {
   }, []);
   return (
     <div className="message-card-wrapper">
-      {admin && <FormAddMessage />}
+      {/* {admin && <FormAddMessage />} */}
       <h1 className="HeadName">НОВОСТИ</h1>
 
       <div className="message-card-container">
