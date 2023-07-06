@@ -8,6 +8,10 @@ export const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
     },
     body: JSON.stringify(admin),
   });
+  if (!res.ok) {
+    const data = await res.json();
+    throw new Error(data.message);
+  }
   return res.json();
 };
 

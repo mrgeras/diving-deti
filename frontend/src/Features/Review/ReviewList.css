@@ -7,6 +7,10 @@
   text-align: center;
   margin: 20px;
 }
+.loading {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .butmin,
 .butplus {
@@ -28,4 +32,7 @@
 }
 .mainfoot {
   color: white;
+}
+.textofrew {
+  width: 50vw;
 }
