@@ -4,7 +4,9 @@ const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 
 router.get('/', async (req, res) => {
   try {
-    const article = await Article.findAll({});
+    const article = await Article.findAll({
+      order: [['id', 'DESC']]
+    });
     // console.log(course)
 
     res.json(article);

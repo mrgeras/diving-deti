@@ -4,9 +4,9 @@ const fileuploadMiddeleware = require('../../middleware/fileuploadMiddeleware');
 
 router.get('/', async (req, res) => {
   try {
-    const message = await Message.findAll({});
-    // console.log(message)
-
+    const message = await Message.findAll({
+      order: [['id', 'DESC']]
+    });
     res.json(message);
   } catch (err) {
     console.log(err);
