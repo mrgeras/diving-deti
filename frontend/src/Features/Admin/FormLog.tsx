@@ -32,7 +32,7 @@ function FormLog(): JSX.Element {
         <label>
           Пароль
           <input
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

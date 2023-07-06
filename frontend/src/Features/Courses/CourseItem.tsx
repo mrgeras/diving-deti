@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Course, CourseId } from './types/CoursesType';
 import './Course.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { deleteCourse } from '../../Redux/Reducers/CourseSlice';
-import FormRequest from '../Requests/FormRequest';
 import ButtonCourse from './Buttons/ButtonCourse';
 import ButtonRequest from './Buttons/ButtonRequest';
 
@@ -62,9 +60,9 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
           </p>
           <div className="course__card__description__btn__group">
             <ButtonCourse course={course} />
-            <ButtonRequest />
+            <ButtonRequest course={course} />
           </div>
-          <FormRequest key={course.id} course={course} />
+          {/* <FormRequest key={course.id} course={course} /> */}
         </div>
       </div>
       {/* <div className="course-card-item">
