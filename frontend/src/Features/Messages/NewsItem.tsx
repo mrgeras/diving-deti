@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { Message, MessageId } from './types/MessageTypes';
 import { deleteMessage } from '../../Redux/Reducers/MessageSlice';
+
 import './News.scss';
+import ButtonNews from './Buttons/ButtonNews';
 
 // Message === News / Название Message иногда встречается вместо News
 
@@ -25,17 +27,8 @@ function NewsItem({ message }: { message: Message }): JSX.Element {
         />
       </div>
       <div className="news__card__right">
-        <h1 className="news__card__name">{message.messageName}</h1>
-        <p className="news__card__text">{message.messageText}</p>
-        <div className="news__card__btn__group">
-          <button type="button" className="news__card__btn__about">
-            <Link
-              to={`/messages/${message.id}`}
-              className="news__card__btn__about__link"
-            >
-              Подробнее
-            </Link>
-          </button>
+        <div className="news__card__name">
+          {message.messageName}
           {admin &&
             (trigger ? (
               <button
@@ -43,13 +36,13 @@ function NewsItem({ message }: { message: Message }): JSX.Element {
                 className="news__card__btn__del"
                 onClick={() => setTrigger(false)}
               >
-                Удалить
+                X
               </button>
             ) : (
               <div className="news__card__modal__group">
-                <h1 className="news__card__modal__text">
+                <h4 className="news__card__modal__text">
                   Вы точно хотите удалить эту новость?
-                </h1>
+                </h4>
                 <div className="news__card__modal__btn__group">
                   <button
                     type="button"
@@ -68,6 +61,18 @@ function NewsItem({ message }: { message: Message }): JSX.Element {
                 </div>
               </div>
             ))}
+        </div>
+        <p className="news__card__text">{message.messageText}</p>
+        <div className="news__card__btn__group">
+          {/* <button type="button" className="news__card__btn__about">
+            <Link
+              to={`/messages/${message.id}`}
+              className="news__card__btn__about__link"
+            >
+              Подробнее
+            </Link>
+          </button> */}
+          <ButtonNews id={message.id} />
         </div>
       </div>
     </div>
