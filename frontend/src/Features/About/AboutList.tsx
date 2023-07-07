@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import AboutItem from './AboutItem';
 import { coachInit } from '../../Redux/Reducers/CoachSlice';
+import './About.scss';
 
 function AboutList(): JSX.Element {
   const { coaches } = useAppSelector((store) => store.coaches);
@@ -13,10 +14,10 @@ function AboutList(): JSX.Element {
   }, []);
 
   return (
-    <div className="coach-card-wrapper">
-      <h1 className="title">О нашей школе</h1>
-      <div className="coach-card-container">
-      <div className="about-text">
+    <div className="coach__card__wrapper">
+      <div className="coach__card__container">
+      <div className="title">О нашей школе</div>
+      <div className="about__text">
         <p className="">
           К нам в дайвклуб приходят разные дети: веселые, болтливые, молчуны,
           шумные, капризные, обидчивые, гиперподвижные, некоторые со страхом
@@ -46,7 +47,7 @@ function AboutList(): JSX.Element {
           <AboutItem key={coach.id} coach={coach} />
         ))}
       </div>
-      <div className="our-adresses">
+      <div className="about__adresses">
         <h2>Адреса площадок:</h2>
         <p>1. Ушинского 10, к2</p>
         <p>2. Пискарёвский просп., 47, стр. 11</p>

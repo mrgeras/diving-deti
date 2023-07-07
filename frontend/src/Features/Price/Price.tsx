@@ -1,5 +1,5 @@
 import React from 'react';
-import './Price.css';
+import './Price.scss';
 
 function Price(): JSX.Element {
   return (
