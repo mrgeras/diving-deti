@@ -20,7 +20,7 @@ function Ya(): JSX.Element {
 
     <YMaps
       query={{
-        ns: 'use-load-option',
+        // ns: 'use-load-option',
         load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon',
       }}
     >
