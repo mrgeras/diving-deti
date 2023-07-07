@@ -24,9 +24,7 @@ function ReviewList(): JSX.Element {
 
   return (
     <>
-      <div>
-        <h1 className="mainfoot">ОТЗЫВЫ:</h1>
-      </div>
+      <h1 className="mainfoot">ОТЗЫВЫ:</h1>
       <div className="ReviewListmain">
         <button
           className="butmin"
@@ -36,9 +34,7 @@ function ReviewList(): JSX.Element {
               setNum(num - 1);
             }
           }}
-        >
-          ᐸ
-        </button>
+        />
         <div className="textall">
           <h1 className="nameofrew">{rewiews[num]?.userName}</h1>
           <div className="textofrew">{rewiews[num]?.reviewText}</div>
@@ -52,9 +48,7 @@ function ReviewList(): JSX.Element {
               setNum(num + 1);
             }
           }}
-        >
-          ᐳ
-        </button>
+        />
       </div>
     </>
   );
