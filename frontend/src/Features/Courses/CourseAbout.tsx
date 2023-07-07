@@ -114,6 +114,7 @@ function CourseAbout(): JSX.Element {
         приходил с большим удовольствием на урок.
       </p>
       <div className="course__about__btn__group">
+      {course1 && <ButtonRequest course={course1} />}
         <button
           onClick={() => navigate(-1)}
           type="button"
@@ -121,7 +122,6 @@ function CourseAbout(): JSX.Element {
         >
           Назад к курсам
         </button>
-        {course1 && <ButtonRequest course={course1} />}
       </div>
     </div>
   );
