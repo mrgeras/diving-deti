@@ -36,7 +36,7 @@ function Main({ course }: { course: Course }): JSX.Element {
   return (
     <main className="main">
       <div className="main__content">
-        <div className="course__card__container">
+        <div className="course__card__container__main">
           {courses3.map((course1) => (
             <CourseItem key={course1.id} course={course1} />
           ))}

@@ -64,6 +64,11 @@ $blue: #00b6e6;
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: center;
+
+      &__main {
+        display: flex;
+        flex-direction: column-reverse;
+      }
     }
 
     &__img {
