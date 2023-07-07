@@ -11,9 +11,9 @@ export type Request = {
 };
 
 export type Answer = {
-  id:number,
-  text:string
-}
+  id: number;
+  text: string;
+};
 
 export type RequestId = Request['id'];
 
