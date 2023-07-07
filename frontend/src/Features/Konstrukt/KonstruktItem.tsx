@@ -86,7 +86,9 @@ function KonstruktItem(): JSX.Element {
             </div>
           </div>
           <div className="buttons_yar">
-            <button className="submit" type="submit">Add</button>
+            <button className="submit" type="submit">
+              Add
+            </button>
             <select
               className="submitnear"
               value={selectValue}
