@@ -17,13 +17,17 @@ module.exports = (sequelize, DataTypes) => {
       },
       courseImg: {
         allowNull: false,
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
       },
       courseName: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
       description: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      descriptionFull: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
