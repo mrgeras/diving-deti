@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import {
   authorization,
@@ -7,17 +6,14 @@ import {
   logOut,
 } from '../../Redux/Reducers/AuthSlice';
 import RequestsList from '../Requests/RequestsList';
-// import { Link } from 'react-router-dom';
+import './Admin.css';
 
 function FormLog(): JSX.Element {
   const { admin, error } = useAppSelector((store) => store.auth);
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const handleClickk = (): any => {
-    // Выполните необходимые действия перед редиректом, если нужно
-
-    // Выполните редирект на определенный маршрут
+  const handleClickk: React.MouseEventHandler<HTMLButtonElement> = () => {
     window.location.href = '/konstrukt';
   };
 
@@ -46,14 +42,8 @@ function FormLog(): JSX.Element {
     dispatch(logOut());
   };
 
-  // useEffect(() => {
-  //   if (admin) {
-  //     navigate('/');
-  //   }
-  // }, [admin, navigate]);
-
   return (
-    <div>
+    <div className="allanminpanelb">
       {error && <span style={{ color: 'red', fontSize: '25' }}>{error}</span>}
       {!admin && (
         <form onSubmit={onHandleSubmit}>
@@ -80,12 +70,12 @@ function FormLog(): JSX.Element {
       )}
       {admin && <RequestsList />}
       {admin && (
-        <button type="button" onClick={onHandleLogout}>
+        <button className="yesbut" type="button" onClick={onHandleLogout}>
           Выйти
         </button>
       )}
       {admin && (
-        <button type="button" onClick={handleClickk}>
+        <button className="nobut" type="button" onClick={handleClickk}>
           Создать пост
         </button>
       )}

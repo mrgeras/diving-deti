@@ -65,7 +65,8 @@ function CourseItem({ course }: { course: Course }): JSX.Element {
             ))}
         </div>
         <p className="course__card__description__text">{course.description}</p>
-        <p className="course__card__description__text">{answer && answer}</p>
+        <div className='answer-container'><p className="course__card__description__text answer">{answer && answer}</p></div>
+        
         <div className="course__card__description__btn__group">
           <ButtonCourse course={course} />
           <ButtonRequest course={course} />

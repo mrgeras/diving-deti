@@ -3,7 +3,9 @@ $blue: #00b6e6;
 $dark: #ffffff;
 $borderW: 2px;
 
-.button__course {
+.button__news {
+  position: relative;
+  left: -55px;
   width: 100px;
   height: 60px;
 }
@@ -25,8 +27,7 @@ $borderW: 2px;
   cursor: pointer;
   border-radius: 30px;
 
-  &__link,
-  &__link__req {
+  &__link {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: $orang;
@@ -35,15 +36,6 @@ $borderW: 2px;
     position: absolute;
     left: 48px;
     bottom: 10px;
-  }
-
-  &__link__req {
-    position: relative;
-    left: -3px;
-  }
-
-  &__req {
-    color: #00b6e6;
   }
 
   &:before {
