@@ -17,7 +17,7 @@ function CoursesList(): JSX.Element {
     fetchcourses();
   }, []);
   if (loading) {
-    return <div className="loader"></div>;
+    return <div className="loader" />;
   }
 
   return (

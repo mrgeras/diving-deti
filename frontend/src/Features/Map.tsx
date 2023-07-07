@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Placemark, TrafficControl } from '@pbe/react-yandex-maps';
+import './MapStyle.css';
 
 function Ya(): JSX.Element {
   return (
@@ -53,6 +54,7 @@ function Ya(): JSX.Element {
               'Калининский/Красногвардейский районы: Пискаревский пр. 47с11',
           }}
         />
+        <TrafficControl />
       </Map>
     </YMaps>
   );

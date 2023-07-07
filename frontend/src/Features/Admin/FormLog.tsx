@@ -7,14 +7,14 @@ import {
   logOut,
 } from '../../Redux/Reducers/AuthSlice';
 import RequestsList from '../Requests/RequestsList';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function FormLog(): JSX.Element {
   const { admin, error } = useAppSelector((store) => store.auth);
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const handleClickk = () => {
+  const handleClickk = (): any => {
     // Выполните необходимые действия перед редиректом, если нужно
 
     // Выполните редирект на определенный маршрут
@@ -81,7 +81,7 @@ function FormLog(): JSX.Element {
       {admin && <RequestsList />}
       {admin && (
         <button type="button" onClick={onHandleLogout}>
-          logout
+          Выйти
         </button>
       )}
       {admin && (

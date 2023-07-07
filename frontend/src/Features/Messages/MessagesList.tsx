@@ -7,7 +7,6 @@ import './MessagesList.css';
 import NewsItem from './NewsItem';
 
 function MessageList(): JSX.Element {
-  
   const { messages } = useAppSelector((store) => store.messages);
   const [loading, setLoading] = useState(true);
   const dispatch = useAppDispatch();

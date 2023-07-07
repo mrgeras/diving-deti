@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.scss';
-import { useAppDispatch } from '../../Redux/store';
-import { logOut } from '../../Redux/Reducers/AuthSlice';
+// import { useAppDispatch } from '../../Redux/store';
+// import { logOut } from '../../Redux/Reducers/AuthSlice';
 import ReviewList from '../Review/ReviewList';
 import ThreeOtzov from '../Three_otzov/Three_otzov';
 import Ya from '../Map';
@@ -10,7 +10,6 @@ import Slider from '../Slider/Slider';
 
 function Main({ course }: { course: Course }): JSX.Element {
   return (
-
     <main className="main">
       <div className="main__content">
         <Slider />
@@ -23,7 +22,6 @@ function Main({ course }: { course: Course }): JSX.Element {
             ТО ДЕНЬ РОЖДЕНИЯ ИЛИ НОВЫЙ ГОД. МЫ УСТРОИМ КОНКУРСЫ И ЭСТАФЕТЫ, И
             КОНЕЧНО ПОГРУЖЕНИЯ С АКВАЛАНГОМ! МЕРОПРИЯТИЕ ДЛЯ ДЕТЕЙ ОТ 10 ЛЕТ.
           </p>
-
         </div>
       </div>
     </main>
