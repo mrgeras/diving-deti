@@ -1,14 +1,22 @@
+$rgbaf: rgba(
+  $color: #fff,
+  $alpha: 0.4,
+);
+
 table.iksweb{
 	width: 80vw;
 	border-collapse:collapse;
 	border-spacing:0;
 	height: auto;
     margin: auto;
-
+	background-color: $rgbaf;
+	backdrop-filter: blur(5px);
+	border-radius: 25px;
 }
 table.iksweb,table.iksweb td, table.iksweb th {
 	border: 1px solid #595959;
 }
+
 table.iksweb td,table.iksweb th {
 	padding: 3px;
 	width: 30px;
@@ -19,4 +27,8 @@ table.iksweb th {
 	background: #347c99; 
 	color: #fff; 
 	font-weight: normal;
+}
+
+tbody {
+	border: none;
 }

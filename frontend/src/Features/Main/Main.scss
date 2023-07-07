@@ -9,6 +9,7 @@
   }
 
   &__text {
+    margin: 25px;
     color: tomato;
     font-size: 24px;
     font-weight: 800;
@@ -16,7 +17,6 @@
     padding: 10px;
     background-color: rgba($color: #eeeeee, $alpha: 0.9);
     border-radius: 10px;
-    // justify-self: center;
     align-self: center;
   }
 }

@@ -1,0 +1,62 @@
+$rgbaf: rgba(
+  $color: #fff,
+  $alpha: 0.7,
+);
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+}
+
+.about__text p {
+    font-size: 16px;
+}
+
+.coach {
+  &__card__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  background-color: $rgbaf;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 35px;
+  width: 800px;
+  min-height: 100px;
+  max-height: 600px;
+  margin: 25px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__img {
+    width: 250px;
+    border-radius: 15px;
+  }
+
+  &__name {
+  }
+
+  &__about {
+  }
+}
+
+.about__adreses {
+
+}
