@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  margin: 20px;
+  margin: 50px;
 }
 .loading {
   color: white;
@@ -15,7 +15,7 @@
 .butplus {
     width: 44px;
     height: 44px;
-    border: 2px solid #333;
+    border: 2px solid white;
     border-left: 0;
     border-top: 0;
     transform: rotate(315deg);
@@ -25,7 +25,7 @@
 .butmin {
     width: 44px;
     height: 44px;
-    border: 2px solid #333;
+    border: 2px solid white;
     border-left: 0;
     border-top: 0;
     background-color: transparent;
@@ -38,6 +38,11 @@
   font-family: 'Montserrat', sans-serif;
   color: white;
 }
+
+.textofrew {
+  font-size: 16px;
+}
+
 .mainfoot {
   color: white;
 }
