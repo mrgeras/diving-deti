@@ -2,6 +2,7 @@ import React from 'react';
 import { Request } from './types/request';
 import { useAppDispatch } from '../../Redux/store';
 import { updateRequests } from '../../Redux/Reducers/RequestSlice';
+import './RequestItem.css';
 
 function RequestItem({ request }: { request: Request }): JSX.Element {
   const dispatch = useAppDispatch();
@@ -15,7 +16,7 @@ function RequestItem({ request }: { request: Request }): JSX.Element {
   };
 
   return (
-    <div>
+    <div className="item">
       <h3>Имя: {request.userName}</h3>
       <p>Курс: {request.Course?.courseName}</p>
       <p>Телефон: {request.tel}</p>

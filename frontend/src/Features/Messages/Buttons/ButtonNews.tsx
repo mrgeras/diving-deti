@@ -5,7 +5,7 @@ import { MessageId } from '../types/MessageTypes';
 
 function ButtonNews({ id }: { id: MessageId }): JSX.Element {
   return (
-    <div className="button__course">
+    <div className="button__news">
       <button type="button" className="blob-btn">
         <Link to={`/messages/${id}`} className="blob-btn__link">
           Подробнее

@@ -128,13 +128,13 @@ function ButtonRequest({ course }: { course: Course }): JSX.Element {
           )}
           <div className="course__request__modal__btn__group">
             <button
-              className="course__request__modal__btn__cancel"
+              className="course__request__modal__btn__cancel btn-send"
               type="button"
               onClick={() => setTrigger(true)}
             >
               Отменить
             </button>
-            <button className="course__request__modal__btn__send" type="submit">
+            <button className="course__request__modal__btn__send btn-send" type="submit">
               Отправить
             </button>
           </div>

@@ -32,7 +32,7 @@ router.get('/:messageId', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('Нет фала для загрузки');
+      return res.status(400).send('Нет файла для загрузки');
     }
     const { file } = req.files;
     const { name, text, text2 } = req.body;
