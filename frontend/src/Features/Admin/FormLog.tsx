@@ -84,7 +84,11 @@ function FormLog(): JSX.Element {
           logout
         </button>
       )}
-      {admin && <button type="button" onClick={handleClickk}>Создать пост</button>}
+      {admin && (
+        <button type="button" onClick={handleClickk}>
+          Создать пост
+        </button>
+      )}
     </div>
   );
 }
