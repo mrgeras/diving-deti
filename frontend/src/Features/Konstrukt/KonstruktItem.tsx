@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { redirect } from 'react-router-dom';
+// import { redirect } from 'react-router-dom';
 import './KonstruktItem.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { addArticle } from '../../Redux/Reducers/ArticleSlice';
@@ -30,7 +30,7 @@ function KonstruktItem(): JSX.Element {
       formData.append('name', titleValue);
       formData.append('text', form1Value);
       formData.append('text2', maintextValue);
-      if (selectValue == '1') {
+      if (selectValue === '1') {
         dispatch(addMessage(formData));
         window.location.href = '/messages';
       } else {
@@ -39,6 +39,7 @@ function KonstruktItem(): JSX.Element {
       }
     }
   };
+  
 
   return (
     <div>
@@ -86,7 +87,9 @@ function KonstruktItem(): JSX.Element {
             </div>
           </div>
           <div className="buttons_yar">
-            <button className="submit" type="submit">Add</button>
+            <button className="submit" type="submit">
+              Добавить
+            </button>
             <select
               className="submitnear"
               value={selectValue}

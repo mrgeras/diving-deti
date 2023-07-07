@@ -1,10 +1,15 @@
-.allanminpanelb {
-  margin-left: 50px;
+.obrab,
+.neobrab {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  align-items: center;
 }
-.yesbut,
-.nobut {
+.obrabbutton,
+.neobrabbutton {
   margin-top: 30px;
-  width: 90px;
+  width: 180px;
   height: 50px;
   border: none;
   background-color: #ec6933;
@@ -13,7 +18,7 @@
   font-size: 20px;
   cursor: pointer;
 }
-.nobut {
+.neobrabbutton {
   background-color: #00b6e6;
   margin-left: 10px;
   width: 180px;

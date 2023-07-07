@@ -18,3 +18,18 @@
   color: white;
   text-align: center;
 }
+.buttonopps {
+  font-size: 30px;
+  width: 180px;
+  height: 90px;
+  color: white;
+  background-color: #00b6e6;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.butdiv {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
