@@ -20,7 +20,12 @@ function Footer(): JSX.Element {
             <img src={instLogo} alt="instlogo" width="50px" />
           </a>
         </div>
-        <p>Новые статьи:</p>
+        <p>
+          © BaltikaKids
+          <br />
+          <p>Клуб Подводного плавания,</p>
+          <p>2013-2023</p>
+        </p>
         <p>
           Телефон в Санкт-Петербурге: <br />
           <a className="tel" href="tel:+78127038643">
