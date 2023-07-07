@@ -1,6 +1,13 @@
 .main {
   justify-self: center;
   font-family: 'Montserrat', sans-serif;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__text {
     color: tomato;
     font-size: 24px;
