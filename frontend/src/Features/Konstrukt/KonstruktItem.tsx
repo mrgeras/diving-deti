@@ -39,6 +39,7 @@ function KonstruktItem(): JSX.Element {
       }
     }
   };
+  
 
   return (
     <div>
