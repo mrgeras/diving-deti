@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Three_otzov.css';
+import './Three_otzov.scss';
 import { Course } from '../Courses/types/CoursesType';
 import { useAppDispatch } from '../../Redux/store';
 import { addRequest } from '../../Redux/Reducers/RequestSlice';
