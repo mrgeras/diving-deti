@@ -13,9 +13,9 @@ $blue: #00b6e6;
     backdrop-filter: blur(5px);
     padding: 20px;
     border-radius: 35px;
-    min-width: 200px;
-    max-width: 900px;
-    min-height: 40px;
+    width: 900px;
+    min-height: 100px;
+    max-height: 300px;
     margin: 25px;
     position: relative;
     align-items: center;
@@ -111,9 +111,6 @@ $blue: #00b6e6;
         }
 
         &__del {
-          position: relative;
-          left: 20%;
-          bottom: 5%;
           width: 30px;
           height: 30px;
           color: white;
@@ -266,19 +263,17 @@ $blue: #00b6e6;
         cursor: pointer;
         text-transform: uppercase;
 
-
         &:hover {
           transform: translateY(3px);
           box-shadow: none;
           background-color: $blue;
           color: black;
         }
+        &:active {
+          opacity: 0.5;
+        }
       }
 
-
-      &:active {
-        opacity: 0.5;
-      }
     }
   }
 }
