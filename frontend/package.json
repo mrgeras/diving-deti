@@ -26,7 +26,7 @@
     "ymaps": "^0.2.1"
   },
   "scripts": {
-    "start": "ESLINT_NO_DEV_ERRORS=true react-scripts start",
+   "start": "cross-env ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -95,7 +95,8 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.43.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.45.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
