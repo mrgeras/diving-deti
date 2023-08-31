@@ -7,7 +7,7 @@ module.exports = {
       'Requests',
       [
         {
-          courseId: 16,
+          courseId: 1,
           requestStatus: false,
           userName: 'Оксана',
           tel: '+79243746534',
@@ -16,7 +16,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 17,
+          courseId: 2,
           requestStatus: true,
           userName: 'Карина',
           tel: '+79284630286',
@@ -25,7 +25,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 18,
+          courseId: 3,
           requestStatus: false,
           userName: 'Роман',
           tel: '+79264509384',
@@ -34,7 +34,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 19,
+          courseId: 4,
           requestStatus: true,
           userName: 'Александр',
           tel: '+79117264503',
@@ -43,7 +43,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 20,
+          courseId: 5,
           requestStatus: false,
           userName: 'Екатерина',
           tel: '+7923456342',
@@ -52,7 +52,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 16,
+          courseId: 6,
           requestStatus: true,
           userName: 'Анатолий',
           tel: '+79123412875',
@@ -61,7 +61,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 17,
+          courseId: 7,
           requestStatus: false,
           userName: 'Дмитрий',
           tel: '+79552418768',
@@ -70,8 +70,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 18,
-          requestStatus: true,
+          courseId: 8,
           userName: 'Владислав',
           tel: '+79127866538',
           email: 'WhatsApp',
