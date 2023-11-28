@@ -51,32 +51,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
-        {
-          courseId: 6,
-          requestStatus: true,
-          userName: 'Анатолий',
-          tel: '+79123412875',
-          email: 'Telegram',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          courseId: 7,
-          requestStatus: false,
-          userName: 'Дмитрий',
-          tel: '+79552418768',
-          email: 'По телефону',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          courseId: 8,
-          userName: 'Владислав',
-          tel: '+79127866538',
-          email: 'WhatsApp',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
+
       ],
       {}
     );
